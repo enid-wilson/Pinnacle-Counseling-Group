@@ -1,0 +1,41 @@
+# Pinnacle Counseling Group — Netlify configuration
+
+[build]
+  publish = "."
+
+[build.processing]
+  skip_processing = false
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true   # /about resolves to /about.html — cleaner shareable URLs
+
+[build.processing.images]
+  compress = true
+
+# Force HTTPS (Netlify handles this by default; this is belt-and-suspenders)
+[[redirects]]
+  from = "http://pinnaclecounselinggroup.com/*"
+  to = "https://pinnaclecounselinggroup.com/:splat"
+  status = 301
+  force = true
+
+# Canonical: prefer non-www. If you decide to use www, swap this block.
+[[redirects]]
+  from = "https://www.pinnaclecounselinggroup.com/*"
+  to = "https://pinnaclecounselinggroup.com/:splat"
+  status = 301
+  force = true
+
+# Custom 404 fallback for any unknown URL
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404

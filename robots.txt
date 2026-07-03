@@ -1,0 +1,48 @@
+# Robots policy for Pinnacle Counseling Group
+# https://pinnaclecounselinggroup.com
+
+# General crawlers — full access
+User-agent: *
+Allow: /
+Disallow: /uploads/
+Disallow: /*.json$
+
+# AI / LLM crawlers — explicitly allowed (so the practice is discoverable
+# when people ask AI assistants for therapy in Sacramento)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://pinnaclecounselinggroup.com/sitemap.xml

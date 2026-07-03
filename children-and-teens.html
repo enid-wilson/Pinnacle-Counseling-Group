@@ -1,0 +1,1512 @@
+<!doctype html>
+<html lang="en" class="no-lenis">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Children & Teen Therapy in Sacramento, CA — Pinnacle Counseling Group</title>
+  <meta name="description" content="Attachment-based, developmentally attuned therapy for children and adolescents in Sacramento and Gold River. Includes parent collateral time and family coordination." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+  <link rel="icon" type="image/png" href="PC_Black%20PC%20Logo_Asset%204%20small.png" />
+  <link rel="apple-touch-icon" href="PC_Black%20PC%20Logo_Asset%204.png" />
+
+  <style>
+    :root {
+      --white:        #ffffff;
+      --cream:        #ffffff;
+      --cream-warm:   #ddd5c3;
+      --cream-soft:   #ffffff;
+      --ink:          #2f3535;
+      --ink-soft:     rgba(47, 53, 53, 0.90);
+      --ink-faint:    rgba(47, 53, 53, 0.48);
+      --clay:         #a36345;
+      --clay-deep:    #9a5a3d;
+      --clay-soft:    #d49a7e;
+      --sage:         #4f6361;
+      --sage-deep:    #3a4b49;
+      --sage-soft:    #8a9c99;
+      --line:         rgba(47, 53, 53, 0.12);
+      --line-soft:    rgba(47, 53, 53, 0.06);
+
+      --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+      --sans:  "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+
+      --pad-x: clamp(1.5rem, 5vw, 6rem);
+      --section-y: clamp(5rem, 11vw, 10rem);
+      --radius-md: 28px;
+      --radius-lg: 40px;
+      --radius-xl: 44px;
+      --radius-pill: 999px;
+      --ease: cubic-bezier(.2, .7, .2, 1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html.no-lenis { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      letter-spacing: .005em;
+      font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+      text-rendering: optimizeLegibility;
+    }
+    h1, h2, h3, h4, h5,
+    .display, .lede, .hero__title, .hero__subtitle,
+    .topic h3, .approach h3, .contact-card__lead h3 {
+      font-feature-settings: "kern" 1, "liga" 1, "dlig" 1, "onum" 1, "calt" 1;
+      font-variant-numeric: oldstyle-nums proportional-nums;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ::selection { background: var(--clay); color: var(--cream-warm); }
+
+    /* Typography */
+    .display { font-family: var(--serif); font-weight: 300; line-height: 1.05; letter-spacing: -.01em; color: var(--ink); }
+    .display em { font-style: italic; color: var(--clay); font-weight: 300; }
+    .eyebrow {
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: .72rem;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+    .ornament {
+      display: block;
+      margin: 0 auto 2rem;
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      color: var(--sage);
+      line-height: 1;
+      user-select: none;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; gap: .7rem;
+      padding: 1.05rem 1.9rem;
+      border: 1px solid var(--ink);
+      border-radius: var(--radius-pill);
+      color: var(--ink);
+      background: transparent;
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: .76rem;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      transition: background .5s var(--ease), color .5s var(--ease), border-color .5s var(--ease), padding .35s var(--ease);
+      cursor: pointer;
+    }
+    .btn:hover { background: var(--ink); color: var(--cream-warm); padding-right: 2.2rem; }
+    .btn--clay { background: var(--clay); border-color: var(--clay); color: #fff; }
+    .btn--clay:hover { background: var(--clay-deep); border-color: var(--clay-deep); color: #fff; }
+    .arrow { width: 14px; height: 1px; background: currentColor; position: relative; display: inline-block; }
+    .arrow::after {
+      content: ""; position: absolute; right: 0; top: -3px; width: 7px; height: 7px;
+      border-top: 1px solid currentColor; border-right: 1px solid currentColor;
+      transform: rotate(45deg);
+    }
+
+    /* Sections */
+    section { padding: var(--section-y) var(--pad-x); position: relative; }
+    .container { max-width: 1280px; margin: 0 auto; }
+
+    /* Nav (shared) */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 1.4rem var(--pad-x);
+      transition: transform .55s var(--ease), background .45s var(--ease), padding .4s var(--ease), border-color .55s var(--ease);
+      border-bottom: 1px solid transparent;
+      transform: translateY(0);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: saturate(140%) blur(12px);
+      -webkit-backdrop-filter: saturate(140%) blur(12px);
+      border-bottom-color: var(--line-soft);
+    }
+    .nav__brand { justify-self: start; display: flex; align-items: center; height: 56px; width: 56px; position: relative; }
+    .nav__brand img { height: 100%; width: 100%; object-fit: contain; transition: opacity .35s var(--ease); }
+    .nav__links { justify-self: center; display: flex; align-items: center; gap: 2.6rem; }
+    .nav__links a {
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: .74rem;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--ink);
+      opacity: 1;
+      position: relative;
+      padding-bottom: 4px;
+    }
+    .nav__links a::after {
+      content: ""; position: absolute; left: 0; bottom: 0;
+      height: 1px; width: 100%; background: currentColor;
+      transform: scaleX(0); transform-origin: left center;
+      transition: transform .45s var(--ease);
+    }
+    .nav__links a:hover { color: var(--clay-deep); }
+    .nav__links a:hover::after { transform: scaleX(1); }
+    .nav__cta {
+      justify-self: end;
+      display: inline-flex; align-items: center; gap: .6rem;
+      font-family: var(--sans);
+      font-weight: 400; font-size: .74rem; letter-spacing: .26em;
+      text-transform: uppercase;
+      color: var(--ink);
+      padding: .85rem 1.4rem;
+      border: 1px solid var(--ink);
+      border-radius: var(--radius-pill);
+      transition: background .5s var(--ease), color .5s var(--ease), border-color .5s var(--ease);
+    }
+    .nav__cta:hover { background: var(--ink); color: var(--cream-warm); border-color: var(--ink); }
+    .nav.is-hidden { transform: translateY(-100%); }
+    .nav__hamburger { display: none; width: 28px; height: 18px; position: relative; background: transparent; border: 0; padding: 0; cursor: pointer; }
+    .nav__hamburger span { position: absolute; left: 0; right: 0; height: 1px; background: var(--ink); transition: transform .4s var(--ease); }
+    .nav__hamburger span:nth-child(1) { top: 2px; }
+    .nav__hamburger span:nth-child(2) { top: 50%; }
+    .nav__hamburger span:nth-child(3) { bottom: 2px; }
+
+    /* Mobile panel */
+    .mobile-panel {
+      position: fixed; inset: 0; z-index: 60;
+      background: var(--cream-warm);
+      transform: translateY(-100%);
+      transition: transform .6s var(--ease);
+      display: flex; flex-direction: column;
+      padding: 1.4rem var(--pad-x);
+    }
+    .mobile-panel.is-open { transform: translateY(0); }
+    .mobile-panel__top { display: flex; justify-content: space-between; align-items: center; height: 38px; }
+    .mobile-panel__top img { height: 100%; width: auto; }
+    .mobile-panel__close { background: transparent; border: 0; padding: 0; width: 28px; height: 28px; position: relative; cursor: pointer; }
+    .mobile-panel__close::before, .mobile-panel__close::after { content:""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--ink); }
+    .mobile-panel__close::before { transform: rotate(45deg); }
+    .mobile-panel__close::after  { transform: rotate(-45deg); }
+    .mobile-panel__nav { margin-top: 4rem; display: flex; flex-direction: column; gap: 1.6rem; }
+    .mobile-panel__nav a { font-family: var(--serif); font-weight: 300; font-size: 2.2rem; color: var(--ink); line-height: 1; }
+    .mobile-panel__nav a em { font-style: italic; color: var(--clay-deep); }
+
+    /* Scroll progress */
+    .scroll-progress {
+      position: fixed; top: 0; left: 0; right: 0;
+      height: 1px; background: var(--sage);
+      z-index: 60;
+      transform: scaleX(0); transform-origin: left center;
+      pointer-events: none;
+      opacity: .72;
+    }
+
+    /* Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 1.1s var(--ease), transform 1.1s var(--ease);
+    }
+    .reveal.is-in { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: .12s; }
+    .reveal-delay-2 { transition-delay: .24s; }
+    .reveal-delay-3 { transition-delay: .36s; }
+
+    /* PAGE HERO */
+    .hero {
+      padding: clamp(11rem, 18vw, 14rem) var(--pad-x) clamp(5rem, 9vw, 8rem);
+      text-align: center;
+      background: var(--cream);
+    }
+    .hero__inner { max-width: 920px; margin: 0 auto; }
+    .hero .eyebrow { display: block; margin-bottom: 1.5rem; }
+    .hero__title {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      line-height: 1.0;
+      letter-spacing: -.015em;
+      color: var(--ink);
+      margin: 0 0 1.8rem;
+    }
+    .hero__title em { font-style: italic; color: var(--clay); }
+    .hero__subtitle {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.1rem, 1.7vw, 1.4rem);
+      color: var(--ink-soft);
+      max-width: 30em;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+.hero { padding-bottom: calc(clamp(5rem, 9vw, 8rem) + var(--radius-xl)); }
+/* TOPICS — Support With */
+    .topics {
+      background: var(--cream);
+    }
+    .topics__header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto clamp(3rem, 5vw, 4.5rem);
+    }
+    .topics__header .eyebrow { display: block; margin-bottom: 1.4rem; }
+    .topics__header .ornament { margin-bottom: 1.6rem; }
+    .topics__header h2 {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      margin: 0 0 1rem;
+    }
+    .topics__header h2 em { color: var(--clay); font-style: italic; }
+    .topics__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1.2rem, 2vw, 1.6rem);
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .topic {
+      background: var(--white);
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem 1.9rem;
+      transition: transform .55s var(--ease), border-color .55s var(--ease), box-shadow .55s var(--ease);
+    }
+    .topic:hover {
+      transform: translateY(-4px);
+      border-color: var(--sage);
+      box-shadow: 0 18px 40px -24px rgba(47, 53, 53, .2);
+    }
+    .topic h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 1.3rem;
+      line-height: 1.2;
+      margin: 0 0 .8rem;
+      color: var(--ink);
+    }
+    .topic p {
+      font-size: .94rem;
+      line-height: 1.6;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+    .topic p strong { color: var(--ink); font-weight: 400; }
+
+    /* APPROACH — Our Approach */
+    .approach {
+      background: var(--cream-warm);
+      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+      margin-top: -1px;
+    }
+    .approach__header {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto clamp(3rem, 5vw, 4.5rem);
+    }
+    .approach__header .eyebrow { display: block; margin-bottom: 1.4rem; }
+    .approach__header .ornament { margin-bottom: 1.6rem; }
+    .approach__header h2 {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      margin: 0;
+    }
+    .approach__header h2 em { color: var(--clay); font-style: italic; }
+    .approach__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1.5rem, 2.5vw, 2.2rem);
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+    .approach__card {
+      background: var(--cream-warm);
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-lg);
+      padding: 2.8rem 2.2rem;
+    }
+    .approach__num {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--sage);
+      display: block;
+      margin-bottom: 1.4rem;
+    }
+    .approach__card h3 {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: clamp(1.4rem, 1.9vw, 1.75rem);
+      line-height: 1.2;
+      margin: 0 0 1.2rem;
+      color: var(--ink);
+    }
+    .approach__card h3 em { font-style: italic; color: var(--clay-deep); font-weight: 400; }
+    .approach__card p { font-size: 1rem; line-height: 1.7; color: var(--ink-soft); margin: 0; }
+
+    /* Contact card (sage) */
+    .contact-band {
+      background: var(--white);
+      padding: 0 var(--pad-x) clamp(5rem, 9vw, 8rem);
+    }
+    .contact-card {
+      background: var(--sage);
+      color: var(--cream-warm);
+      border-radius: var(--radius-xl);
+      padding: clamp(2.4rem, 4.5vw, 4rem) clamp(2rem, 4vw, 3.5rem);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .contact-card__inner {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: clamp(2rem, 4vw, 4rem);
+      align-items: center;
+    }
+    .contact-card__lead h3 {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(2rem, 3.5vw, 2.9rem);
+      line-height: 1.1;
+      margin: 0 0 1.1rem;
+      color: var(--cream-warm);
+    }
+    .contact-card__lead h3 em { color: var(--clay-soft); font-style: italic; }
+    .contact-card__lead p {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 1.05rem;
+      line-height: 1.55;
+      color: rgba(229, 223, 211, .85);
+      margin: 0 0 1.5rem;
+      max-width: 30em;
+    }
+    .contact-card__info { display: flex; flex-direction: column; gap: 1.5rem; }
+    .contact-card__detail .label {
+      display: block;
+      font-family: var(--sans);
+      font-size: .65rem;
+      letter-spacing: .32em;
+      text-transform: uppercase;
+      color: rgba(229, 223, 211, .55);
+      margin-bottom: .45rem;
+    }
+    .contact-card__detail a {
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 1.15rem;
+      color: var(--cream-warm);
+      transition: color .4s var(--ease);
+      display: inline-block;
+    }
+    .contact-card__detail a:hover { color: var(--clay-soft); }
+
+    /* Footer (shared) */
+    .footer {
+      background: var(--cream-warm);
+      color: var(--ink);
+      padding: clamp(5rem, 8vw, 7rem) var(--pad-x) 2rem;
+      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+      margin-top: -1px;
+    }
+    .footer a { transition: color .35s var(--ease); }
+    .footer a:hover { color: var(--clay-deep); }
+    .footer__top {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1.4fr;
+      gap: clamp(2rem, 5vw, 4.5rem);
+      padding-bottom: 3.5rem;
+      border-bottom: 1px solid rgba(43,38,32,.14);
+    }
+    .footer__brand img { width: 110px; height: auto; }
+    .footer__brand p {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--ink-soft);
+      margin: 1.8rem 0 0;
+      line-height: 1.5;
+      max-width: 22em;
+    }
+    .footer__col h5 {
+      font-family: var(--sans);
+      font-weight: 400; font-size: .68rem;
+      letter-spacing: .32em; text-transform: uppercase;
+      color: var(--ink-soft);
+      margin: 0 0 1.6rem;
+    }
+    .footer__col ul { list-style: none; }
+    .footer__col li { margin-bottom: .9rem; }
+    .footer__col a {
+      font-family: var(--serif); font-weight: 300; font-size: 1.05rem;
+      color: var(--ink); line-height: 1.45;
+      display: inline-block;
+      transition: color .35s var(--ease), transform .45s var(--ease);
+    }
+    .footer__col a:hover { transform: translateX(5px); }
+    .footer__locations { display: flex; flex-direction: column; gap: 1.6rem; font-family: var(--serif); font-weight: 300; color: var(--ink); }
+    .footer__locations .location { font-size: 1rem; line-height: 1.55; }
+    .footer__locations .label {
+      display: block;
+      font-family: var(--sans); font-size: .65rem;
+      letter-spacing: .3em; text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: .35rem;
+    }
+    .footer__locations .hours { font-family: var(--serif); font-style: italic; color: var(--ink-soft); font-size: .98rem; line-height: 1.55; }
+    .footer__locations a { font-family: var(--serif); font-size: 1.05rem; }
+    .footer__ornament {
+      display: flex; justify-content: center; align-items: center;
+      gap: .9rem;
+      margin: 3rem auto 1.6rem;
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: .66rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      cursor: pointer;
+      width: max-content;
+      transition: color .35s var(--ease), gap .35s var(--ease), letter-spacing .35s var(--ease);
+    }
+    .footer__ornament:hover {
+      color: var(--clay-deep);
+      gap: 1.2rem;
+      letter-spacing: .34em;
+    }
+    .footer__ornament__arrow {
+      width: 14px; height: 1px; background: currentColor;
+      position: relative; display: inline-block;
+    }
+    .footer__ornament__arrow::after {
+      content: ""; position: absolute;
+      left: 50%; top: 0;
+      width: 7px; height: 7px;
+      border-top: 1px solid currentColor;
+      border-left: 1px solid currentColor;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+    .footer__bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+      font-family: var(--sans); font-size: .72rem;
+      letter-spacing: .15em; color: var(--ink-soft);
+    }
+    .footer__bottom .legal a { margin-left: 1.4rem; color: var(--ink-soft); }
+    .footer__bottom .legal a:first-child { margin-left: 0; }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .topics__grid { grid-template-columns: repeat(2, 1fr); }
+      .approach__grid { grid-template-columns: 1fr; }
+      .footer__top { grid-template-columns: 1fr 1fr; gap: 3rem; }
+      .footer__brand { grid-column: span 2; }
+    }
+    @media (max-width: 720px) {
+      .nav__links { display: none; }
+      .nav__cta { display: none; }
+      .nav__hamburger { display: block; }
+      .topics__grid { grid-template-columns: 1fr; }
+      .contact-card__inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .footer__top { grid-template-columns: 1fr; gap: 2.5rem; }
+      .footer__brand { grid-column: auto; }
+      .footer__bottom { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .footer__bottom .legal a:first-child { margin-left: 0; }
+    }
+  
+    /* Services dropdown in nav */
+.nav__item-dropdown::after {
+      content: ""; position: absolute;
+      top: 100%; left: 50%; transform: translateX(-50%);
+      width: 100%; height: 18px;
+    }
+    .nav__dropdown {
+      position: absolute;
+      top: calc(100% + 18px);
+      left: 50%;
+      transform: translateX(-50%) translateY(-8px);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: saturate(140%) blur(12px);
+      -webkit-backdrop-filter: saturate(140%) blur(12px);
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-md);
+      padding: .9rem 0;
+      min-width: 270px;
+      box-shadow: 0 24px 50px -22px rgba(47,53,53,.22);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .45s var(--ease), transform .45s var(--ease), visibility .45s var(--ease);
+      z-index: 51;
+    }
+    .nav__dropdown a {
+      display: block;
+      padding: .85rem 1.7rem;
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: 1.04rem;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--ink);
+      transition: color .35s var(--ease), background .35s var(--ease), padding-left .35s var(--ease);
+      position: static;
+    }
+    .nav__dropdown a::after { display: none; }
+    .nav__dropdown a:hover {
+      color: var(--clay-deep);
+      background: rgba(229, 223, 211, 0.45);
+      padding-left: 2rem;
+    }
+    .nav__item-dropdown:hover .nav__dropdown,
+    .nav__item-dropdown:focus-within .nav__dropdown {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+}
+/* === LUXURY HOVER REFINEMENTS === */
+    .topic, .approach__card {
+      transition: transform .55s var(--ease), border-color .55s var(--ease),
+                  box-shadow .55s var(--ease), background .55s var(--ease);
+      position: relative;
+      overflow: hidden;
+    }
+    .topic::before, .approach__card::before {
+      content: "";
+      position: absolute;
+      width: 240px; height: 240px;
+      background: radial-gradient(circle at center, rgba(189,119,87,.10) 0%, rgba(189,119,87,0) 70%);
+      top: -80px; right: -80px;
+      border-radius: 999px;
+      opacity: 0;
+      transition: opacity .6s var(--ease);
+      pointer-events: none;
+    }
+    .topic:hover::before, .approach__card:hover::before { opacity: 1; }
+    .topic:hover { transform: translateY(-6px); border-color: var(--sage); box-shadow: 0 22px 50px -28px rgba(47,53,53,.22); }
+    .approach__card:hover { transform: translateY(-6px); border-color: var(--sage); box-shadow: 0 22px 50px -28px rgba(47,53,53,.22); }
+    .topic h3, .approach__card h3 { transition: transform .5s var(--ease), color .5s var(--ease); }
+    .topic:hover h3, .approach__card:hover h3 { transform: translateX(2px); }
+    .approach__card:hover .approach__num { letter-spacing: .12em; color: var(--sage-deep); }
+    .approach__num { transition: letter-spacing .55s var(--ease), color .55s var(--ease); }
+
+    /* Faux-link inside topic/approach: tiny arrow after */
+    .topic h3::after, .approach__card h3::after { display: none; }
+
+    /* Provider portraits — deeper hover */
+    .provider-card__portrait img { transition: transform 1.6s var(--ease), filter 1s var(--ease); }
+    .provider-card:hover .provider-card__portrait img { transform: scale(1.06); filter: saturate(1) brightness(1); }
+    .provider-card__name { transition: color .4s var(--ease), transform .55s var(--ease); }
+    .provider-card:hover .provider-card__name { color: var(--clay-deep); transform: translateX(3px); }
+
+    /* Sage card on consult/contact-card: subtle parallax on hover with a sheen */
+    .contact-card { position: relative; overflow: hidden; }
+    .contact-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at var(--cx, 50%) var(--cy, 50%), rgba(212,154,126,.18) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity .6s var(--ease);
+      pointer-events: none;
+    }
+    .contact-card:hover::before { opacity: 1; }
+
+      /* Services dropdown alignment fix */
+    .nav__item-dropdown {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+    .nav__item-dropdown > a {
+      padding-right: .2rem;
+      display: inline-flex;
+      align-items: center;
+    }
+    /* Remove the warm-glow hover on Support With cards */
+    .topic::before { display: none !important; }
+  
+    
+    /* === Refined service page layout (sticky photo + pullquote) === */
+    /* Hero adds extra bottom padding to give the cream pullquote room to overlap */
+    .hero { padding-bottom: calc(clamp(2.5rem, 5vw, 4rem) + var(--radius-xl)); }
+
+    /* Pull quote — italic statement on the cream zone; rises from white hero
+       with rounded shoulders, then flows continuously into sticky-topics. */
+    .pullquote-section {
+      background: var(--cream-warm);
+      padding-top: calc(clamp(3rem, 6vw, 5rem) + var(--radius-xl));
+      padding-bottom: clamp(3rem, 6vw, 5rem);
+      padding-left: var(--pad-x);
+      padding-right: var(--pad-x);
+      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+      margin-top: calc(-1 * var(--radius-xl));
+      position: relative;
+      z-index: 1;
+    }
+    .pullquote {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(1.7rem, 3.2vw, 2.6rem);
+      line-height: 1.4;
+      color: var(--ink);
+      max-width: 44ch;
+      margin: 0 auto;
+      text-align: center;
+      letter-spacing: -.005em;
+    }
+    .pullquote em { color: var(--clay); font-style: italic; }
+    /* Sticky photo + topics — continues the cream zone started by the pullquote. */
+    .sticky-topics {
+      background: var(--cream-warm);
+      padding-top: clamp(2rem, 4vw, 3rem);
+      padding-bottom: var(--section-y);
+    }
+    .sticky-grid {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: start;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .sticky-grid__photo {
+      position: sticky;
+      top: 110px;
+      align-self: start;
+    }
+    .sticky-grid__photo-inner {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      aspect-ratio: 4 / 5;
+      background: var(--white);
+      box-shadow: 0 24px 60px -32px rgba(47, 53, 53, .25);
+    }
+    .sticky-grid__photo-inner img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      filter: saturate(.92);
+      transition: transform 1.6s var(--ease), filter 1s var(--ease);
+    }
+    .sticky-grid__photo:hover .sticky-grid__photo-inner img {
+      transform: scale(1.04);
+      filter: saturate(1);
+    }
+    .sticky-grid__content header.topics__header {
+      text-align: left;
+      margin: 0 0 clamp(2rem, 4vw, 3rem);
+    }
+    .sticky-grid__content header.topics__header .ornament { margin: 0 0 1.2rem; }
+    .sticky-grid__content header.topics__header h2 {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      margin: 0;
+    }
+    .sticky-grid__content header.topics__header h2 em { color: var(--clay); font-style: italic; }
+    .topics__grid--col {
+      grid-template-columns: 1fr !important;
+      max-width: none !important;
+      gap: 1.1rem !important;
+    }
+    .sticky-grid__content .topic {
+      padding: 1.9rem 1.8rem 1.7rem;
+      border-radius: var(--radius-md);
+      background: var(--white);
+    }
+    .sticky-grid__content .topic h3 { font-size: 1.2rem; margin-bottom: .55rem; }
+    .sticky-grid__content .topic p  { font-size: .94rem; line-height: 1.6; }
+
+    /* Bolding — same color as body, distinguishable only by weight */
+    .topic p strong,
+    .approach__card p strong {
+      color: inherit;
+      font-weight: 500;
+    }
+
+    /* No orange radial glow on .approach__card OR contact-card */
+    .approach__card::before,
+    .contact-card::before { display: none !important; }
+
+    .approach {
+      background: var(--white);
+      border-radius: 0 !important;
+      margin-top: 0 !important;
+    }
+
+    /* Mobile */
+    @media (max-width: 880px) {
+      .sticky-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .sticky-grid__photo { position: static; }
+      .sticky-grid__photo-inner { aspect-ratio: 4 / 3; }
+    }
+
+  
+    /* Footer brand logo link */
+    .footer__brand a {
+      display: inline-block;
+      transition: opacity .35s cubic-bezier(.2,.7,.2,1), transform .45s cubic-bezier(.2,.7,.2,1);
+    }
+    .footer__brand a:hover { opacity: .75; transform: translateY(-2px); }
+  
+    /* Skip-to-content link — accessibility + crawler signal */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      z-index: 200;
+      font-family: var(--sans);
+      font-size: .75rem;
+      font-weight: 400;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      padding: .9rem 1.2rem;
+      background: var(--ink);
+      color: var(--cream-warm);
+      border-radius: 0 0 8px 0;
+    }
+    .skip-link:focus {
+      left: 0;
+      top: 0;
+    }
+  </style>
+
+  <!-- === SEO META — generated === -->
+  <link rel="canonical" href="https://pinnaclecounselinggroup.com/children-and-teens.html" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="theme-color" content="#2f3535" />
+  <meta name="author" content="Pinnacle Counseling Group" />
+  <meta name="geo.region" content="US-CA" />
+  <meta name="geo.placename" content="Sacramento, California" />
+  <meta name="geo.position" content="38.5816;-121.4944" />
+  <meta name="ICBM" content="38.5816, -121.4944" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Children & Teen Therapy in Sacramento, CA — Pinnacle Counseling Group" />
+  <meta property="og:description" content="Attachment-based, developmentally attuned therapy for children and adolescents in Sacramento and Gold River. Includes parent collateral time and family coordination." />
+  <meta property="og:url" content="https://pinnaclecounselinggroup.com/children-and-teens.html" />
+  <meta property="og:image" content="https://pinnaclecounselinggroup.com/social-preview.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Pinnacle Counseling Group logo over a serene lake landscape" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Children & Teen Therapy in Sacramento, CA — Pinnacle Counseling Group" />
+  <meta name="twitter:description" content="Attachment-based, developmentally attuned therapy for children and adolescents in Sacramento and Gold River. Includes parent collateral time and family coordination." />
+  <meta name="twitter:image" content="https://pinnaclecounselinggroup.com/social-preview.jpg" />
+  <meta name="twitter:image:alt" content="Pinnacle Counseling Group logo over a serene lake landscape" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "MentalHealthCenter",
+        "ProfessionalService"
+      ],
+      "@id": "https://pinnaclecounselinggroup.com/#practice",
+      "sameAs": [
+        "https://www.linkedin.com/company/pinnacle-counseling-group"
+      ],
+      "name": "Pinnacle Counseling Group",
+      "legalName": "Wilson Marriage and Family Therapist Corporation",
+      "alternateName": "Pinnacle MFT",
+      "slogan": "Rigorous clinical excellence meets intentional hospitality.",
+      "url": "https://pinnaclecounselinggroup.com",
+      "logo": "https://pinnaclecounselinggroup.com/PC_Black%20PC%20Logo_Asset%204.png",
+      "image": "https://pinnaclecounselinggroup.com/brand-statement-2.jpg",
+      "telephone": "+1-916-990-2326",
+      "email": "Info@PinnacleCounselingGroup.com",
+      "priceRange": "$140–$225",
+      "currenciesAccepted": "USD",
+      "description": "Concierge psychotherapy practice in Sacramento, California specializing in high-functioning anxiety, OCD, modern relational and attachment-based therapy, eating disorders, and substance use treatment for adults. Veteran-, LGBTQ-, and multicultural-affirming. Non-pathologizing, whole-person care for individuals, couples, and adolescents. Founded by Enid Wilson, LMFT.",
+      "foundingDate": "2026",
+      "founder": {
+        "@id": "https://pinnaclecounselinggroup.com/#enid"
+      },
+      "identifier": [
+        {
+          "@type": "PropertyValue",
+          "propertyID": "NPI",
+          "value": "1053267906",
+          "name": "Group NPI"
+        }
+      ],
+      "knowsAbout": [
+        "Psychotherapy",
+        "High-functioning anxiety",
+        "Obsessive-Compulsive Disorder (OCD)",
+        "Exposure and Response Prevention (ERP)",
+        "Eating disorders",
+        "Modern relational therapy",
+        "Attachment-based therapy",
+        "Couples therapy",
+        "Marriage and family therapy",
+        "Trauma-informed care",
+        "Emotionally Focused Therapy (EFT)",
+        "Internal Family Systems (IFS)",
+        "Psychodynamic therapy",
+        "Dialectical Behavior Therapy (DBT)",
+        "LGBTQ-affirming therapy",
+        "Veteran-friendly mental health care",
+        "Substance use treatment for adults",
+        "Multicultural-attuned therapy",
+        "Non-pathologizing mental health care",
+        "Concierge mental health care",
+        "Clinical supervision for California AMFTs and APCCs",
+        "Workplace mental health consulting"
+      ],
+      "knowsLanguage": [
+        "en"
+      ],
+      "audience": [
+        {
+          "@type": "Audience",
+          "audienceType": "Adults"
+        },
+        {
+          "@type": "Audience",
+          "audienceType": "Couples"
+        },
+        {
+          "@type": "Audience",
+          "audienceType": "Adolescents and teens"
+        },
+        {
+          "@type": "Audience",
+          "audienceType": "LGBTQ-affirming"
+        },
+        {
+          "@type": "Audience",
+          "audienceType": "Veterans and military families"
+        },
+        {
+          "@type": "Audience",
+          "audienceType": "Multicultural and immigrant communities"
+        },
+        {
+          "@type": "Audience",
+          "audienceType": "High-functioning professionals"
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Sacramento",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "California"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Gold River",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "California"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Carmichael",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "California"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Granite Bay",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "California"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Folsom",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "California"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "El Dorado Hills",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "California"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Roseville",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "California"
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Loomis",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "California"
+          }
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "California — telehealth statewide"
+        }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2335 American River Drive, Suite 305",
+        "addressLocality": "Sacramento",
+        "addressRegion": "CA",
+        "postalCode": "95825",
+        "addressCountry": "US"
+      },
+      "location": [
+        {
+          "@id": "https://pinnaclecounselinggroup.com/#sacramento-office"
+        },
+        {
+          "@id": "https://pinnaclecounselinggroup.com/#gold-river-office"
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "09:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "09:00",
+          "closes": "16:00"
+        }
+      ],
+      "paymentAccepted": [
+        "Cash",
+        "Credit Card",
+        "PPO Insurance"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-916-990-2326",
+        "contactType": "Customer Service",
+        "email": "Info@PinnacleCounselingGroup.com",
+        "areaServed": "US-CA",
+        "availableLanguage": [
+          "English"
+        ]
+      }
+    },
+    {
+      "@type": "Place",
+      "@id": "https://pinnaclecounselinggroup.com/#sacramento-office",
+      "name": "Pinnacle Counseling Group — Sacramento Office",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2335 American River Drive, Suite 305",
+        "addressLocality": "Sacramento",
+        "addressRegion": "CA",
+        "postalCode": "95825",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "38.5703256",
+        "longitude": "-121.4090964"
+      },
+      "hasMap": "https://maps.google.com/?q=2335+American+River+Drive+Suite+305+Sacramento+CA+95825"
+    },
+    {
+      "@type": "Place",
+      "@id": "https://pinnaclecounselinggroup.com/#gold-river-office",
+      "name": "Pinnacle Counseling Group — Gold River Office",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "11201 Gold Express Drive, Suite 200",
+        "addressLocality": "Gold River",
+        "addressRegion": "CA",
+        "postalCode": "95670",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "38.6233297",
+        "longitude": "-121.2657518"
+      },
+      "hasMap": "https://maps.google.com/?q=11201+Gold+Express+Drive+Suite+200+Gold+River+CA+95670"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://pinnaclecounselinggroup.com/children-and-teens.html#service",
+      "name": "Children & Teens Therapy",
+      "serviceType": "Psychotherapy",
+      "category": "Mental health care",
+      "provider": {
+        "@id": "https://pinnaclecounselinggroup.com/#practice"
+      },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "California"
+      },
+      "availableChannel": [
+        {
+          "@type": "ServiceChannel",
+          "name": "In-person — Sacramento Office",
+          "servicePostalAddress": {
+            "@id": "https://pinnaclecounselinggroup.com/#sacramento-office"
+          }
+        },
+        {
+          "@type": "ServiceChannel",
+          "name": "In-person — Gold River Office",
+          "servicePostalAddress": {
+            "@id": "https://pinnaclecounselinggroup.com/#gold-river-office"
+          }
+        },
+        {
+          "@type": "ServiceChannel",
+          "name": "Telehealth — statewide California"
+        }
+      ],
+      "description": "Attachment-based, developmentally attuned therapy for children and adolescents. Includes parent collateral time and family coordination.",
+      "url": "https://pinnaclecounselinggroup.com/children-and-teens.html",
+      "audience": [
+        {
+          "@type": "Audience",
+          "audienceType": "Adolescents and teens"
+        },
+        {
+          "@type": "Audience",
+          "audienceType": "Families"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://pinnaclecounselinggroup.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://pinnaclecounselinggroup.com/services.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Children & Teens",
+          "item": "https://pinnaclecounselinggroup.com/children-and-teens.html"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <!-- === /SEO META === -->
+
+  <!-- Google tag (gtag.js) — HIPAA-aware config -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5NPRRT63D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-C5NPRRT63D', {
+      'anonymize_ip': true,
+      'allow_google_signals': false,
+      'allow_ad_personalization_signals': false
+    });
+  </script>
+
+  <script src="waitlist.js" defer></script>
+</head>
+<body>
+
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="index.html" aria-label="Pinnacle Counseling Group — home">
+      <img loading="eager" decoding="async" src="pcg-monogram.svg" alt="Pinnacle Counseling Group" />
+    </a>
+    <nav class="nav__links" aria-label="Primary">
+      <a href="about.html">About</a>
+      <a href="providers.html">Providers</a>
+      <div class="nav__item-dropdown">
+        <a href="services.html">Services</a>
+        <div class="nav__dropdown" role="menu">
+          <a href="individual-therapy.html">Individual Therapy</a>
+          <a href="couples-counseling.html">Couples Counseling</a>
+          <a href="children-and-teens.html">Children &amp; Teens</a>
+          <a href="organizational-consulting.html">Organizational Consulting</a>
+          <a href="providers.html#supervisors">Clinical Supervision</a>
+        </div>
+      </div>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="nav__cta" data-waitlist-open>Join the Waitlist</a>
+    <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-panel" id="mobilePanel" aria-hidden="true">
+    <div class="mobile-panel__top">
+      <img loading="lazy" decoding="async" src="pcg-wordmark.svg" alt="Pinnacle Counseling Group" />
+      <button class="mobile-panel__close" id="closePanel" aria-label="Close menu"></button>
+    </div>
+    <nav class="mobile-panel__nav">
+      <a href="about.html">About</a>
+      <a href="providers.html">Providers</a>
+      <a href="services.html">Services</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" data-waitlist-open><em>Join the Waitlist</em></a>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <main id="main">
+
+  <section class="hero">
+    <div class="hero__inner">
+      <span class="eyebrow reveal">Our Services</span>
+      <h1 class="hero__title reveal reveal-delay-1">Children &amp; <em>Teens</em></h1>
+      <p class="hero__subtitle reveal reveal-delay-2">In person in Sacramento &amp; Gold River. Virtually throughout California.</p>
+    </div>
+  </section>
+  <!-- PULL QUOTE — beige zone begins here -->
+  <section class="pullquote-section">
+    <p class="pullquote reveal">
+      Therapy for children and teens at Pinnacle is <em>developmentally attuned, attachment-based</em>, and built in partnership with parents. We work with young people on anxiety, mood, behavioral concerns, family transitions, and the <em>long arc of growing up</em>.
+    </p>
+  </section>
+
+
+  <!-- TOPICS — Support with -->
+  <section class="sticky-topics">
+    <div class="container">
+      <div class="sticky-grid">
+        <div class="sticky-grid__photo reveal">
+          <div class="sticky-grid__photo-inner">
+            <img loading="lazy" decoding="async" src="Children and teens_3.jpg" alt="Children and teen therapy at Pinnacle Counseling Group" />
+          </div>
+        </div>
+        <div class="sticky-grid__content">
+          <header class="topics__header">
+            <span class="eyebrow reveal">Support With</span>
+            <span class="ornament reveal reveal-delay-1" aria-hidden="true">&#10038;</span>
+            <h2 class="reveal reveal-delay-1">What we work <em>on</em>.</h2>
+          </header>
+          <div class="topics__grid topics__grid--col">
+        <article class="topic reveal">
+          <h3>Anxiety &amp; School Stress</h3>
+          <p>From test anxiety to social pressure, we help young people develop the tools to navigate the demands of school and friendships with confidence.</p>
+        </article>
+
+        <article class="topic reveal reveal-delay-1">
+          <h3>Behavioral Concerns</h3>
+          <p>When emotional regulation feels out of reach, we work alongside families to understand the patterns and build sustainable strategies for change.</p>
+        </article>
+
+        <article class="topic reveal reveal-delay-2">
+          <h3>Major Life Transitions</h3>
+          <p>Divorce, loss, relocation, or new family configurations — therapy gives children a private space to process change at their own pace.</p>
+        </article>
+
+        <article class="topic reveal">
+          <h3>Adolescent Identity</h3>
+          <p>The teen years bring profound shifts in self-understanding. We support the developmental work of figuring out who you are, with privacy and respect.</p>
+        </article>
+
+        <article class="topic reveal reveal-delay-1">
+          <h3>Family Dynamics</h3>
+          <p>When sibling tension, parent-child conflict, or communication patterns are at the heart of the struggle, we help everyone find their footing.</p>
+        </article>
+
+        <article class="topic reveal reveal-delay-2">
+          <h3>Mood &amp; Withdrawal</h3>
+          <p>We approach low mood, withdrawal, and depression in young people through developmentally attuned care that takes their experience seriously.</p>
+        </article>
+      </div>
+        </div>
+      </div>
+      <div class="wl-section-cta reveal">
+        <span class="wl-section-cta__eyebrow">Now Accepting Waitlist Requests</span>
+        <a href="contact.html" class="btn btn--clay" data-waitlist-open>Join the Waitlist</a>
+      </div>
+    </div>
+  </section>
+
+<!-- APPROACH -->
+  <section class="approach">
+    <div class="container">
+      <header class="approach__header">
+        <span class="eyebrow reveal">Our Approach</span>
+        <span class="ornament reveal reveal-delay-1" aria-hidden="true">&#10038;</span>
+        <h2 class="reveal reveal-delay-1">Care across <em>every stage</em>.</h2>
+      </header>
+
+      <div class="approach__grid">
+        <article class="approach__card reveal">
+          <span class="approach__num">— 01</span>
+          <h3>Care across every <em>developmental stage</em></h3>
+          <p>From early childhood through pre-teen and adolescence, our work is tailored to where your child is — emotionally, cognitively, and developmentally. <strong>We meet them at their level, not the other way around.</strong></p>
+        </article>
+
+        <article class="approach__card reveal reveal-delay-1">
+          <span class="approach__num">— 02</span>
+          <h3>Parents as <em>partners</em> in the work</h3>
+          <p>We see therapy with young people as a shared project. Parents are looped in with <strong>regular communication, parenting strategies, and clear understanding of how to support the work</strong> — without compromising your child's privacy or trust.</p>
+        </article>
+
+        <article class="approach__card reveal reveal-delay-2">
+          <span class="approach__num">— 03</span>
+          <h3>Skills that <em>grow with them</em></h3>
+          <p>The emotional intelligence and self-regulation skills children develop in therapy compound over years. Our goal is not just immediate relief, but <strong>lasting tools — for navigating school, friendships, family, and adulthood.</strong></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT CARD -->
+  <section class="contact-band">
+    <div class="contact-card reveal">
+      <div class="contact-card__inner">
+        <div class="contact-card__lead">
+          <h3>Schedule a <em>consultation</em>.</h3>
+          <p>We'll help you find the right clinician for you, answer any questions, and walk you through the intake process.</p>
+        </div>
+        <div class="contact-card__info">
+          <div class="contact-card__detail">
+            <span class="label">Telephone</span>
+            <a href="tel:+19169902326">(916) 990-2326</a>
+          </div>
+          <div class="contact-card__detail">
+            <span class="label">Email</span>
+            <a href="mailto:Info@PinnacleCounselingGroup.com">Info@PinnacleCounselingGroup.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" aria-label="Pinnacle Counseling Group — home"><img loading="lazy" decoding="async" src="pcg-monogram.svg" alt="Pinnacle Counseling Group" /></a>
+          <p>Personalized psychotherapy in Sacramento, California — and virtually throughout the state.</p>
+        </div>
+        <div class="footer__col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="individual-therapy.html">Individual Therapy</a></li>
+            <li><a href="couples-counseling.html">Couples Counseling</a></li>
+            <li><a href="children-and-teens.html">Children &amp; Teens</a></li>
+            <li><a href="organizational-consulting.html">Organizational Consulting</a></li>
+            <li><a href="providers.html#supervisors">Clinical Supervision</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h5>About</h5>
+          <ul>
+            <li><a href="about.html">About Pinnacle</a></li>
+            <li><a href="providers.html">Our Therapists</a></li>
+            <li><a href="faq.html">Frequently Asked Questions</a></li>
+            <li><a href="rates.html">Rates &amp; Payments</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h5>Locations &amp; Contact</h5>
+          <div class="footer__locations">
+            <div class="location"><span class="label">Sacramento</span>2335 American River Drive, Suite 305<br/>Sacramento, CA 95825</div>
+            <div class="location"><span class="label">Gold River</span>11201 Gold Express Drive, Suite 200<br/>Gold River, CA 95670</div>
+            <div class="hours">Monday – Friday  9am – 8pm<br/>Weekends  9am – 4pm</div>
+            <div>
+              <a href="mailto:Info@PinnacleCounselingGroup.com">Info@PinnacleCounselingGroup.com</a>
+              <a href="tel:+19169902326">(916) 990-2326</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="footer__ornament" data-back-to-top><span class="footer__ornament__arrow" aria-hidden="true"></span>Back to Top</a>
+      <div class="footer__bottom">
+        <span>© Pinnacle Counseling Group 2026. All rights reserved.</span>
+        <span class="legal">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="legal.html">Legal Notice</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Lenis smooth scroll
+    window.__lenis = null;
+    window.addEventListener('load', () => {
+      if (typeof Lenis === 'undefined') return;
+      document.documentElement.classList.remove('no-lenis');
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) return;
+      const lenis = new Lenis({
+        duration: 1.15,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true, smoothTouch: false,
+        wheelMultiplier: 1.0, touchMultiplier: 1.6,
+      });
+      window.__lenis = lenis;
+      const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); };
+      requestAnimationFrame(raf);
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', (ev) => {
+          const id = a.getAttribute('href');
+          if (!id || id === '#') return;
+          const target = document.querySelector(id);
+          if (!target) return;
+          ev.preventDefault();
+          lenis.scrollTo(target, { offset: -20, duration: 1.3 });
+        });
+      });
+    });
+
+    // Nav hide-on-scroll-down, show-on-scroll-up
+    (() => {
+      const nav = document.getElementById('nav');
+      if (!nav) return;
+      let lastY = window.scrollY, ticking = false;
+      const onScroll = () => {
+        const y = window.scrollY;
+        const delta = y - lastY;
+        if (delta > 4 && y > 80) nav.classList.add('is-hidden');
+        else if (delta < -4) nav.classList.remove('is-hidden');
+        lastY = y; ticking = false;
+      };
+      window.addEventListener('scroll', () => {
+        if (!ticking) { window.requestAnimationFrame(onScroll); ticking = true; }
+      }, { passive: true });
+    })();
+
+    // Mobile panel
+    (() => {
+      const panel = document.getElementById('mobilePanel');
+      const openBtn = document.getElementById('hamburger');
+      const closeBtn = document.getElementById('closePanel');
+      openBtn?.addEventListener('click', () => { panel.classList.add('is-open'); panel.setAttribute('aria-hidden','false'); });
+      closeBtn?.addEventListener('click', () => { panel.classList.remove('is-open'); panel.setAttribute('aria-hidden','true'); });
+      panel?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => panel.classList.remove('is-open')));
+    })();
+
+    // Scroll progress
+    (() => {
+      const bar = document.getElementById('scrollProgress');
+      if (!bar) return;
+      let raf = null;
+      const update = () => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+        bar.style.transform = `scaleX(${p})`;
+        raf = null;
+      };
+      window.addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(update); }, { passive: true });
+      window.addEventListener('resize', () => { if (!raf) raf = requestAnimationFrame(update); });
+      update();
+    })();
+
+    // Reveal on intersect
+    (() => {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    })();
+  
+    // Cursor-following spotlight on photo break
+    (() => {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) return;
+      document.querySelectorAll('.photo-break').forEach(pb => {
+        pb.addEventListener('mousemove', (e) => {
+          const r = pb.getBoundingClientRect();
+          const x = ((e.clientX - r.left) / r.width) * 100;
+          const y = ((e.clientY - r.top) / r.height) * 100;
+          pb.style.setProperty('--mx', x + '%');
+          pb.style.setProperty('--my', y + '%');
+        });
+      });
+    })();
+
+  
+    // Sheen-tracker on the sage contact card
+    (() => {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) return;
+      document.querySelectorAll('.contact-card').forEach(c => {
+        c.addEventListener('mousemove', (e) => {
+          const r = c.getBoundingClientRect();
+          c.style.setProperty('--cx', ((e.clientX - r.left) / r.width) * 100 + '%');
+          c.style.setProperty('--cy', ((e.clientY - r.top) / r.height) * 100 + '%');
+        });
+      });
+    })();
+
+  
+    // Back to top
+    (() => {
+      document.querySelectorAll('[data-back-to-top]').forEach(el => {
+        el.addEventListener('click', (ev) => {
+          ev.preventDefault();
+          if (window.__lenis) {
+            window.__lenis.scrollTo(0, { duration: 1.4 });
+          } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

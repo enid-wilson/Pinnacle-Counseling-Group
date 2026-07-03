@@ -1,0 +1,38 @@
+# Pinnacle Counseling Group — security + caching headers for Netlify
+
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-XSS-Protection: 1; mode=block
+
+# Long cache for versioned static assets — images, fonts, logos
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+/*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML should always re-validate (fast updates when content changes)
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Sitemap + robots — short cache so updates reach crawlers
+/sitemap.xml
+  Cache-Control: public, max-age=3600
+  Content-Type: application/xml
+/robots.txt
+  Cache-Control: public, max-age=3600
+  Content-Type: text/plain
+/llms.txt
+  Cache-Control: public, max-age=3600
+  Content-Type: text/plain; charset=utf-8

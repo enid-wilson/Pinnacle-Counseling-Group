@@ -1,0 +1,9 @@
+# Pinnacle Counseling Group — clean URL aliases for Netlify
+# (Pretty URLs are enabled in netlify.toml — these are explicit backups
+# for any caller that requests a deep alias without .html)
+
+/index       /                     301
+/home        /                     301
+
+# 404 fallback — must be last so it doesn't shadow other rules
+/*           /404.html             404
