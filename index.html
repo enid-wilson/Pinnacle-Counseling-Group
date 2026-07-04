@@ -14,12 +14,12 @@
   <!-- Smooth scroll -->
   <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
 
-  <link rel="icon" type="image/png" href="PC_Black%20PC%20Logo_Asset%204%20small.png" />
-  <link rel="apple-touch-icon" href="PC_Black%20PC%20Logo_Asset%204.png" />
+  <link rel="icon" type="image/png" href="PC_Black%20PC%20Logo_Asset%204%20small.png?v=1" />
+  <link rel="apple-touch-icon" href="PC_Black%20PC%20Logo_Asset%204.png?v=1" />
 
   <!-- Preload LCP hero image (responsive) -->
   <link rel="preload" as="image" type="image/webp"
-        imagesrcset="hero-mobile.webp 1200w, hero-desktop.webp 2000w"
+        imagesrcset="hero-mobile.webp?v=1 1200w, hero-desktop.webp?v=1 2000w"
         imagesizes="100vw"
         fetchpriority="high" />
 
@@ -193,7 +193,7 @@
     .nav__brand { justify-self: start; display: flex; align-items: center; gap: .9rem; height: 56px; width: 56px; position: relative; color: #fff; transition: color .35s var(--ease); }
     .nav__links { justify-self: center; }
     .nav__cta { justify-self: end; }
-    .nav__brand img { height: 100%; width: 100%; object-fit: contain; }
+    .nav__brand img, .nav__brand svg { height: 100%; width: 100%; object-fit: contain; display: block; }
     .nav__links { display: flex; align-items: center; gap: 2.6rem; }
     .nav__links a {
       font-family: var(--sans);
@@ -298,7 +298,6 @@
     .hero__wordmark {
       width: clamp(280px, 42vw, 600px);
       margin: 0 auto;
-      color: #fff;  /* currentColor drives the SVG fill */
       filter: drop-shadow(0 6px 30px rgba(0,0,0,.35));
       animation: fadeUp 1.4s .35s var(--ease) both;
     }
@@ -2214,14 +2213,14 @@
     });
   </script>
 
-  <script src="waitlist.js" defer></script>
+  <script src="waitlist.js?v=1" defer></script>
 </head>
 <body class="is-loading">
 
   <!-- ========== PRELOADER ========== -->
   <div class="preloader" id="preloader" aria-hidden="true">
     <div class="preloader__brand">
-      <img loading="eager" decoding="async" class="preloader__brand-logo" src="pcg-monogram.svg" alt="" />
+      <img loading="eager" decoding="async" class="preloader__brand-logo" src="pcg-monogram.svg?v=1" alt="" />
       <span class="preloader__brand-name">Pinnacle Counseling Group</span>
     </div>
     <div class="preloader__center">
@@ -2234,7 +2233,7 @@
   <!-- ========== NAVIGATION ========== -->
   <header class="nav" id="nav">
     <a class="nav__brand" href="#top" aria-label="Pinnacle Counseling Group — home">
-      <img loading="eager" decoding="async" src="pcg-monogram.svg" alt="Pinnacle Counseling Group" width="56" height="56" />
+      <svg class="nav__brand-mark" viewBox="560 152 244 428" fill="currentColor" aria-hidden="true"><path d="M 763.667969 366.976562 C 752.503906 335.832031 717.613281 318.105469 684.691406 320.210938 L 684.683594 383.328125 C 714.738281 383.609375 741.789062 386.390625 763.667969 366.976562 M 772.800781 276.324219 C 753.617188 245.160156 714.738281 249.632812 684.476562 249.683594 L 684.796875 316.382812 C 720.652344 315.15625 751.242188 328.289062 775.25 352.378906 C 786.921875 327.886719 787.257812 299.808594 772.800781 276.324219 M 664.722656 474.070312 L 664.9375 322.855469 C 596.246094 336.644531 576.09375 416.210938 587.097656 475.117188 C 596.679688 526.414062 637.796875 561.003906 688.558594 567.1875 C 726.953125 571.859375 756.125 553.78125 782.5 524.308594 C 763.496094 562.460938 719.378906 579.746094 678.671875 576.183594 C 625.449219 571.523438 582.109375 533.824219 567.375 482.800781 C 559.515625 455.589844 560.898438 427.617188 568.984375 400.683594 C 582.273438 356.417969 618.585938 325.664062 664.863281 318.53125 L 664.582031 267.625 C 664.515625 255.617188 657.382812 252.597656 646.390625 246.394531 L 732.847656 246.46875 C 742.53125 246.476562 753.230469 250.21875 761.953125 253.480469 C 789.335938 263.71875 804.179688 288.824219 803.84375 317.492188 C 803.28125 365.683594 764.441406 386.925781 720.496094 387.039062 L 684.539062 387.128906 L 684.792969 474.292969 C 684.828125 485.628906 691.710938 489.640625 702.339844 495.683594 C 683.042969 496.300781 666.050781 496.289062 647.011719 495.605469 C 657.085938 489.882812 664.703125 486.207031 664.722656 474.070312 "/><path d="M 673.488281 189.199219 C 669.714844 179.246094 663.726562 171.921875 653.460938 170.476562 C 662.257812 168.132812 669.386719 162.488281 672.851562 152.902344 C 676.488281 161.074219 682.054688 166.921875 691.683594 170.714844 C 682.296875 172.257812 675.5 179.539062 673.488281 189.199219 "/></svg>
     </a>
     <nav class="nav__links" aria-label="Primary">
       <a href="about.html">About</a>
@@ -2260,7 +2259,7 @@
 
   <div class="mobile-panel" id="mobilePanel" aria-hidden="true">
     <div class="mobile-panel__top">
-      <img loading="lazy" decoding="async" src="pcg-wordmark.svg" alt="Pinnacle Counseling Group" />
+      <img loading="lazy" decoding="async" src="pcg-wordmark.svg?v=1" alt="Pinnacle Counseling Group" />
       <button class="mobile-panel__close" id="closePanel" aria-label="Close menu"></button>
     </div>
     <nav class="mobile-panel__nav">
@@ -2283,10 +2282,10 @@
   <section class="hero" id="top">
     <div class="hero__media">
       <picture>
-        <source type="image/webp" media="(max-width: 768px)" srcset="hero-mobile.webp" />
-        <source type="image/webp" srcset="hero-desktop.webp" />
-        <source media="(max-width: 768px)" srcset="hero-mobile.jpg" />
-        <img loading="eager" decoding="async" src="norbert-buduczki-S2RmhM61SE8-unsplash.jpg"
+        <source type="image/webp" media="(max-width: 768px)" srcset="hero-mobile.webp?v=1" />
+        <source type="image/webp" srcset="hero-desktop.webp?v=1" />
+        <source media="(max-width: 768px)" srcset="hero-mobile.jpg?v=1" />
+        <img loading="eager" decoding="async" src="norbert-buduczki-S2RmhM61SE8-unsplash.jpg?v=1"
              alt="Calm natural light through a window — quiet space for therapy at Pinnacle Counseling Group"
              width="2000" height="1333"
              fetchpriority="high"
@@ -2294,7 +2293,7 @@
       </picture>
     </div>
     <div class="hero__inner">
-      <img loading="eager" decoding="async" class="hero__wordmark" src="pcg-wordmark.svg" alt="Pinnacle Counseling Group" width="600" height="217" />
+      <img loading="eager" decoding="async" fetchpriority="high" class="hero__wordmark" src="pcg-wordmark-white.svg?v=1" alt="Pinnacle Counseling Group" width="600" height="217" />
       <a href="#consult" data-lightbox="lightbox-consult" class="btn btn--light hero__cta">
         Request a Consultation
       </a>
@@ -2334,35 +2333,35 @@
 
       <div class="services__grid">
         <a href="individual-therapy.html" class="service service--feature reveal">
-          <div class="service__icon"><img loading="lazy" decoding="async" src="INdividual%20Therapy%20and%20CounselingAsset%201.png" alt="Individual therapy and counseling at Pinnacle Counseling Group" /></div>
+          <div class="service__icon"><img loading="lazy" decoding="async" src="INdividual%20Therapy%20and%20CounselingAsset%201.png?v=1" alt="Individual therapy and counseling at Pinnacle Counseling Group" /></div>
           <h3 class="service__title"><em>Individual</em> Therapy</h3>
           <p class="service__desc">Individual psychotherapy for adults navigating relationship challenges, high-functioning anxiety, OCD, eating disorders, trauma, and significant life transitions. Deep, relational work is paired with evidence-based tools for lasting clarity.</p>
           <span class="service__indicator" aria-hidden="true"></span>
         </a>
 
         <a href="couples-counseling.html" class="service service--feature reveal reveal-delay-1">
-          <div class="service__icon"><img loading="lazy" decoding="async" src="Couples%20and%20Relationship%20Therapy.png" alt="Couples and relationship therapy at Pinnacle Counseling Group" /></div>
+          <div class="service__icon"><img loading="lazy" decoding="async" src="Couples%20and%20Relationship%20Therapy.png?v=1" alt="Couples and relationship therapy at Pinnacle Counseling Group" /></div>
           <h3 class="service__title"><em>Couples</em> Counseling</h3>
           <p class="service__desc">Couples counseling rooted in modern relational and attachment-based therapy, including Emotionally Focused Therapy (EFT) and Gottman frameworks. Designed for couples navigating transitions, deeper connection, or healing from rifts.</p>
           <span class="service__indicator" aria-hidden="true"></span>
         </a>
 
         <a href="children-and-teens.html" class="service reveal">
-          <div class="service__icon"><img loading="lazy" decoding="async" src="Children%20and%20Teen%20Counseling.png" alt="Sacramento children and teen counseling at Pinnacle Counseling Group" /></div>
+          <div class="service__icon"><img loading="lazy" decoding="async" src="Children%20and%20Teen%20Counseling.png?v=1" alt="Sacramento children and teen counseling at Pinnacle Counseling Group" /></div>
           <h3 class="service__title">Children &amp; <em>Teens</em></h3>
           <p class="service__desc">Specialized support for young people navigating identity, academic pressure, social challenges, family change, and the complexities of growing up.</p>
           <span class="service__indicator" aria-hidden="true"></span>
         </a>
 
         <a href="organizational-consulting.html" class="service reveal reveal-delay-1">
-          <div class="service__icon"><img loading="lazy" decoding="async" src="Organizational%20Consulting.png" alt="Workplace and organizational consulting at Pinnacle Counseling Group" /></div>
+          <div class="service__icon"><img loading="lazy" decoding="async" src="Organizational%20Consulting.png?v=1" alt="Workplace and organizational consulting at Pinnacle Counseling Group" /></div>
           <h3 class="service__title">Organizational <em>Consulting</em></h3>
           <p class="service__desc">Strategic support for leaders and organizations seeking to improve workplace culture, team dynamics, and organizational wellbeing.</p>
           <span class="service__indicator" aria-hidden="true"></span>
         </a>
 
         <a href="providers.html#supervisors" class="service reveal reveal-delay-2">
-          <div class="service__icon"><img loading="lazy" decoding="async" src="Clinical%20Supervision%20for%20TherapistsAsset%201.png" alt="Clinical supervision for California associate clinicians" /></div>
+          <div class="service__icon"><img loading="lazy" decoding="async" src="Clinical%20Supervision%20for%20TherapistsAsset%201.png?v=1" alt="Clinical supervision for California associate clinicians" /></div>
           <h3 class="service__title">Clinical <em>Supervision</em></h3>
           <p class="service__desc">Individual and group supervision for California AMFTs and APCCs, grounded in rigorous clinical standards, a psychodynamic approach, and a commitment to your growth in the field.</p>
           <span class="service__indicator" aria-hidden="true"></span>
@@ -2388,7 +2387,7 @@
   <!-- ========== QUOTE BREAK (sage band wraps the rounded photo) ========== -->
   <div class="quotebreak-band" aria-label="Practice philosophy">
     <div class="quotebreak">
-      <img loading="lazy" decoding="async" src="tim-schmidbauer-9wPBLs1ep7A-unsplash.jpg" alt="Soft daylight on a quiet interior — Pinnacle Counseling Group" />
+      <img loading="lazy" decoding="async" src="tim-schmidbauer-9wPBLs1ep7A-unsplash.jpg?v=1" alt="Soft daylight on a quiet interior — Pinnacle Counseling Group" />
       <div class="quotebreak__spot" aria-hidden="true"></div>
       <div class="quotebreak__inner reveal">
         <p class="quotebreak__quote">
@@ -2446,7 +2445,7 @@
   <!-- ========== BRAND STATEMENT (second photo break) ========== -->
   <div class="quotebreak-band quotebreak-band--cream" aria-label="The meaning of Pinnacle">
     <div class="quotebreak quotebreak--statement">
-      <img loading="lazy" decoding="async" src="brand-statement-2.jpg" alt="Pinnacle Counseling Group practice environment" />
+      <img loading="lazy" decoding="async" src="brand-statement-2.jpg?v=1" alt="Pinnacle Counseling Group practice environment" />
       <div class="quotebreak__spot" aria-hidden="true"></div>
       <div class="quotebreak__inner reveal">
         <p class="quotebreak__quote">
@@ -2469,7 +2468,7 @@
       <div class="providers__grid">
         <article class="provider reveal">
           <a class="provider__portrait" href="#enid" data-lightbox="lightbox-enid" aria-label="View Enid Wilson's profile">
-            <img loading="lazy" decoding="async" src="ENID_WILSON_HEADSHOTS_2025_029%20copy.jpg" alt="Enid Wilson" style="object-position: 32% 30%;" />
+            <img loading="lazy" decoding="async" src="ENID_WILSON_HEADSHOTS_2025_029%20copy.jpg?v=1" alt="Enid Wilson" style="object-position: 32% 30%;" />
           </a>
           <div class="provider__meta">
             <h3 class="provider__name">Enid Wilson</h3>
@@ -2482,7 +2481,7 @@
 
         <article class="provider reveal reveal-delay-1">
           <a class="provider__portrait" href="#giana" data-lightbox="lightbox-giana" aria-label="View Giana Azizeh's profile">
-            <img loading="lazy" decoding="async" src="Giana%20Azizeh%20copy.png" alt="Giana Azizeh" style="object-position: center 28%;" />
+            <img loading="lazy" decoding="async" src="Giana%20Azizeh%20copy.png?v=1" alt="Giana Azizeh" style="object-position: center 28%;" />
           </a>
           <div class="provider__meta">
             <h3 class="provider__name">Giana Azizeh</h3>
@@ -2531,7 +2530,7 @@
     <div class="container">
       <div class="footer__top">
         <div class="footer__brand">
-          <a href="index.html" aria-label="Pinnacle Counseling Group — home"><img loading="lazy" decoding="async" src="pcg-monogram.svg" alt="Pinnacle Counseling Group" /></a>
+          <a href="index.html" aria-label="Pinnacle Counseling Group — home"><img loading="lazy" decoding="async" src="pcg-monogram.svg?v=1" alt="Pinnacle Counseling Group" /></a>
           <p>Personalized psychotherapy in Sacramento, California — and virtually throughout the state.</p>
         </div>
 
@@ -2601,7 +2600,7 @@
     <div class="lightbox__inner">
       <button class="lightbox__close" data-lightbox-close aria-label="Close">&#10005;</button>
       <div class="lightbox__media">
-        <img loading="lazy" decoding="async" src="ENID_WILSON_HEADSHOTS_2025_029%20copy.jpg" alt="Enid Wilson" style="object-position: 32% 30%;" />
+        <img loading="lazy" decoding="async" src="ENID_WILSON_HEADSHOTS_2025_029%20copy.jpg?v=1" alt="Enid Wilson" style="object-position: 32% 30%;" />
       </div>
       <div class="lightbox__bio" data-lenis-prevent>
         <h3 class="lightbox__name" id="lb-enid-name">Enid Wilson, LMFT</h3>
@@ -2649,7 +2648,7 @@
     <div class="lightbox__inner">
       <button class="lightbox__close" data-lightbox-close aria-label="Close">&#10005;</button>
       <div class="lightbox__media">
-        <img loading="lazy" decoding="async" src="Giana%20Azizeh%20copy.png" alt="Giana Azizeh" style="object-position: center 28%;" />
+        <img loading="lazy" decoding="async" src="Giana%20Azizeh%20copy.png?v=1" alt="Giana Azizeh" style="object-position: center 28%;" />
       </div>
       <div class="lightbox__bio" data-lenis-prevent>
         <h3 class="lightbox__name" id="lb-giana-name">Giana Azizeh, LMFT</h3>
