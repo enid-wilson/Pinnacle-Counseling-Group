@@ -1451,7 +1451,7 @@
       display: flex; flex-direction: column;
       overflow: hidden;
       isolation: isolate;
-      transition: opacity 1s var(--ease), visibility 1s var(--ease);
+      transition: opacity .3s var(--ease), visibility .3s var(--ease);
     }
     /* Drifting warm blobs — tan + warm white against the cream */
     .preloader::before,
@@ -2333,35 +2333,35 @@
 
       <div class="services__grid">
         <a href="individual-therapy.html" class="service service--feature reveal">
-          <div class="service__icon"><img loading="lazy" decoding="async" src="INdividual%20Therapy%20and%20CounselingAsset%201.png?v=1" alt="Individual therapy and counseling at Pinnacle Counseling Group" /></div>
+          <div class="service__icon"><picture><source type="image/webp" srcset="INdividual%20Therapy%20and%20CounselingAsset%201.webp?v=1" /><img loading="lazy" decoding="async" src="INdividual%20Therapy%20and%20CounselingAsset%201.png?v=1" alt="Individual therapy and counseling at Pinnacle Counseling Group"  width="90" height="98"/></picture></div>
           <h3 class="service__title"><em>Individual</em> Therapy</h3>
           <p class="service__desc">Individual psychotherapy for adults navigating relationship challenges, high-functioning anxiety, OCD, eating disorders, trauma, and significant life transitions. Deep, relational work is paired with evidence-based tools for lasting clarity.</p>
           <span class="service__indicator" aria-hidden="true"></span>
         </a>
 
         <a href="couples-counseling.html" class="service service--feature reveal reveal-delay-1">
-          <div class="service__icon"><img loading="lazy" decoding="async" src="Couples%20and%20Relationship%20Therapy.png?v=1" alt="Couples and relationship therapy at Pinnacle Counseling Group" /></div>
+          <div class="service__icon"><picture><source type="image/webp" srcset="Couples%20and%20Relationship%20Therapy.webp?v=1" /><img loading="lazy" decoding="async" src="Couples%20and%20Relationship%20Therapy.png?v=1" alt="Couples and relationship therapy at Pinnacle Counseling Group"  width="69" height="98"/></picture></div>
           <h3 class="service__title"><em>Couples</em> Counseling</h3>
           <p class="service__desc">Couples counseling rooted in modern relational and attachment-based therapy, including Emotionally Focused Therapy (EFT) and Gottman frameworks. Designed for couples navigating transitions, deeper connection, or healing from rifts.</p>
           <span class="service__indicator" aria-hidden="true"></span>
         </a>
 
         <a href="children-and-teens.html" class="service reveal">
-          <div class="service__icon"><img loading="lazy" decoding="async" src="Children%20and%20Teen%20Counseling.png?v=1" alt="Sacramento children and teen counseling at Pinnacle Counseling Group" /></div>
+          <div class="service__icon"><picture><source type="image/webp" srcset="Children%20and%20Teen%20Counseling.webp?v=1" /><img loading="lazy" decoding="async" src="Children%20and%20Teen%20Counseling.png?v=1" alt="Sacramento children and teen counseling at Pinnacle Counseling Group"  width="65" height="69"/></picture></div>
           <h3 class="service__title">Children &amp; <em>Teens</em></h3>
           <p class="service__desc">Specialized support for young people navigating identity, academic pressure, social challenges, family change, and the complexities of growing up.</p>
           <span class="service__indicator" aria-hidden="true"></span>
         </a>
 
         <a href="organizational-consulting.html" class="service reveal reveal-delay-1">
-          <div class="service__icon"><img loading="lazy" decoding="async" src="Organizational%20Consulting.png?v=1" alt="Workplace and organizational consulting at Pinnacle Counseling Group" /></div>
+          <div class="service__icon"><picture><source type="image/webp" srcset="Organizational%20Consulting.webp?v=1" /><img loading="lazy" decoding="async" src="Organizational%20Consulting.png?v=1" alt="Workplace and organizational consulting at Pinnacle Counseling Group"  width="54" height="69"/></picture></div>
           <h3 class="service__title">Organizational <em>Consulting</em></h3>
           <p class="service__desc">Strategic support for leaders and organizations seeking to improve workplace culture, team dynamics, and organizational wellbeing.</p>
           <span class="service__indicator" aria-hidden="true"></span>
         </a>
 
         <a href="providers.html#supervisors" class="service reveal reveal-delay-2">
-          <div class="service__icon"><img loading="lazy" decoding="async" src="Clinical%20Supervision%20for%20TherapistsAsset%201.png?v=1" alt="Clinical supervision for California associate clinicians" /></div>
+          <div class="service__icon"><picture><source type="image/webp" srcset="Clinical%20Supervision%20for%20TherapistsAsset%201.webp?v=1" /><img loading="lazy" decoding="async" src="Clinical%20Supervision%20for%20TherapistsAsset%201.png?v=1" alt="Clinical supervision for California associate clinicians"  width="66" height="69"/></picture></div>
           <h3 class="service__title">Clinical <em>Supervision</em></h3>
           <p class="service__desc">Individual and group supervision for California AMFTs and APCCs, grounded in rigorous clinical standards, a psychodynamic approach, and a commitment to your growth in the field.</p>
           <span class="service__indicator" aria-hidden="true"></span>
@@ -2767,7 +2767,7 @@
         hidden = true;
         preloader.classList.add('is-gone');
         document.body.classList.remove('is-loading');
-        setTimeout(() => preloader.remove(), 1000);
+        setTimeout(() => preloader.remove(), 300);
       };
 
       // Resolve as soon as the hero image is ready — LCP-critical path.
