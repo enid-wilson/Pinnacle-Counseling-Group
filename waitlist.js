@@ -12,7 +12,7 @@
   window.__pcgWaitlistLoaded = true;
 
   // ---------- Config ----------
-  var BOOKING_URL = 'https://pinnacle.clientsecure.me';
+  var BOOKING_URL = 'https://pinnacle.clientsecure.me/request/service';
   var POPUP_DELAY_MS = 5500;                     // wait a beat before showing
   var POPUP_COOLDOWN_MS = 24 * 60 * 60 * 1000;   // 1 day between showings
   var STORAGE_LAST_SHOWN = 'pcg-waitlist-popup-shown';
