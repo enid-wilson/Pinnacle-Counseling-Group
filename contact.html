@@ -188,6 +188,7 @@
     .mobile-panel.is-open { transform: translateY(0); }
     .mobile-panel__top { display: flex; justify-content: space-between; align-items: center; height: 38px; }
     .mobile-panel__top img { height: 100%; width: auto; }
+    .mobile-panel__brand { display: inline-flex; align-items: center; height: 100%; color: var(--ink); text-decoration: none; }
     .mobile-panel__close { background: transparent; border: 0; padding: 0; width: 28px; height: 28px; position: relative; cursor: pointer; }
     .mobile-panel__close::before, .mobile-panel__close::after { content:""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--ink); }
     .mobile-panel__close::before { transform: rotate(45deg); }
@@ -1332,7 +1333,11 @@
 
   <div class="mobile-panel" id="mobilePanel" aria-hidden="true">
     <div class="mobile-panel__top">
-      <img loading="lazy" decoding="async" src="pcg-wordmark.svg?v=1" alt="Pinnacle Counseling Group" />
+      <a href="index.html" class="mobile-panel__brand" aria-label="Pinnacle Counseling Group — home">
+
+        <img loading="lazy" decoding="async" src="pcg-monogram.svg?v=1" alt="Pinnacle Counseling Group" width="40" height="40" />
+
+      </a>
       <button class="mobile-panel__close" id="closePanel" aria-label="Close menu"></button>
     </div>
     <nav class="mobile-panel__nav">

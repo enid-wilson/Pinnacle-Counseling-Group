@@ -301,6 +301,35 @@
       filter: drop-shadow(0 6px 30px rgba(0,0,0,.35));
       animation: fadeUp 1.4s .35s var(--ease) both;
     }
+    .hero__lede {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-style: italic;
+      font-size: clamp(1.2rem, 2.4vw, 1.75rem);
+      color: rgba(255,255,255,.92);
+      margin: 1.6rem auto 0;
+      max-width: 32em;
+      line-height: 1.35;
+      letter-spacing: -.005em;
+      text-shadow: 0 2px 20px rgba(0,0,0,.4);
+      animation: fadeUp 1.4s .6s var(--ease) both;
+    }
+    .hero__sublede {
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: clamp(.85rem, 1.4vw, 1rem);
+      color: rgba(255,255,255,.78);
+      margin: .7rem auto 2.2rem;
+      max-width: 36em;
+      line-height: 1.55;
+      letter-spacing: .02em;
+      text-shadow: 0 2px 20px rgba(0,0,0,.4);
+      animation: fadeUp 1.4s .8s var(--ease) both;
+    }
+    .hero__sublede em {
+      color: rgba(255,255,255,.95);
+      font-style: italic;
+    }
     .hero__tagline {
       font-family: var(--serif);
       font-style: italic;
@@ -1563,6 +1592,12 @@
     @media (prefers-reduced-motion: reduce) {
       .preloader { display: none; }
     }
+    /* Skip the preloader on mobile entirely — hero LCP is what matters here,
+       and the fade animation was blocking it. Desktop still gets the reveal. */
+    @media (max-width: 768px) {
+      .preloader { display: none !important; }
+      body.is-loading { overflow: auto !important; }
+    }
 
     /* --- Mobile menu panel --- */
     .mobile-panel {
@@ -1578,6 +1613,7 @@
       height: 38px;
     }
     .mobile-panel__top img { height: 100%; width: auto; }
+    .mobile-panel__brand { display: inline-flex; align-items: center; height: 100%; color: var(--ink); text-decoration: none; }
     .mobile-panel__close {
       background: transparent; border: 0; padding: 0;
       width: 28px; height: 28px; position: relative;
@@ -2259,7 +2295,9 @@
 
   <div class="mobile-panel" id="mobilePanel" aria-hidden="true">
     <div class="mobile-panel__top">
-      <img loading="lazy" decoding="async" src="pcg-wordmark.svg?v=1" alt="Pinnacle Counseling Group" />
+      <a href="index.html" class="mobile-panel__brand" aria-label="Pinnacle Counseling Group — home">
+        <img loading="lazy" decoding="async" src="pcg-monogram.svg?v=1" alt="Pinnacle Counseling Group" width="40" height="40" />
+      </a>
       <button class="mobile-panel__close" id="closePanel" aria-label="Close menu"></button>
     </div>
     <nav class="mobile-panel__nav">
@@ -2294,6 +2332,8 @@
     </div>
     <div class="hero__inner">
       <img loading="eager" decoding="async" fetchpriority="high" class="hero__wordmark" src="pcg-wordmark-white.svg?v=1" alt="Pinnacle Counseling Group" width="600" height="217" />
+      <p class="hero__lede">A private, bespoke approach to psychotherapy.</p>
+      <p class="hero__sublede">For individuals, couples, and families in <em>Sacramento &amp; Gold River</em>.</p>
       <a href="#consult" data-lightbox="lightbox-consult" class="btn btn--light hero__cta">
         Request a Consultation
       </a>
@@ -2309,7 +2349,7 @@
         Psychotherapy in <em>Sacramento</em> and virtually throughout California — for <em>individuals, couples,</em> and the <em>next generation</em>.
       </h1>
       <p class="keymsg__sub reveal reveal-delay-2">
-        Specializing in high-functioning anxiety, OCD, eating disorders, attachment-based therapy, and modern relational therapy. We view each client as a whole person — not a diagnosis — so your psychotherapy is tailored entirely to your life and goals.
+        We view each client as a whole person — not a diagnosis — so your therapy is tailored entirely to your life and goals. Our clinical expertise includes relational therapy, trauma, anxiety, obsessions, and eating disorders, with focused specialty in parenthood, adoption, multicultural families, and veterans and military families.
       </p>
       <a href="about.html" class="link-quiet reveal reveal-delay-3">
         About Pinnacle
@@ -2747,11 +2787,14 @@
     // Shown only on the FIRST visit per browser session.
     (() => {
       const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const isMobile = window.matchMedia('(max-width: 768px)').matches;
       const preloader = document.getElementById('preloader');
       let alreadySeen = false;
       try { alreadySeen = sessionStorage.getItem('pcg-loaded') === '1'; } catch (e) {}
 
-      if (!preloader || reduce || alreadySeen) {
+      // Skip the preloader entirely on mobile — hero LCP is the priority there.
+      // Also skip if reduced-motion is preferred, or if already seen this session.
+      if (!preloader || reduce || isMobile || alreadySeen) {
         document.body.classList.remove('is-loading');
         preloader?.remove();
         try { sessionStorage.setItem('pcg-loaded', '1'); } catch (e) {}
