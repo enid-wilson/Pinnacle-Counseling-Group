@@ -284,8 +284,8 @@
     .hero__media::after {
       content: ""; position: absolute; inset: 0; z-index: 1;
       background:
-        radial-gradient(ellipse at center, rgba(15,10,6,.06) 0%, rgba(15,10,6,.28) 85%),
-        linear-gradient(180deg, rgba(15,10,6,.24) 0%, rgba(15,10,6,.08) 35%, rgba(15,10,6,.08) 60%, rgba(15,10,6,.40) 100%);
+        radial-gradient(ellipse at center, rgba(15,10,6,.22) 0%, rgba(15,10,6,.42) 85%),
+        linear-gradient(180deg, rgba(15,10,6,.30) 0%, rgba(15,10,6,.18) 35%, rgba(15,10,6,.18) 60%, rgba(15,10,6,.48) 100%);
     }
     .hero__inner {
       position: relative; z-index: 2;
@@ -303,31 +303,31 @@
     }
     .hero__lede {
       font-family: var(--serif);
-      font-weight: 300;
+      font-weight: 400;
       font-style: italic;
-      font-size: clamp(1.2rem, 2.4vw, 1.75rem);
-      color: rgba(255,255,255,.92);
+      font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+      color: #fff;
       margin: 1.6rem auto 0;
       max-width: 32em;
       line-height: 1.35;
       letter-spacing: -.005em;
-      text-shadow: 0 2px 20px rgba(0,0,0,.4);
+      text-shadow: 0 2px 24px rgba(0,0,0,.55), 0 0 2px rgba(0,0,0,.35);
       animation: fadeUp 1.4s .6s var(--ease) both;
     }
     .hero__sublede {
       font-family: var(--sans);
-      font-weight: 300;
-      font-size: clamp(.85rem, 1.4vw, 1rem);
-      color: rgba(255,255,255,.78);
-      margin: .7rem auto 2.2rem;
+      font-weight: 400;
+      font-size: clamp(.95rem, 1.5vw, 1.05rem);
+      color: rgba(255,255,255,.92);
+      margin: .8rem auto 2.2rem;
       max-width: 36em;
       line-height: 1.55;
       letter-spacing: .02em;
-      text-shadow: 0 2px 20px rgba(0,0,0,.4);
+      text-shadow: 0 2px 24px rgba(0,0,0,.55), 0 0 2px rgba(0,0,0,.35);
       animation: fadeUp 1.4s .8s var(--ease) both;
     }
     .hero__sublede em {
-      color: rgba(255,255,255,.95);
+      color: #fff;
       font-style: italic;
     }
     .hero__tagline {
