@@ -8,7 +8,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" media="print" onload="this.media='all'; this.onload=null" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" /></noscript>
 
   <!-- Smooth scroll -->
   <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
@@ -2220,7 +2221,7 @@
   <!-- ========== PRELOADER ========== -->
   <div class="preloader" id="preloader" aria-hidden="true">
     <div class="preloader__brand">
-      <img loading="lazy" decoding="async" class="preloader__brand-logo" src="pcg-monogram.svg" alt="" />
+      <img loading="eager" decoding="async" class="preloader__brand-logo" src="pcg-monogram.svg" alt="" />
       <span class="preloader__brand-name">Pinnacle Counseling Group</span>
     </div>
     <div class="preloader__center">
@@ -2740,9 +2741,11 @@
   </div>
 
   <script>
-    // Preloader: monogram appears, holds, fades away.
-    // Shown only on the FIRST visit per browser session — skipped on subsequent
-    // navigations (e.g. returning from careers.html during the same session).
+    // Preloader: monogram appears, holds until the hero image is actually loaded,
+    // then fades away. No hardcoded minimum — the preloader is purely visual and
+    // never gates the LCP hero from rendering. A max safety timer catches the
+    // edge case where the hero fails to fire load (e.g. offline, cached, error).
+    // Shown only on the FIRST visit per browser session.
     (() => {
       const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const preloader = document.getElementById('preloader');
@@ -2756,11 +2759,30 @@
         return;
       }
       try { sessionStorage.setItem('pcg-loaded', '1'); } catch (e) {}
-      setTimeout(() => {
+
+      const MAX_WAIT_MS = 2500;   // safety cap — never block longer than this
+      let hidden = false;
+
+      const hidePreloader = () => {
+        if (hidden) return;
+        hidden = true;
         preloader.classList.add('is-gone');
         document.body.classList.remove('is-loading');
         setTimeout(() => preloader.remove(), 1000);
-      }, 2400);
+      };
+
+      // Resolve as soon as the hero image is ready — LCP-critical path.
+      const heroImg = document.querySelector('.hero__media img');
+      if (heroImg) {
+        if (heroImg.complete && heroImg.naturalWidth > 0) {
+          hidePreloader();
+        } else {
+          heroImg.addEventListener('load', hidePreloader, { once: true });
+          heroImg.addEventListener('error', hidePreloader, { once: true });
+        }
+      }
+      // Safety net: hide unconditionally after MAX_WAIT_MS
+      setTimeout(hidePreloader, MAX_WAIT_MS);
     })();
 
     // While at the very top (over the hero), nav is transparent and uses white logo.
