@@ -278,9 +278,9 @@
     }
     .hero__media img {
       width: 100%; height: 100%; object-fit: cover; object-position: center 55%;
-      /* No opacity animation — LCP candidate must paint at final opacity for
-         Lighthouse to record LCP on throttled mobile. Subtle scale-in only. */
-      animation: heroIn 6s var(--ease) both;
+      /* No animation at all — hero image is the LCP candidate; must be
+         perfectly stable from initial paint for Lighthouse LCP to register
+         on throttled slow-4G mobile emulation. */
     }
     /* Lighter layered overlay — minimal darkening; just enough vignette to hold the wordmark */
     .hero__media::after {
@@ -301,7 +301,8 @@
       width: clamp(280px, 42vw, 600px);
       margin: 0 auto;
       filter: drop-shadow(0 6px 30px rgba(0,0,0,.35));
-      animation: fadeUp 1.4s .35s var(--ease) both;
+      /* No opacity animation — the wordmark is `<img>` with fetchpriority="high",
+         which makes it a potential LCP candidate. Paint at final state. */
     }
     .hero__lede {
       font-family: var(--serif);
@@ -346,10 +347,6 @@
       display: inline-block;
     }
 
-    @keyframes heroIn {
-      from { transform: scale(1.05); }
-      to   { transform: scale(1.00); }
-    }
     @keyframes fadeUp {
       from { transform: translateY(18px); opacity: 0; }
       to   { transform: translateY(0);    opacity: 1; }
