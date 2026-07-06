@@ -1,9 +1,10 @@
 /* ========================================================================
    Pinnacle Counseling Group — Consultation CTA Component
-   Self-contained: injects popup + click handler for booking redirects.
+   Self-contained: injects popup + click handler for booking triggers.
    Usage:  <script src="waitlist.js" defer></script>
-           Any element with [data-waitlist-open] opens the booking URL in a
-           new tab. (Attribute name preserved for backwards compatibility.)
+           The popup CTA is a SimplePractice widget trigger — clicking it
+           opens the SP modal on the current page. Falls back to book.html
+           if the SP widget script fails to load.
    ======================================================================== */
 (function () {
   'use strict';
@@ -12,7 +13,9 @@
   window.__pcgWaitlistLoaded = true;
 
   // ---------- Config ----------
-  var BOOKING_URL = 'https://pinnacle.clientsecure.me/request/service';
+  // Fallback destination if the SimplePractice widget script fails to load.
+  // The primary flow is: SP script auto-binds → click opens modal on page.
+  var BOOKING_FALLBACK_URL = 'book.html';
   var POPUP_DELAY_MS = 5500;                     // wait a beat before showing
   var POPUP_COOLDOWN_MS = 24 * 60 * 60 * 1000;   // 1 day between showings
   var STORAGE_LAST_SHOWN = 'pcg-waitlist-popup-shown';
@@ -41,13 +44,24 @@
   ].join('');
 
   // ---------- Markup ----------
+  // The CTA below is a SimplePractice widget trigger. The SP widget script
+  // (loaded separately on every page) auto-binds to [data-spwidget-autobind]
+  // elements and intercepts clicks to open the booking modal. If SP script
+  // fails to load, the href takes the user to the branded /book.html page.
   var popupHTML = [
     '<aside class="wl-popup" id="wl-popup" aria-label="Book a consultation" role="complementary">',
     '  <button class="wl-popup__close" type="button" data-wl-popup-close aria-label="Dismiss">&#10005;</button>',
     '  <span class="wl-popup__eyebrow">Now Booking</span>',
     '  <h4 class="wl-popup__title">A free 15-minute <em>consultation</em>.</h4>',
     '  <p class="wl-popup__sub">Meet with our practice manager to find the right therapist and starting point.</p>',
-    '  <a class="wl-popup__cta" href="' + BOOKING_URL + '" target="_blank" rel="noopener" data-waitlist-open>Book a Consultation <span class="wl-popup__cta-arrow" aria-hidden="true"></span></a>',
+    '  <a class="wl-popup__cta" href="' + BOOKING_FALLBACK_URL + '"',
+    '     data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1"',
+    '     data-spwidget-scope-uri="pinnacle"',
+    '     data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b"',
+    '     data-spwidget-type="OAR"',
+    '     data-spwidget-scope-global',
+    '     data-spwidget-autobind',
+    '     data-waitlist-open>Book a Consultation <span class="wl-popup__cta-arrow" aria-hidden="true"></span></a>',
     '</aside>'
   ].join('\n');
 
@@ -68,20 +82,15 @@
 
   // ---------- Bindings ----------
   function bind() {
-    // Delegated handler: any [data-waitlist-open] opens the booking URL in a
-    // new tab. If the element is already an anchor pointing at the booking
-    // URL (like the popup CTA), we let it navigate natively and just mark
-    // that the user engaged with it.
+    // Delegated handler: [data-waitlist-open] is the popup CTA. We don't
+    // interfere with its click — SimplePractice's widget script handles the
+    // navigation (opens modal on page). We just mark that the user engaged
+    // and hide the popup so it doesn't linger.
+    // If SP script fails to load, the anchor's href="book.html" carries the
+    // user to the branded landing page as a graceful fallback.
     document.addEventListener('click', function (e) {
       var opener = e.target.closest('[data-waitlist-open]');
       if (opener) {
-        // If it's an anchor with target=_blank, let the browser handle it —
-        // we just need to hide the popup so it doesn't linger.
-        var isAnchor = opener.tagName === 'A' && opener.getAttribute('href');
-        if (!isAnchor) {
-          e.preventDefault();
-          window.open(BOOKING_URL, '_blank', 'noopener');
-        }
         try { localStorage.setItem(STORAGE_DISMISSED, '1'); } catch (err) {}
         hidePopup();
         return;
