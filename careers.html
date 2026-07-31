@@ -595,6 +595,8 @@
       backdrop-filter: blur(6px);
       -webkit-backdrop-filter: blur(6px);
       overflow-y: auto;
+      -webkit-overflow-scrolling: touch;    /* iOS momentum scrolling */
+      overscroll-behavior: contain;         /* Prevent scroll chaining to body */
       padding: 32px 20px;
       align-items: flex-start;
       justify-content: center;
@@ -610,7 +612,9 @@
       width: 100%;
       max-width: 680px;
       position: relative;
-      margin: auto;
+      /* Horizontal centering only — vertical anchoring is handled by the
+         overlay's align-items: flex-start so tall forms remain fully scrollable. */
+      margin: 0 auto;
       box-shadow: 0 32px 80px rgba(0,0,0,0.22);
     }
 
@@ -1444,7 +1448,9 @@
       ],
       "@id": "https://pinnaclecounselinggroup.com/#practice",
       "sameAs": [
-        "https://www.linkedin.com/company/pinnacle-counseling-group"
+        "https://www.linkedin.com/company/pinnacle-counseling-group",
+        "https://www.psychologytoday.com/us/therapists/pinnacle-counseling-group-gold-river-ca/1784761",
+        "https://therapist.com/clinician/enid-wilson-11330/"
       ],
       "name": "Pinnacle Counseling Group",
       "legalName": "Wilson Marriage and Family Therapist Corporation",
@@ -1455,7 +1461,7 @@
       "image": "https://pinnaclecounselinggroup.com/brand-statement-2.jpg",
       "telephone": "+1-916-990-2326",
       "email": "Info@PinnacleCounselingGroup.com",
-      "priceRange": "$140–$225",
+      "priceRange": "$160–$225",
       "currenciesAccepted": "USD",
       "description": "Sacramento, California psychotherapy practice specializing in high-functioning anxiety, OCD (with ERP), eating disorders, modern relational and attachment-based therapy, couples counseling, and substance use treatment for adults. LGBTQ-affirming, veteran-friendly, and multicultural-attuned. Private-pay with select PPO coverage; superbills provided. Founded by Enid Wilson, LMFT.",
       "foundingDate": "2026",
@@ -1761,7 +1767,7 @@
     });
   </script>
 
-  <script src="waitlist.js?v=3" defer></script>
+  <script src="waitlist.js?v=4" defer></script>
 </head>
 <body>
 
@@ -2087,7 +2093,7 @@
 
 
 <!-- ══ APPLICATION MODAL ════════════════════════════════════ -->
-<div class="overlay" id="overlay" onclick="handleOverlayClick(event)">
+<div class="overlay" id="overlay" onclick="handleOverlayClick(event)" data-lenis-prevent>
   <div class="modal" id="modal">
     <button class="modal-close" onclick="closeModal()" aria-label="Close">×</button>
 

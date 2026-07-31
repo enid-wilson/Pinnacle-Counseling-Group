@@ -78,6 +78,28 @@
 
     bind();
     schedulePopup();
+    rebindSpWidget();
+  }
+
+  // ---------- SP widget re-bind ----------
+  // The popup is JS-injected AFTER SimplePractice's widget script does its
+  // one-and-done DOM scan. Without a manual re-bind, the popup CTA has all the
+  // right data-spwidget-* attributes but no click handler — clicking it just
+  // navigates to book.html instead of opening the modal.
+  // We poll for window.spWidgetAutoBind (SP script may still be loading when
+  // waitlist.js runs) and call it up to 5s. Once bound, the popup CTA opens
+  // the modal like every other trigger on the page.
+  function rebindSpWidget() {
+    var tries = 0;
+    var poll = setInterval(function () {
+      tries++;
+      if (typeof window.spWidgetAutoBind === 'function') {
+        try { window.spWidgetAutoBind(); } catch (e) {}
+        clearInterval(poll);
+      } else if (tries > 25) {
+        clearInterval(poll);
+      }
+    }, 200);
   }
 
   // ---------- Bindings ----------

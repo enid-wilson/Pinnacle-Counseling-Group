@@ -827,7 +827,9 @@
       ],
       "@id": "https://pinnaclecounselinggroup.com/#practice",
       "sameAs": [
-        "https://www.linkedin.com/company/pinnacle-counseling-group"
+        "https://www.linkedin.com/company/pinnacle-counseling-group",
+        "https://www.psychologytoday.com/us/therapists/pinnacle-counseling-group-gold-river-ca/1784761",
+        "https://therapist.com/clinician/enid-wilson-11330/"
       ],
       "name": "Pinnacle Counseling Group",
       "legalName": "Wilson Marriage and Family Therapist Corporation",
@@ -838,7 +840,7 @@
       "image": "https://pinnaclecounselinggroup.com/brand-statement-2.jpg",
       "telephone": "+1-916-990-2326",
       "email": "Info@PinnacleCounselingGroup.com",
-      "priceRange": "$140–$225",
+      "priceRange": "$160–$225",
       "currenciesAccepted": "USD",
       "description": "Sacramento, California psychotherapy practice specializing in high-functioning anxiety, OCD (with ERP), eating disorders, modern relational and attachment-based therapy, couples counseling, and substance use treatment for adults. LGBTQ-affirming, veteran-friendly, and multicultural-attuned. Private-pay with select PPO coverage; superbills provided. Founded by Enid Wilson, LMFT.",
       "foundingDate": "2026",
@@ -1036,9 +1038,16 @@
       }
     },
     {
-      "@type": "Place",
+      "@type": ["MedicalClinic", "Place"],
       "@id": "https://pinnaclecounselinggroup.com/#sacramento-office",
       "name": "Pinnacle Counseling Group — Sacramento Office",
+      "url": "https://pinnaclecounselinggroup.com/contact.html#sacramento",
+      "telephone": "+1-916-990-2326",
+      "email": "Info@PinnacleCounselingGroup.com",
+      "priceRange": "$160–$225",
+      "currenciesAccepted": "USD",
+      "image": "https://pinnaclecounselinggroup.com/brand-statement-2.jpg",
+      "parentOrganization": { "@id": "https://pinnaclecounselinggroup.com/#practice" },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "2335 American River Drive, Suite 305",
@@ -1052,12 +1061,28 @@
         "latitude": "38.5703256",
         "longitude": "-121.4090964"
       },
-      "hasMap": "https://maps.google.com/?q=2335+American+River+Drive+Suite+305+Sacramento+CA+95825"
+      "hasMap": "https://maps.google.com/?q=2335+American+River+Drive+Suite+305+Sacramento+CA+95825",
+      "sameAs": [
+        "https://www.google.com/maps/place/Pinnacle+Counseling+Group/@38.5704416,-121.4090982,17z/data=!3m1!4b1!4m6!3m5!1s0x809adb681d51e957:0xcce46a443a28f0a8!8m2!3d38.5704416!4d-121.4090982!16s%2Fg%2F11nqyr_nr9"
+      ],
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "20:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "09:00", "closes": "16:00" }
+      ],
+      "areaServed": { "@type": "AdministrativeArea", "name": "California" },
+      "medicalSpecialty": ["Psychiatric", "PublicHealth"]
     },
     {
-      "@type": "Place",
+      "@type": ["MedicalClinic", "Place"],
       "@id": "https://pinnaclecounselinggroup.com/#gold-river-office",
       "name": "Pinnacle Counseling Group — Gold River Office",
+      "url": "https://pinnaclecounselinggroup.com/contact.html#gold-river",
+      "telephone": "+1-916-990-2326",
+      "email": "Info@PinnacleCounselingGroup.com",
+      "priceRange": "$160–$225",
+      "currenciesAccepted": "USD",
+      "image": "https://pinnaclecounselinggroup.com/brand-statement-2.jpg",
+      "parentOrganization": { "@id": "https://pinnaclecounselinggroup.com/#practice" },
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "11201 Gold Express Drive, Suite 200",
@@ -1071,7 +1096,17 @@
         "latitude": "38.6233297",
         "longitude": "-121.2657518"
       },
-      "hasMap": "https://maps.google.com/?q=11201+Gold+Express+Drive+Suite+200+Gold+River+CA+95670"
+      "hasMap": "https://maps.google.com/?q=11201+Gold+Express+Drive+Suite+200+Gold+River+CA+95670",
+      "sameAs": [
+        "https://www.google.com/maps/place/Pinnacle+Counseling+Group/@38.6233273,-121.265545,17z/data=!3m1!4b1!4m6!3m5!1s0x809add75dc5e327d:0xaffd0869f3f6107!8m2!3d38.6233273!4d-121.265545!16s%2Fg%2F11zgmtlv3y",
+        "https://www.psychologytoday.com/us/therapists/pinnacle-counseling-group-gold-river-ca/1773668"
+      ],
+      "openingHoursSpecification": [
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "20:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "09:00", "closes": "16:00" }
+      ],
+      "areaServed": { "@type": "AdministrativeArea", "name": "California" },
+      "medicalSpecialty": ["Psychiatric", "PublicHealth"]
     },
     {
       "@type": "Service",
@@ -1172,7 +1207,7 @@
     });
   </script>
 
-  <script src="waitlist.js?v=3" defer></script>
+  <script src="waitlist.js?v=4" defer></script>
 </head>
 <body>
 
