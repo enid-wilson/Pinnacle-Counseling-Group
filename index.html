@@ -552,16 +552,13 @@
       background: var(--sage);
       padding: 0 var(--pad-x) clamp(4rem, 7vw, 7rem);
     }
-    /* Variant: cream band — used for the brand statement break between pillars + providers */
-    /* Visible cream above the image = padding-top
-       Visible cream below the image at center = padding-bottom MINUS radius-xl
-         (since providers overlaps the bottom by that much)
-       So padding-bottom must = padding-top + radius-xl for above and below to be equal. */
+    /* Variant: cream band — brand statement quote break above the footer.
+       Background matches the footer's cream so the band flows into it
+       without a visible seam. Padding is symmetric top/bottom since no
+       section overlaps this band anymore (Providers was moved up). */
     .quotebreak-band--cream {
-      background: var(--cream-warm);
-      padding:
-        clamp(3.5rem, 6vw, 5rem) var(--pad-x)
-        calc(clamp(3.5rem, 6vw, 5rem) + var(--radius-xl));
+      background: var(--cream-deep);
+      padding: clamp(3.5rem, 6vw, 5rem) var(--pad-x);
     }
     .quotebreak {
       position: relative;
@@ -632,9 +629,9 @@
 
     /* --- Why Pinnacle pillars --- */
     .pillars {
-      background: var(--cream-warm);
+      background: var(--white);
       padding-top: clamp(7rem, 13vw, 12rem);
-      padding-bottom: 0;
+      padding-bottom: clamp(6rem, 10vw, 9rem);
     }
     .pillars__header {
       display: grid;
@@ -654,7 +651,7 @@
     .pillar {
       position: relative;
       padding: 2.8rem 2.2rem;
-      background: var(--cream-soft);
+      background: var(--cream-warm);
       border: 1px solid var(--line-soft);
       border-radius: var(--radius-lg);
       transition: transform .55s var(--ease), border-color .55s var(--ease), box-shadow .55s var(--ease), background .55s var(--ease);
@@ -663,7 +660,7 @@
       transform: translateY(-6px);
       border-color: var(--sage);
       box-shadow: 0 22px 50px -28px rgba(47, 53, 53, .22);
-      background: #ffffff;
+      background: var(--cream-deep);
     }
     .pillar:hover .pillar__num { letter-spacing: .25em; color: var(--sage-deep); }
     .pillar:hover .pillar__title em { color: var(--clay-deep); }
