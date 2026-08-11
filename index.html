@@ -724,10 +724,16 @@
 
     .providers__grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: clamp(2rem, 4vw, 3.6rem);
-      max-width: 760px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(1.2rem, 2.4vw, 2rem);
+      max-width: 1240px;
       margin: 0 auto;
+    }
+    @media (max-width: 960px) {
+      .providers__grid { grid-template-columns: 1fr 1fr; max-width: 760px; }
+    }
+    @media (max-width: 560px) {
+      .providers__grid { grid-template-columns: 1fr; max-width: 420px; }
     }
     .provider { display: block; }
     .provider__portrait {
@@ -737,7 +743,7 @@
       border-radius: var(--radius-md);
       aspect-ratio: 4 / 5;
       background: var(--cream-warm);
-      margin-bottom: 1.6rem;
+      margin-bottom: 1.2rem;
     }
     .provider__portrait img {
       width: 100%; height: 100%; object-fit: cover;
@@ -758,40 +764,40 @@
     }
     .provider__portrait:hover::after { opacity: 1; }
 
-    .provider__meta { padding: 0 .2rem; }
+    .provider__meta { padding: 0 .1rem; }
     .provider__name {
       font-family: var(--serif);
       font-weight: 400;
-      font-size: clamp(1.4rem, 2vw, 1.85rem);
-      line-height: 1.1;
-      margin: 0 0 .6rem;
+      font-size: clamp(1.15rem, 1.5vw, 1.4rem);
+      line-height: 1.15;
+      margin: 0 0 .5rem;
       color: var(--ink);
     }
     .provider__role {
       display: block;
       font-family: var(--sans);
-      font-size: .68rem;
-      letter-spacing: .28em;
+      font-size: .62rem;
+      letter-spacing: .26em;
       text-transform: uppercase;
       color: var(--sage);
-      margin-bottom: .3rem;
+      margin-bottom: .25rem;
     }
     .provider__license {
       display: block;
       font-family: var(--serif);
       font-style: italic;
       font-weight: 300;
-      font-size: .92rem;
+      font-size: .82rem;
       color: var(--ink-soft);
-      margin-bottom: 1.1rem;
+      margin-bottom: .9rem;
     }
     .provider__meta p {
       font-family: var(--serif);
       font-weight: 400;
-      font-size: .98rem;
-      line-height: 1.55;
+      font-size: .88rem;
+      line-height: 1.5;
       color: var(--ink-soft);
-      margin: 0 0 1.3rem;
+      margin: 0 0 1rem;
       max-width: 32em;
     }
 
@@ -2682,7 +2688,7 @@
             <h3 class="provider__name">Evangeline Wilson</h3>
             <span class="provider__role">Associate Therapist</span>
             <span class="provider__license">California AMFT #163690</span>
-            <span class="provider__license" style="font-size:.72rem;opacity:.72;margin-top:-.3rem">Supervised by Enid Wilson, LMFT #149114</span>
+            <span class="provider__license" style="font-style:normal;margin-top:-.5rem">Supervised by Enid Wilson, LMFT #149114</span>
             <p>Evangeline specializes in perinatal mental health — supporting individuals and couples through infertility, pregnancy loss, grief, and the emotional landscape of parenting after loss. As a bereaved parent, she brings both professional expertise and personal understanding to this work.</p>
             <a href="#evangeline" class="provider__link" data-lightbox="lightbox-evangeline">View Profile</a>
           </div>
@@ -2696,7 +2702,7 @@
             <h3 class="provider__name">Cheryl Runkle</h3>
             <span class="provider__role">Associate Therapist</span>
             <span class="provider__license">California AMFT #161250 &middot; APCC #21829</span>
-            <span class="provider__license" style="font-size:.72rem;opacity:.72;margin-top:-.3rem">Supervised by Enid Wilson, LMFT #149114</span>
+            <span class="provider__license" style="font-style:normal;margin-top:-.5rem">Supervised by Enid Wilson, LMFT #149114</span>
             <p>Cheryl is a trauma-informed therapist integrating CBT and strengths-based approaches, with a particular focus on caregivers, individuals navigating major life transitions, and the military community. She is trained in EMDR.</p>
             <a href="#cheryl" class="provider__link" data-lightbox="lightbox-cheryl">View Profile</a>
           </div>
@@ -2888,7 +2894,8 @@
       <div class="lightbox__bio" data-lenis-prevent>
         <h3 class="lightbox__name" id="lb-evangeline-name">Evangeline Wilson, AMFT</h3>
         <span class="lightbox__role">Associate Therapist &nbsp;·&nbsp; California AMFT #163690</span>
-        <span class="lightbox__role" style="font-size:.72rem;opacity:.7;margin-top:-.3rem;display:block">Supervised by Enid Wilson, LMFT #149114</span>
+        <span class="lightbox__role" style="margin-top:.2rem;display:block">Supervised by Enid Wilson, LMFT #149114</span>
+        <span class="lightbox__rates">Session rate &nbsp;·&nbsp; $160</span>
         <p class="lead">Every path to parenthood is unique. As a bereaved parent, I bring both professional expertise and personal understanding to work with clients navigating infertility, pregnancy loss, grief, and parenting after loss. I&rsquo;m especially passionate about walking alongside individuals and couples through miscarriage and the unexpected emotional landscape of postpartum adjustment.</p>
         <p>Whether you&rsquo;re feeling hopeless, disconnected, anxious, or overwhelmed, together we can explore the emotions, decisions, and questions that arise along the way. My clinical approach is grounded in Solution-Focused Brief Therapy and attachment theory, delivered in a trauma-informed frame. I offer a collaborative, safe space where we can begin to process grief and recognize the resilience already within you.</p>
         <p>Whatever your journey to building your family looks like, you don&rsquo;t have to navigate it alone. Together, we can create space for healing, hope, and moving forward in a way that feels right for you.</p>
@@ -2908,7 +2915,8 @@
       <div class="lightbox__bio" data-lenis-prevent>
         <h3 class="lightbox__name" id="lb-cheryl-name">Cheryl Runkle, AMFT, APCC</h3>
         <span class="lightbox__role">Associate Therapist &nbsp;·&nbsp; California AMFT #161250 &nbsp;·&nbsp; APCC #21829</span>
-        <span class="lightbox__role" style="font-size:.72rem;opacity:.7;margin-top:-.3rem;display:block">Supervised by Enid Wilson, LMFT #149114</span>
+        <span class="lightbox__role" style="margin-top:.2rem;display:block">Supervised by Enid Wilson, LMFT #149114</span>
+        <span class="lightbox__rates">Session rate &nbsp;·&nbsp; $160</span>
         <p class="lead">Cheryl believes therapy is most effective when it is grounded in genuine connection, curiosity, and deep respect for each person&rsquo;s lived experience. Her approach is person-centered and relational, with a focus on understanding your unique story, strengths, and values. She strives to create a supportive, collaborative space where you feel truly heard, understood, and empowered to show up exactly as you are.</p>
         <p>Cheryl&rsquo;s therapeutic style is compassionate, thoughtful, and grounded in trauma-informed care. She integrates cognitive behavioral therapy (CBT) and strengths-based approaches to help clients better understand their thoughts, emotions, and patterns while building on the skills and resilience they already possess. She has experience supporting clients through trauma, life stressors, and challenging transitions, and she is trained in Eye Movement Desensitization and Reprocessing (EMDR).</p>
         <p>She has a particular interest in working with caregivers and individuals navigating major life transitions. As the surviving spouse of a disabled Navy veteran, she feels especially connected to and passionate about supporting military spouses and others within the military community.</p>
