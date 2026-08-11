@@ -546,6 +546,12 @@
       margin: 0 auto;
       align-items: start;
     }
+    @media (max-width: 960px) {
+      .team-grid { grid-template-columns: 1fr 1fr; max-width: 720px; }
+    }
+    @media (max-width: 640px) {
+      .team-grid { grid-template-columns: 1fr; max-width: 420px; }
+    }
 
     /* Tag pills */
     .provider-card__tags {
@@ -1058,7 +1064,7 @@
       "email": "Info@PinnacleCounselingGroup.com",
       "priceRange": "$160–$225",
       "currenciesAccepted": "USD",
-      "description": "Sacramento, California psychotherapy practice specializing in high-functioning anxiety, OCD (with ERP), eating disorders, modern relational and attachment-based therapy, couples counseling, and substance use treatment for adults. LGBTQ-affirming, veteran-friendly, and multicultural-attuned. Private-pay with select PPO coverage; superbills provided. Founded by Enid Wilson, LMFT.",
+      "description": "Sacramento, California psychotherapy practice specializing in high-functioning anxiety, OCD (with ERP), eating disorders, modern relational and attachment-based therapy, couples counseling, and substance use treatment for adults. LGBTQ-affirming, veteran-friendly, and multicultural-attuned. Private-pay and select PPO coverage including Aetna and Optum; superbills provided. Founded by Enid Wilson, LMFT.",
       "foundingDate": "2026",
       "founder": {
         "@id": "https://pinnaclecounselinggroup.com/#enid"
@@ -1565,7 +1571,7 @@
     });
   </script>
 
-  <script src="waitlist.js?v=4" defer></script>
+  <script src="waitlist.js?v=5" defer></script>
 </head>
 <body>
 
@@ -1631,7 +1637,7 @@
   <!-- LEDE -->
   <section class="lede-section">
     <p class="lede reveal">
-      Each clinician brings their own training and specialties — and our practice manager will help you find the <em>right match</em> based on what you're working on.
+      Each clinician brings their own training and specialties. Choose whose approach resonates and book a free consultation directly — or call/text (916) 990-2326 or email Info@PinnacleCounselingGroup.com for help finding the <em>right fit</em>.
     </p>
   </section>
 
@@ -1743,7 +1749,7 @@
       <div class="contact-card__inner">
         <div class="contact-card__lead">
           <h3>Find the <em>right fit</em>.</h3>
-          <p>Speak briefly with our practice manager about your goals. We'll help you identify the provider whose approach best aligns with what you need.</p>
+          <p>Book a free 15-minute consultation directly with the therapist you choose. If you'd like help selecting, call or text (916) 990-2326 or email Info@PinnacleCounselingGroup.com — our clinical director will help you find the right fit.</p>
         </div>
         <div class="contact-card__info">
           <div class="contact-card__detail">

@@ -53,7 +53,7 @@
     '  <button class="wl-popup__close" type="button" data-wl-popup-close aria-label="Dismiss">&#10005;</button>',
     '  <span class="wl-popup__eyebrow">Now Booking</span>',
     '  <h4 class="wl-popup__title">A free 15-minute <em>consultation</em>.</h4>',
-    '  <p class="wl-popup__sub">Meet with our practice manager to find the right therapist and starting point.</p>',
+    '  <p class="wl-popup__sub">Book a free 15-minute call directly with one of our therapists.</p>',
     '  <a class="wl-popup__cta" href="' + BOOKING_FALLBACK_URL + '"',
     '     data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1"',
     '     data-spwidget-scope-uri="pinnacle"',

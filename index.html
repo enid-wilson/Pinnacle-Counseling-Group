@@ -800,6 +800,11 @@
       margin: 0 0 1rem;
       max-width: 32em;
     }
+    @media (max-width: 960px) {
+      .provider__meta p { font-size: 1.02rem; line-height: 1.55; }
+      .provider__name { font-size: 1.4rem; }
+      .provider__license { font-size: .95rem; }
+    }
 
     /* View profile link (text link, not pill button) */
     .provider__link {
@@ -1832,7 +1837,7 @@
       "email": "Info@PinnacleCounselingGroup.com",
       "priceRange": "$160–$225",
       "currenciesAccepted": "USD",
-      "description": "Sacramento, California psychotherapy practice specializing in high-functioning anxiety, OCD (with ERP), eating disorders, modern relational and attachment-based therapy, couples counseling, and substance use treatment for adults. LGBTQ-affirming, veteran-friendly, and multicultural-attuned. Private-pay with select PPO coverage; superbills provided. Founded by Enid Wilson, LMFT.",
+      "description": "Sacramento, California psychotherapy practice specializing in high-functioning anxiety, OCD (with ERP), eating disorders, modern relational and attachment-based therapy, couples counseling, and substance use treatment for adults. LGBTQ-affirming, veteran-friendly, and multicultural-attuned. Private-pay and select PPO coverage including Aetna and Optum; superbills provided. Founded by Enid Wilson, LMFT.",
       "foundingDate": "2026",
       "founder": {
         "@id": "https://pinnaclecounselinggroup.com/#enid"
@@ -2398,7 +2403,7 @@
     });
   </script>
 
-  <script src="waitlist.js?v=4" defer></script>
+  <script src="waitlist.js?v=5" defer></script>
 </head>
 <body class="is-loading">
 
@@ -2558,92 +2563,7 @@
     </div>
   </section>
 
-  <!-- ========== CONSULTATION CTA (moved up) ========== -->
-  <section class="consult" id="consult">
-    <div class="consult__inner">
-      <span class="eyebrow reveal">Begin</span>
-      <h2 class="reveal reveal-delay-1">Schedule a <em>complimentary</em> consultation.</h2>
-      <p class="reveal reveal-delay-2">
-        A free 15-minute call with our practice manager. We'll discuss your goals, match you with the right clinician, and handle the logistics from there.
-      </p>
-      <a href="book.html" class="btn btn--clay reveal reveal-delay-3" data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1" data-spwidget-scope-uri="pinnacle" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind>
-        Book a Consultation
-      </a>
-    </div>
-  </section>
-
-  <!-- ========== QUOTE BREAK (sage band wraps the rounded photo) ========== -->
-  <div class="quotebreak-band" aria-label="Practice philosophy">
-    <div class="quotebreak">
-      <img loading="lazy" decoding="async" src="tim-schmidbauer-9wPBLs1ep7A-unsplash.jpg?v=1" alt="Soft daylight on a quiet interior — Pinnacle Counseling Group" />
-      <div class="quotebreak__spot" aria-hidden="true"></div>
-      <div class="quotebreak__inner reveal">
-        <p class="quotebreak__quote">
-          "We meet you <em>as a whole person</em> — never as a problem to be solved."
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ========== WHY PINNACLE PILLARS (moved down) ========== -->
-  <section class="pillars" id="about">
-    <div class="container">
-      <header class="pillars__header">
-        <div class="reveal">
-          <span class="eyebrow">Why Pinnacle</span>
-          <h2 class="display">What sets our <em>therapy practice</em> apart.</h2>
-        </div>
-        <p class="reveal reveal-delay-1">
-          Three commitments that shape every appointment and every client relationship we hold.
-        </p>
-      </header>
-
-      <div class="pillars__grid">
-        <article class="pillar reveal">
-          <span class="pillar__num">— 01</span>
-          <h3 class="pillar__title">Clinical excellence, <em>human-centered</em></h3>
-          <p>
-            We see you as a whole person, not a collection of symptoms to manage. Our work pairs rigorous clinical integrity with genuine respect for your specific context — so the time you spend with us leads to real clarity and lasting change.
-          </p>
-        </article>
-
-        <article class="pillar reveal reveal-delay-1">
-          <span class="pillar__num">— 02</span>
-          <h3 class="pillar__title">Discretion and <em>hospitality</em></h3>
-          <p>
-            Your experience here matters. From the design of our offices to our seamless intake process, every detail reflects our commitment to privacy, warmth, professionalism, and ease.
-          </p>
-        </article>
-
-        <article class="pillar reveal reveal-delay-2">
-          <span class="pillar__num">— 03</span>
-          <h3 class="pillar__title">Invested in our <em>community</em></h3>
-          <p>
-            Our commitment extends beyond the individual to the greater Sacramento region. We support the well-being of families, institutions, and the next generation throughout Sacramento, Gold River, Carmichael, Granite Bay, Folsom, El Dorado Hills, Roseville, and Loomis.
-          </p>
-        </article>
-      </div>
-
-      <div class="pillars__cta reveal">
-        <a href="about.html" class="btn">About Pinnacle</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== BRAND STATEMENT (second photo break) ========== -->
-  <div class="quotebreak-band quotebreak-band--cream" aria-label="The meaning of Pinnacle">
-    <div class="quotebreak quotebreak--statement">
-      <img loading="lazy" decoding="async" src="brand-statement-2.jpg?v=1" alt="Pinnacle Counseling Group practice environment" />
-      <div class="quotebreak__spot" aria-hidden="true"></div>
-      <div class="quotebreak__inner reveal">
-        <p class="quotebreak__quote">
-          The name <em>Pinnacle</em> represents more than a peak — it represents the vantage point, the clinical perspective necessary to see your life from a new height.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- ========== PROVIDERS TEASER ========== -->
+  <!-- ========== PROVIDERS TEASER (moved up — appears right after Services) ========== -->
   <section class="providers" id="providers">
     <div class="container">
       <header class="providers__header">
@@ -2738,6 +2658,91 @@
       </div>
     </div>
   </section>
+
+  <!-- ========== CONSULTATION CTA (moved up) ========== -->
+  <section class="consult" id="consult">
+    <div class="consult__inner">
+      <span class="eyebrow reveal">Begin</span>
+      <h2 class="reveal reveal-delay-1">Schedule a <em>complimentary</em> consultation.</h2>
+      <p class="reveal reveal-delay-2">
+        Book a free 15-minute call directly with any of our therapists. To speak with our clinical director or for help finding the right fit, call or text (916) 990-2326 or email Info@PinnacleCounselingGroup.com.
+      </p>
+      <a href="book.html" class="btn btn--clay reveal reveal-delay-3" data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1" data-spwidget-scope-uri="pinnacle" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind>
+        Book a Consultation
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== QUOTE BREAK (sage band wraps the rounded photo) ========== -->
+  <div class="quotebreak-band" aria-label="Practice philosophy">
+    <div class="quotebreak">
+      <img loading="lazy" decoding="async" src="tim-schmidbauer-9wPBLs1ep7A-unsplash.jpg?v=1" alt="Soft daylight on a quiet interior — Pinnacle Counseling Group" />
+      <div class="quotebreak__spot" aria-hidden="true"></div>
+      <div class="quotebreak__inner reveal">
+        <p class="quotebreak__quote">
+          "We meet you <em>as a whole person</em> — never as a problem to be solved."
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== WHY PINNACLE PILLARS (moved down) ========== -->
+  <section class="pillars" id="about">
+    <div class="container">
+      <header class="pillars__header">
+        <div class="reveal">
+          <span class="eyebrow">Why Pinnacle</span>
+          <h2 class="display">What sets our <em>therapy practice</em> apart.</h2>
+        </div>
+        <p class="reveal reveal-delay-1">
+          Three commitments that shape every appointment and every client relationship we hold.
+        </p>
+      </header>
+
+      <div class="pillars__grid">
+        <article class="pillar reveal">
+          <span class="pillar__num">— 01</span>
+          <h3 class="pillar__title">Clinical excellence, <em>human-centered</em></h3>
+          <p>
+            We see you as a whole person, not a collection of symptoms to manage. Our work pairs rigorous clinical integrity with genuine respect for your specific context — so the time you spend with us leads to real clarity and lasting change.
+          </p>
+        </article>
+
+        <article class="pillar reveal reveal-delay-1">
+          <span class="pillar__num">— 02</span>
+          <h3 class="pillar__title">Discretion and <em>hospitality</em></h3>
+          <p>
+            Your experience here matters. From the design of our offices to our seamless intake process, every detail reflects our commitment to privacy, warmth, professionalism, and ease.
+          </p>
+        </article>
+
+        <article class="pillar reveal reveal-delay-2">
+          <span class="pillar__num">— 03</span>
+          <h3 class="pillar__title">Invested in our <em>community</em></h3>
+          <p>
+            Our commitment extends beyond the individual to the greater Sacramento region. We support the well-being of families, institutions, and the next generation throughout Sacramento, Gold River, Carmichael, Granite Bay, Folsom, El Dorado Hills, Roseville, and Loomis.
+          </p>
+        </article>
+      </div>
+
+      <div class="pillars__cta reveal">
+        <a href="about.html" class="btn">About Pinnacle</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BRAND STATEMENT (second photo break) ========== -->
+  <div class="quotebreak-band quotebreak-band--cream" aria-label="The meaning of Pinnacle">
+    <div class="quotebreak quotebreak--statement">
+      <img loading="lazy" decoding="async" src="brand-statement-2.jpg?v=1" alt="Pinnacle Counseling Group practice environment" />
+      <div class="quotebreak__spot" aria-hidden="true"></div>
+      <div class="quotebreak__inner reveal">
+        <p class="quotebreak__quote">
+          The name <em>Pinnacle</em> represents more than a peak — it represents the vantage point, the clinical perspective necessary to see your life from a new height.
+        </p>
+      </div>
+    </div>
+  </div>
 
   <!-- ========== FOOTER (light cream with PC_Black monogram) ========== -->
   </main>
