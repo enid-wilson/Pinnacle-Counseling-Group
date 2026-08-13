@@ -74,7 +74,7 @@
     .nav__item-dropdown > a { padding-right: .2rem; display: inline-flex; align-items: center; }
     .nav__item-dropdown::after { content: ""; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); width: 100%; height: 18px; }
     .nav__dropdown { position: absolute; top: calc(100% + 18px); left: 50%; transform: translateX(-50%) translateY(-8px); background: rgba(255, 255, 255, 0.96); backdrop-filter: saturate(140%) blur(12px); border: 1px solid var(--line-soft); border-radius: var(--radius-md); padding: .9rem 0; min-width: 270px; box-shadow: 0 24px 50px -22px rgba(47,53,53,.22); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .45s var(--ease), transform .45s var(--ease), visibility .45s var(--ease); z-index: 51; }
-    .nav__dropdown a { display: block; padding: .85rem 1.7rem; font-family: var(--serif); font-weight: 300; font-size: 1.04rem; color: var(--ink); }
+    .nav__dropdown a { display: block; padding: .85rem 1.7rem; font-family: var(--serif); font-weight: 300; font-size: 1.04rem; letter-spacing: 0; text-transform: none; color: var(--ink); }
     .nav__dropdown a::after { display: none; }
     .nav__dropdown a:hover { color: var(--clay-deep); background: rgba(229, 223, 211, 0.45); padding-left: 2rem; }
     .nav__item-dropdown:hover .nav__dropdown, .nav__item-dropdown:focus-within .nav__dropdown { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
@@ -389,28 +389,6 @@
         <p class="reveal">The psychological weight of infertility, pregnancy loss, and reproductive grief is well documented and often underestimated by people outside it. Research from Harvard Medical School&rsquo;s Alice Domar found that women experiencing infertility report levels of anxiety and depression comparable to those seen in patients with cancer or HIV &mdash; a comparison that surprises almost everyone the first time they hear it, and validates almost everyone who has lived it. Perinatal mental health is its own clinical specialty, distinct from general anxiety or depression care, because the terrain it covers &mdash; identity, embodiment, grief, and hope, often held simultaneously &mdash; is not something general practice always knows how to hold.</p>
       </div>
     </section>
-
-    <section class="therapist-spotlight">
-      <div class="therapist-spotlight__inner">
-        <div class="therapist-spotlight__photo reveal">
-          <img loading="lazy" decoding="async" src="evangeline-wilson.jpg?v=1" alt="Evangeline Wilson" />
-        </div>
-        <div class="therapist-spotlight__meta">
-          <span class="eyebrow reveal">Featured Clinician</span>
-          <h2 class="reveal reveal-delay-1">Evangeline Wilson, <em>AMFT</em></h2>
-          <span class="therapist-spotlight__license reveal reveal-delay-1">California AMFT #163690</span>
-          <span class="therapist-spotlight__license reveal reveal-delay-1">Supervised by Enid Wilson, LMFT #149114</span>
-          <p class="reveal reveal-delay-2">Evangeline specializes in perinatal mental health &mdash; supporting individuals and couples through infertility, pregnancy loss, grief, and the emotional landscape of parenting after loss. As a bereaved parent, she brings both professional expertise and personal understanding to this work. Her clinical approach is grounded in Solution-Focused Brief Therapy and attachment theory, delivered in a trauma-informed frame.</p>
-          <div class="therapist-spotlight__cta reveal reveal-delay-3">
-            <a href="book.html" class="btn btn--clay" data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1" data-spwidget-scope-uri="pinnacle" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind>Book with Evangeline</a>
-            <p class="therapist-spotlight__contact">
-              Reach out directly: <a href="mailto:evangeline@pinnaclecounselinggroup.com">evangeline@pinnaclecounselinggroup.com</a><br>
-              <a href="providers.html#evangeline">Read full bio &rarr;</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
     <section class="topics">
       <header class="topics__header">
         <span class="eyebrow reveal">Support <em>With</em></span>
@@ -474,6 +452,28 @@
           <li>Sacks, A. &ldquo;The Birth of a Mother.&rdquo; <em>The New York Times</em>, May 2017.</li>
           <li>Hoekzema, E. et al. &ldquo;Pregnancy leads to long-lasting changes in human brain structure.&rdquo; <em>Nature Neuroscience</em>, 20(2), 2017.</li>
         </ul>
+      </div>
+    </section>
+
+    <section class="therapist-spotlight">
+      <div class="therapist-spotlight__inner">
+        <div class="therapist-spotlight__photo reveal">
+          <img loading="lazy" decoding="async" src="evangeline-wilson.jpg?v=1" alt="Evangeline Wilson" />
+        </div>
+        <div class="therapist-spotlight__meta">
+          <span class="eyebrow reveal">Meet Your Therapist</span>
+          <h2 class="reveal reveal-delay-1">Evangeline Wilson, <em>AMFT</em></h2>
+          <span class="therapist-spotlight__license reveal reveal-delay-1">California AMFT #163690</span>
+          <span class="therapist-spotlight__license reveal reveal-delay-1">Supervised by Enid Wilson, LMFT #149114</span>
+          <p class="reveal reveal-delay-2">Evangeline specializes in perinatal mental health &mdash; supporting individuals and couples through infertility, pregnancy loss, grief, and the emotional landscape of parenting after loss. As a bereaved parent, she brings both professional expertise and personal understanding to this work. Her clinical approach is grounded in Solution-Focused Brief Therapy and attachment theory, delivered in a trauma-informed frame.</p>
+          <div class="therapist-spotlight__cta reveal reveal-delay-3">
+            <a href="book.html" class="btn btn--clay" data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1" data-spwidget-scope-uri="pinnacle" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind>Book with Evangeline</a>
+            <p class="therapist-spotlight__contact">
+              Reach out directly: <a href="mailto:evangeline@pinnaclecounselinggroup.com">evangeline@pinnaclecounselinggroup.com</a><br>
+              <a href="providers.html#evangeline">Read full bio &rarr;</a>
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 

@@ -74,7 +74,7 @@
     .nav__item-dropdown > a { padding-right: .2rem; display: inline-flex; align-items: center; }
     .nav__item-dropdown::after { content: ""; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); width: 100%; height: 18px; }
     .nav__dropdown { position: absolute; top: calc(100% + 18px); left: 50%; transform: translateX(-50%) translateY(-8px); background: rgba(255, 255, 255, 0.96); backdrop-filter: saturate(140%) blur(12px); border: 1px solid var(--line-soft); border-radius: var(--radius-md); padding: .9rem 0; min-width: 270px; box-shadow: 0 24px 50px -22px rgba(47,53,53,.22); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .45s var(--ease), transform .45s var(--ease), visibility .45s var(--ease); z-index: 51; }
-    .nav__dropdown a { display: block; padding: .85rem 1.7rem; font-family: var(--serif); font-weight: 300; font-size: 1.04rem; color: var(--ink); }
+    .nav__dropdown a { display: block; padding: .85rem 1.7rem; font-family: var(--serif); font-weight: 300; font-size: 1.04rem; letter-spacing: 0; text-transform: none; color: var(--ink); }
     .nav__dropdown a::after { display: none; }
     .nav__dropdown a:hover { color: var(--clay-deep); background: rgba(229, 223, 211, 0.45); padding-left: 2rem; }
     .nav__item-dropdown:hover .nav__dropdown, .nav__item-dropdown:focus-within .nav__dropdown { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
@@ -389,28 +389,6 @@
         <p class="reveal">A client can understand, intellectually, that they are safe now &mdash; and still find their heart rate spiking at a sound, a smell, or a tone of voice that resembles an earlier event. That mismatch is trauma&rsquo;s clinical signature: the mind knows the story is over; the body has not caught up. EMDR (Eye Movement Desensitization and Reprocessing) and brainspotting are two of the most researched body-based trauma modalities available, both grounded in the same underlying principle: the memory needs to be reprocessed physiologically, not just discussed.</p>
       </div>
     </section>
-
-    <section class="therapist-spotlight">
-      <div class="therapist-spotlight__inner">
-        <div class="therapist-spotlight__photo reveal">
-          <img loading="lazy" decoding="async" src="cheryl-runkle.jpg?v=1" alt="Cheryl Runkle" />
-        </div>
-        <div class="therapist-spotlight__meta">
-          <span class="eyebrow reveal">Featured Clinician</span>
-          <h2 class="reveal reveal-delay-1">Cheryl Runkle, <em>AMFT, APCC</em></h2>
-          <span class="therapist-spotlight__license reveal reveal-delay-1">California AMFT #161250 &middot; APCC #21829</span>
-          <span class="therapist-spotlight__license reveal reveal-delay-1">Supervised by Enid Wilson, LMFT #149114</span>
-          <p class="reveal reveal-delay-2">Cheryl is a trauma-informed therapist integrating CBT, EMDR, and strengths-based approaches. She has a particular focus on caregivers, individuals navigating major life transitions, and the military community. As the surviving spouse of a disabled Navy veteran, she brings personal understanding to her work with military spouses and others in the military community.</p>
-          <div class="therapist-spotlight__cta reveal reveal-delay-3">
-            <a href="book.html" class="btn btn--clay" data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1" data-spwidget-scope-uri="pinnacle" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind>Book with Cheryl</a>
-            <p class="therapist-spotlight__contact">
-              Reach out directly: <a href="tel:+19165428507">(916) 542-8507</a> &middot; <a href="mailto:cheryl@pinnaclecounselinggroup.com">cheryl@pinnaclecounselinggroup.com</a><br>
-              <a href="providers.html#cheryl">Read full bio &rarr;</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
     <section class="topics">
       <header class="topics__header">
         <span class="eyebrow reveal">Support <em>With</em></span>
@@ -474,6 +452,28 @@
           <li>&ldquo;Efficacy of Eye Movement Desensitization and Reprocessing (EMDR) Therapy in Reducing Post-Traumatic Symptoms.&rdquo; <em>Frontiers in Psychology</em>, 2021.</li>
           <li>&ldquo;Brainspotting: A New Brain-Based Psychotherapy Approach.&rdquo; <em>Journal of Neurology &amp; Neuroscience</em>, 2020.</li>
         </ul>
+      </div>
+    </section>
+
+    <section class="therapist-spotlight">
+      <div class="therapist-spotlight__inner">
+        <div class="therapist-spotlight__photo reveal">
+          <img loading="lazy" decoding="async" src="cheryl-runkle.jpg?v=1" alt="Cheryl Runkle" />
+        </div>
+        <div class="therapist-spotlight__meta">
+          <span class="eyebrow reveal">Meet Your Therapist</span>
+          <h2 class="reveal reveal-delay-1">Cheryl Runkle, <em>AMFT, APCC</em></h2>
+          <span class="therapist-spotlight__license reveal reveal-delay-1">California AMFT #161250 &middot; APCC #21829</span>
+          <span class="therapist-spotlight__license reveal reveal-delay-1">Supervised by Enid Wilson, LMFT #149114</span>
+          <p class="reveal reveal-delay-2">Cheryl is a trauma-informed therapist integrating CBT, EMDR, and strengths-based approaches. She has a particular focus on caregivers, individuals navigating major life transitions, and the military community. As the surviving spouse of a disabled Navy veteran, she brings personal understanding to her work with military spouses and others in the military community.</p>
+          <div class="therapist-spotlight__cta reveal reveal-delay-3">
+            <a href="book.html" class="btn btn--clay" data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1" data-spwidget-scope-uri="pinnacle" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind>Book with Cheryl</a>
+            <p class="therapist-spotlight__contact">
+              Reach out directly: <a href="tel:+19165428507">(916) 542-8507</a> &middot; <a href="mailto:cheryl@pinnaclecounselinggroup.com">cheryl@pinnaclecounselinggroup.com</a><br>
+              <a href="providers.html#cheryl">Read full bio &rarr;</a>
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
