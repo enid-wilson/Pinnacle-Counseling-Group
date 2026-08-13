@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Therapy for Veterans & Military Families — Sacramento | Pinnacle Counseling Group</title>
-  <meta name="description" content="Therapy for veterans, active-duty service members, and military families in Sacramento — reintegration, marriage, family adjustment, grief, and moral injury." />
+  <title>Clinical Specialties — Sacramento Therapy | Pinnacle Counseling Group</title>
+  <meta name="description" content="Explore the clinical specialties at Pinnacle Counseling Group in Sacramento — trauma (EMDR & brainspotting), perinatal mental health, motherhood, adoption, veterans & military families, and more." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,18 +15,18 @@
   <link rel="icon" type="image/png" href="PC_Black%20PC%20Logo_Asset%204%20small.png?v=1" />
   <link rel="apple-touch-icon" href="PC_Black%20PC%20Logo_Asset%204.png?v=1" />
 
-  <link rel="canonical" href="https://pinnaclecounselinggroup.com/veterans-military-families.html" />
+  <link rel="canonical" href="https://pinnaclecounselinggroup.com/specialties.html" />
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="Therapy for Veterans & Military Families — Sacramento | Pinnacle Counseling Group" />
-  <meta property="og:description" content="Therapy for veterans, active-duty service members, and military families in Sacramento — reintegration, marriage, family adjustment, grief, and moral injury." />
-  <meta property="og:url" content="https://pinnaclecounselinggroup.com/veterans-military-families.html" />
+  <meta property="og:title" content="Clinical Specialties — Sacramento Therapy | Pinnacle Counseling Group" />
+  <meta property="og:description" content="Explore the clinical specialties at Pinnacle Counseling Group in Sacramento — trauma (EMDR & brainspotting), perinatal mental health, motherhood, adoption, veterans & military families, and more." />
+  <meta property="og:url" content="https://pinnaclecounselinggroup.com/specialties.html" />
   <meta property="og:image" content="https://pinnaclecounselinggroup.com/social-preview.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Pinnacle Counseling Group logo over a serene lake landscape" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Therapy for Veterans & Military Families — Sacramento | Pinnacle Counseling Group" />
-  <meta name="twitter:description" content="Therapy for veterans, active-duty service members, and military families in Sacramento — reintegration, marriage, family adjustment, grief, and moral injury." />
+  <meta name="twitter:title" content="Clinical Specialties — Sacramento Therapy | Pinnacle Counseling Group" />
+  <meta name="twitter:description" content="Explore the clinical specialties at Pinnacle Counseling Group in Sacramento — trauma (EMDR & brainspotting), perinatal mental health, motherhood, adoption, veterans & military families, and more." />
   <meta name="twitter:image" content="https://pinnaclecounselinggroup.com/social-preview.jpg" />
   <meta name="twitter:image:alt" content="Pinnacle Counseling Group logo over a serene lake landscape" />
 
@@ -220,6 +220,85 @@
     .reveal-delay-2 { transition-delay: .3s; }
     .reveal-delay-3 { transition-delay: .45s; }
     @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+  
+    /* === Specialties hub — grouped specialty cards === */
+    .specialty-group {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: clamp(3rem, 5vw, 4rem) var(--pad-x);
+    }
+    .specialty-group + .specialty-group { padding-top: 0; }
+    .specialty-group__head {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto clamp(2rem, 3.5vw, 3rem);
+    }
+    .specialty-group__head h2 {
+      font-family: var(--serif); font-weight: 300;
+      font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+      line-height: 1.15;
+      color: var(--ink);
+      margin: .5rem 0 .8rem;
+      letter-spacing: -.005em;
+    }
+    .specialty-group__head h2 em { font-style: italic; color: var(--clay); font-weight: 300; }
+    .specialty-group__head p {
+      font-family: var(--serif); font-weight: 400;
+      font-size: 1.05rem; line-height: 1.6;
+      color: var(--ink-soft);
+      margin: 0;
+    }
+    .specialty-group__grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(1.2rem, 2.5vw, 2rem);
+    }
+    @media (max-width: 720px) {
+      .specialty-group__grid { grid-template-columns: 1fr; }
+    }
+    .specialty-card {
+      display: block;
+      background: var(--white);
+      padding: clamp(1.8rem, 3vw, 2.4rem);
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-md);
+      transition: transform .55s var(--ease), border-color .55s var(--ease), box-shadow .55s var(--ease);
+      text-decoration: none;
+      color: inherit;
+    }
+    .specialty-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--sage);
+      box-shadow: 0 22px 50px -28px rgba(47, 53, 53, .2);
+    }
+    .specialty-card h3 {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(1.3rem, 2vw, 1.55rem);
+      line-height: 1.2;
+      color: var(--ink);
+      margin: 0 0 .7rem;
+      letter-spacing: -.005em;
+    }
+    .specialty-card p {
+      font-family: var(--serif); font-weight: 400;
+      font-size: .98rem; line-height: 1.55;
+      color: var(--ink-soft);
+      margin: 0 0 1.1rem;
+    }
+    .specialty-card__more {
+      display: inline-flex; align-items: center; gap: .55rem;
+      font-family: var(--sans); font-size: .74rem;
+      font-weight: 400; letter-spacing: .26em;
+      text-transform: uppercase;
+      color: var(--clay);
+      transition: gap .35s var(--ease), color .35s var(--ease);
+    }
+    .specialty-card__more::after {
+      content: ""; width: 14px; height: 1px; background: currentColor;
+      transition: width .35s var(--ease);
+    }
+    .specialty-card:hover .specialty-card__more { color: var(--clay-deep); gap: .8rem; }
+
   </style>
 
   <script type="application/ld+json">
@@ -228,12 +307,12 @@
     "@graph": [
       {
         "@type": "MedicalWebPage",
-        "@id": "https://pinnaclecounselinggroup.com/veterans-military-families.html",
-        "url": "https://pinnaclecounselinggroup.com/veterans-military-families.html",
-        "name": "Therapy for Veterans & Military Families — Sacramento | Pinnacle Counseling Group",
-        "description": "Therapy for veterans, active-duty service members, and military families in Sacramento — reintegration, marriage, family adjustment, grief, and moral injury.",
+        "@id": "https://pinnaclecounselinggroup.com/specialties.html",
+        "url": "https://pinnaclecounselinggroup.com/specialties.html",
+        "name": "Adoption-Competent Therapy — Sacramento | Pinnacle Counseling Group",
+        "description": "Explore the clinical specialties at Pinnacle Counseling Group in Sacramento — trauma (EMDR & brainspotting), perinatal mental health, motherhood, adoption, veterans & military families, and more.",
         "isPartOf": { "@type": "WebSite", "name": "Pinnacle Counseling Group", "url": "https://pinnaclecounselinggroup.com/" },
-        "about": { "@type": "MedicalSpecialty", "name": "Military Family Psychology" },
+        "about": { "@type": "MedicalBusiness", "name": "Pinnacle Counseling Group Specialties" },
         "publisher": { "@type": "MentalHealthCenter", "name": "Pinnacle Counseling Group", "url": "https://pinnaclecounselinggroup.com/", "logo": "https://pinnaclecounselinggroup.com/PC_Black%20PC%20Logo_Asset%204.png" }
       },
       {
@@ -241,7 +320,7 @@
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://pinnaclecounselinggroup.com/" },
           { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://pinnaclecounselinggroup.com/services.html" },
-          { "@type": "ListItem", "position": 3, "name": "Veterans and military families", "item": "https://pinnaclecounselinggroup.com/veterans-military-families.html" }
+          { "@type": "ListItem", "position": 3, "name": "Clinical specialties", "item": "https://pinnaclecounselinggroup.com/specialties.html" }
         ]
       }
     ]
@@ -310,100 +389,78 @@
 
     <section class="hero">
       <div class="hero__inner">
-        <span class="eyebrow reveal">Specialty Focus</span>
-        <h1 class="hero__title reveal reveal-delay-1">Veterans and <em>military families</em>.</h1>
-        <p class="hero__subtitle reveal reveal-delay-2">The full range of experiences military life carries — reintegration, marriage, family adjustment, career transitions, grief, and identity — treated as the whole system it is.</p>
+        <span class="eyebrow reveal">Our Specialties</span>
+        <h1 class="hero__title reveal reveal-delay-1">Clinical <em>specialties</em>.</h1>
+        <p class="hero__subtitle reveal reveal-delay-2">Areas of specialized clinical care at Pinnacle Counseling Group — organized by the life terrain each addresses. Every specialty page is written for both prospective clients and researchers, with the clinical depth to match what the work actually asks.</p>
       </div>
     </section>
 
     <section class="lede-section">
-      <p class="lede reveal">The clinical picture of military life is <strong>wider than any single diagnosis.</strong> Reintegration, marital strain, career transitions, grief, and the invisible weight family members carry — each deserves clinical attention in its own right.</p>
+      <p class="lede reveal">We work across a range of clinical territories &mdash; but <strong>each specialty carries its own literature, its own techniques, and its own conditions for meaningful change.</strong> These pages describe how we hold each one.</p>
     </section>
 
-    <section class="intro-section">
-      <div class="intro-section__inner">
-        <p class="reveal">For much of its clinical history, therapy for veterans was narrowed to a single diagnosis and a single family member: PTSD, treated individually, with everyone else in the household treated as a bystander. That framing has shifted substantially. The Department of Veterans Affairs&rsquo; National Center for PTSD now maintains a formal clinical literature on family involvement, and recent research is clear that the concerns military life produces &mdash; reintegration challenges, career transitions, marital strain, children&rsquo;s adjustment, grief, moral injury, and yes, sometimes PTSD &mdash; are best understood as a <strong>family system</strong>, not one person&rsquo;s diagnosis.</p>
-      </div>
-    </section>
-
-    <section class="topics">
-      <header class="topics__header">
-        <span class="eyebrow reveal">Support <em>With</em></span>
-        <span class="ornament reveal reveal-delay-1" aria-hidden="true">&#10038;</span>
-        <h2 class="reveal reveal-delay-1">Areas of <em>focus</em>.</h2>
+    <section class="specialty-group">
+      <header class="specialty-group__head">
+        <h2 class="reveal">Perinatal &amp; Family Formation</h2>
+        <p class="reveal reveal-delay-1">Care for the identity shifts, losses, and transitions of building a family — before, during, and after.</p>
       </header>
-      <div class="topics__grid">
-        <article class="topic reveal">
-          <h3>Reintegration &amp; Life Transitions</h3>
-          <p>Coming home from deployment, transitioning out of active duty, or shifting from military to civilian career. <strong>Identity renegotiation</strong> after years of service structures that no longer apply.</p>
-        </article>
-        <article class="topic reveal reveal-delay-2">
-          <h3>Marriage &amp; Partnership Strain</h3>
-          <p>The specific pressures military life places on relationships &mdash; deployments, PCS moves, workload, extended separations, and the difficulty of resuming shared daily life after time apart.</p>
-        </article>
-        <article class="topic reveal reveal-delay-3">
-          <h3>Children &amp; Family Adjustment</h3>
-          <p>Kids in military families absorb what the adults are carrying, sometimes through role behavior that doesn&rsquo;t match their developmental stage &mdash; a child quietly becoming the household&rsquo;s emotional stabilizer at an age when that isn&rsquo;t theirs to carry.</p>
-        </article>
-        <article class="topic reveal">
-          <h3>Grief &amp; Loss</h3>
-          <p>Loss of comrades, loss of identity when a career ends, loss of physical capacity from injury, loss of the assumed future. Grief in military life is often complex, delayed, and layered.</p>
-        </article>
-        <article class="topic reveal reveal-delay-2">
-          <h3>Moral Injury &amp; Invisible Wounds</h3>
-          <p>The distinct psychological weight of acts done, witnessed, or failed to prevent that violate deeply held moral beliefs &mdash; <strong>clinically distinct from PTSD</strong>, and often unaddressed by treatment focused on trauma symptoms alone.</p>
-        </article>
-        <article class="topic reveal reveal-delay-3">
-          <h3>Spouse &amp; Caregiver Support</h3>
-          <p>Military spouses often absorb caregiving roles that reshape their own identity and daily functioning, alongside social isolation that mirrors the caregiver-burden literature in other chronic conditions. Their experience is <em>clinically significant in its own right</em>.</p>
-        </article>
-        <article class="topic reveal">
-          <h3>PTSD (When Present)</h3>
-          <p>Evidence-based treatment for PTSD when it&rsquo;s part of the picture &mdash; individual work with the servicemember alongside couples and family approaches, because the research now shows what clinicians have long observed.</p>
-        </article>
-        <article class="topic reveal reveal-delay-2">
-          <h3>Career &amp; Purpose</h3>
-          <p>For those transitioning out of service into civilian work &mdash; the search for equivalent meaning, structure, and community. Career transitions in military life carry weight that civilian career shifts rarely do.</p>
-        </article>
+      <div class="specialty-group__grid">
+        <a class="specialty-card reveal" href="perinatal-mental-health.html">
+          <h3>Perinatal Mental Health</h3>
+          <p>Fertility, pregnancy loss, grief, and postpartum support for individuals and couples — with Evangeline Wilson, AMFT.</p>
+          <span class="specialty-card__more">Read more</span>
+        </a>
+        <a class="specialty-card reveal" href="motherhood.html">
+          <h3>Motherhood at Every Stage</h3>
+          <p>Matrescence-informed therapy for mothers — postpartum through the identity shifts of later motherhood.</p>
+          <span class="specialty-card__more">Read more</span>
+        </a>
+        <a class="specialty-card reveal" href="infertility.html">
+          <h3>Fertility &amp; Reproductive Mental Health</h3>
+          <p>Individual and couples therapy for fertility struggles, pregnancy loss, and reproductive grief.</p>
+          <span class="specialty-card__more">Read more</span>
+        </a>
+        <a class="specialty-card reveal" href="adoption.html">
+          <h3>Adoption-Competent Therapy</h3>
+          <p>For adult adoptees, adoptive parents, and adoptive families — grounded in current attachment research.</p>
+          <span class="specialty-card__more">Read more</span>
+        </a>
       </div>
     </section>
-
-    <section class="approach">
-      <header class="approach__header">
-        <span class="eyebrow reveal">Our Approach</span>
-        <span class="ornament reveal reveal-delay-1" aria-hidden="true">&#10038;</span>
-        <h2 class="reveal reveal-delay-1">How we <em>work</em>.</h2>
+    <section class="specialty-group">
+      <header class="specialty-group__head">
+        <h2 class="reveal">Trauma &amp; Life Transitions</h2>
+        <p class="reveal reveal-delay-1">Body-based, evidence-informed care for what the nervous system carries after a hard chapter.</p>
       </header>
-      <div class="approach__grid">
-        <article class="approach__card reveal">
-          <span class="approach__num">— 01</span>
-          <h3>Beyond the PTSD <em>stereotype</em></h3>
-          <p>Military life produces a wide range of concerns &mdash; reintegration, marriage, identity, grief, moral injury, family adjustment. PTSD is one possibility among many; treating it as the default framing misses <strong>most of what actually shows up</strong>.</p>
-        </article>
-        <article class="approach__card reveal reveal-delay-2">
-          <span class="approach__num">— 02</span>
-          <h3>Family-systems <em>perspective</em></h3>
-          <p>PTSD, if present, doesn&rsquo;t stay with one person &mdash; and neither does deployment strain, career transition, or grief. Modern research is clear that <strong>the whole system responds together</strong>, and effective care treats it that way.</p>
-        </article>
-        <article class="approach__card reveal reveal-delay-3">
-          <span class="approach__num">— 03</span>
-          <h3>Evidence-based, <em>full-spectrum</em> care</h3>
-          <p>Individual work for the servicemember; couples work that treats a partner&rsquo;s experience as clinically significant in its own right; family-level attention to how children are adapting. Approaches include Structured Approach Therapy, ADAPT, EMDR when trauma is present, and grief-informed care.</p>
-        </article>
+      <div class="specialty-group__grid">
+        <a class="specialty-card reveal" href="trauma-therapy.html">
+          <h3>Trauma Therapy &mdash; EMDR &amp; Brainspotting</h3>
+          <p>EMDR, brainspotting, and integrated trauma-informed care — with Cheryl Runkle, AMFT, APCC.</p>
+          <span class="specialty-card__more">Read more</span>
+        </a>
+        <a class="specialty-card reveal" href="veterans-military-families.html">
+          <h3>Veterans &amp; Military Families</h3>
+          <p>Family-systems care for veterans, active-duty service members, and their families — reintegration, marriage, grief, moral injury.</p>
+          <span class="specialty-card__more">Read more</span>
+        </a>
       </div>
     </section>
-
-    <section class="sources-section">
-      <div class="sources-section__inner">
-        <span class="eyebrow">Research Cited</span>
-        <ul class="sources-list">
-          <li>Thompson-Hollands, J. et al. &ldquo;Family involvement in PTSD treatment: Perspectives from a nationwide sample of VHA clinicians.&rdquo; <em>Administration and Policy in Mental Health</em>, 2022.</li>
-          <li>&ldquo;Mental Health Therapy for Veterans with PTSD as a Family Affair.&rdquo; PMC, 2023.</li>
-          <li>Sautter, F.J. et al. &ldquo;Efficacy of structured approach therapy in reducing PTSD in returning Veterans.&rdquo; Randomized clinical trial, 2015.</li>
-          <li>Gewirtz, A.H. et al. &ldquo;Helping military families through the deployment process: Strategies to support parenting.&rdquo; <em>Professional Psychology: Research and Practice</em>, 2011.</li>
-          <li>&ldquo;Posttraumatic Stress Disorder and Military-Connected Families: The Relevance of a Family-Centered Approach.&rdquo; PMC, 2019.</li>
-          <li>Litz, B.T. et al. &ldquo;Moral injury and moral repair in war veterans: A preliminary model and intervention strategy.&rdquo; <em>Clinical Psychology Review</em>, 2009.</li>
-        </ul>
+    <section class="specialty-group">
+      <header class="specialty-group__head">
+        <h2 class="reveal">Couples, Families &amp; Children</h2>
+        <p class="reveal reveal-delay-1">Relational, culturally-attuned work across the systems that shape our lives.</p>
+      </header>
+      <div class="specialty-group__grid">
+        <a class="specialty-card reveal" href="multicultural-families.html">
+          <h3>Multicultural Couples &amp; Families</h3>
+          <p>Culturally attuned therapy for intercultural partnerships and multicultural families building a third culture.</p>
+          <span class="specialty-card__more">Read more</span>
+        </a>
+        <a class="specialty-card reveal" href="play-therapy.html">
+          <h3>Play Therapy for Children</h3>
+          <p>Evidence-based play therapy for children navigating anxiety, trauma, grief, and family transitions.</p>
+          <span class="specialty-card__more">Read more</span>
+        </a>
       </div>
     </section>
 
@@ -411,8 +468,8 @@
       <div class="contact-card reveal">
         <div class="contact-card__inner">
           <div class="contact-card__lead">
-            <h3>Interested in this <em>focus area</em>?</h3>
-            <p>Now booking new clients in this focus area. Book a free 15-minute consultation directly with one of our therapists. For help finding the right fit, call or text (916) 990-2326 or email Info@PinnacleCounselingGroup.com.</p>
+            <h3>Not sure which <em>specialty</em> fits?</h3>
+            <p>Book a free 15-minute consultation directly with a therapist whose focus resonates &mdash; or, for help matching, call or text (916) 990-2326 or email Info@PinnacleCounselingGroup.com. Our clinical director will help you find the right fit.</p>
           </div>
           <div class="contact-card__info">
             <div class="contact-card__detail">

@@ -2433,6 +2433,7 @@
           <a href="children-and-teens.html">Children &amp; Teens</a>
           <a href="organizational-consulting.html">Organizational Consulting</a>
           <a href="providers.html#supervisors">Clinical Supervision</a>
+          <a href="specialties.html">Specialties</a>
         </div>
       </div>
       <a href="faq.html">FAQ</a>
@@ -2761,6 +2762,7 @@
             <li><a href="children-and-teens.html">Children &amp; Teens</a></li>
             <li><a href="organizational-consulting.html">Organizational Consulting</a></li>
             <li><a href="providers.html#supervisors">Clinical Supervision</a></li>
+            <li><a href="specialties.html">Specialties</a></li>
           </ul>
         </div>
 
@@ -3221,6 +3223,19 @@
         if (ev.key !== 'Escape') return;
         document.querySelectorAll('.lightbox.is-open').forEach(closeLightbox);
       });
+
+      // Deep-link support: URLs like index.html#cheryl or #evangeline
+      // auto-open the matching clinician's lightbox.
+      const openFromHash = () => {
+        const hash = (location.hash || '').replace(/^#/, '').toLowerCase();
+        if (!hash) return;
+        const lbId = 'lightbox-' + hash;
+        if (document.getElementById(lbId)) {
+          openLightbox(lbId);
+        }
+      };
+      setTimeout(openFromHash, 120);
+      window.addEventListener('hashchange', openFromHash);
     })();
 
     // Back to top

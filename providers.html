@@ -1593,6 +1593,7 @@
           <a href="children-and-teens.html">Children &amp; Teens</a>
           <a href="organizational-consulting.html">Organizational Consulting</a>
           <a href="providers.html#supervisors">Clinical Supervision</a>
+          <a href="specialties.html">Specialties</a>
         </div>
       </div>
       <a href="faq.html">FAQ</a>
@@ -2053,6 +2054,23 @@
         if (ev.key !== 'Escape') return;
         document.querySelectorAll('.lightbox.is-open').forEach(closeLightbox);
       });
+
+      // Deep-link support: URLs like providers.html#cheryl or #evangeline
+      // auto-open the matching clinician's lightbox. Handles both initial
+      // page load and in-page hash changes (e.g., a link elsewhere on the
+      // site pointing at #cheryl).
+      const openFromHash = () => {
+        const hash = (location.hash || '').replace(/^#/, '').toLowerCase();
+        if (!hash) return;
+        const lbId = 'lightbox-' + hash;
+        if (document.getElementById(lbId)) {
+          openLightbox(lbId);
+        }
+      };
+      // Slight delay on initial load so any CSS/font layout has settled and
+      // the transition reads as a proper open rather than an instant snap.
+      setTimeout(openFromHash, 120);
+      window.addEventListener('hashchange', openFromHash);
     })();
   
     // Sheen-tracker on the sage contact card
