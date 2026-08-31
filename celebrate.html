@@ -219,26 +219,71 @@
     }
     .radio-group label {
       flex: 1; min-width: 100px;
+      position: relative;
       display: flex; align-items: center; justify-content: center;
-      padding: .8rem 1rem;
+      padding: .85rem 1rem;
       background: transparent;
-      border: 1px solid rgba(47, 53, 53, .18);
+      border: 1px solid rgba(47, 53, 53, .22);
       border-radius: var(--radius-pill);
       cursor: pointer;
       font-family: var(--sans); font-size: .78rem; font-weight: 400;
       letter-spacing: .06em;
       color: var(--ink-soft);
-      transition: background .3s var(--ease), border-color .3s var(--ease), color .3s var(--ease);
+      transition: color .35s var(--ease), border-color .45s var(--ease), transform .3s var(--ease);
       text-transform: none; margin-bottom: 0;
+      overflow: hidden; isolation: isolate;
     }
+    .radio-group label:hover {
+      border-color: rgba(47, 53, 53, .45);
+      transform: translateY(-1px);
+    }
+    /* Sweep fill — animates in on selection */
+    .radio-group label::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: var(--ink);
+      border-radius: inherit;
+      transform: scaleX(0);
+      transform-origin: left center;
+      transition: transform .55s var(--ease);
+      z-index: -1;
+    }
+    .radio-group label[for="yes"]::after { background: var(--clay); }
+    .radio-group input:checked + label {
+      color: #fff;
+      border-color: transparent;
+    }
+    .radio-group input:checked + label::after { transform: scaleX(1); }
     .radio-group input {
       position: absolute; opacity: 0; pointer-events: none;
     }
-    .radio-group input:checked + label {
-      background: var(--ink);
-      border-color: var(--ink);
-      color: var(--cream-warm);
+    /* Icon (check for yes, dash for no) that scales in on select */
+    .radio-group label::before {
+      content: "";
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 14px; height: 14px;
+      margin-right: 0; max-width: 0;
+      opacity: 0; transform: scale(.3) rotate(-90deg);
+      transition: opacity .35s var(--ease) .1s, transform .5s cubic-bezier(.34,1.56,.64,1) .1s, max-width .3s var(--ease) .05s, margin-right .3s var(--ease) .05s;
+      background: no-repeat center/contain;
     }
+    .radio-group input:checked + label::before {
+      max-width: 14px; margin-right: .5rem;
+      opacity: 1; transform: scale(1) rotate(0);
+    }
+    .radio-group input:checked + label[for="yes"]::before {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23ffffff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><path d='M3 8.5 L6.5 12 L13 4'/></svg>");
+    }
+    .radio-group input:checked + label[for="no"]::before {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23ffffff' stroke-width='2.4' stroke-linecap='round'><path d='M4 12 L12 4 M4 4 L12 12'/></svg>");
+    }
+    /* Micro-bounce on selection */
+    @keyframes selectPop {
+      0%   { transform: scale(1); }
+      40%  { transform: scale(1.045); }
+      100% { transform: scale(1); }
+    }
+    .radio-group input:checked + label { animation: selectPop .5s var(--ease); }
 
     .submit-row {
       display: flex; justify-content: center; margin-top: 1rem;
@@ -382,13 +427,15 @@
 
     /* Countdown hint under the date */
     .detail__hint {
-      display: inline-block;
+      display: block;
       font-family: var(--serif); font-style: italic; font-weight: 400;
       font-size: .92rem; color: var(--clay);
-      margin-top: .4rem;
+      margin-top: .5rem;
       letter-spacing: .01em;
       position: relative;
       padding-left: 14px;
+      width: fit-content;
+      margin-left: auto; margin-right: auto;
     }
     .detail__hint::before {
       content: "";
@@ -448,28 +495,6 @@
     @media (max-width: 480px) {
       .save-date__buttons { flex-direction: column; align-items: stretch; }
       .btn-calendar { justify-content: center; }
-    }
-
-    /* Yes/No — differentiate joyfully yes when selected */
-    .radio-group input:checked + label[for="yes"] {
-      background: var(--clay);
-      border-color: var(--clay);
-      color: #fff;
-    }
-    .radio-group label[for="yes"]::before {
-      content: "";
-      display: inline-block;
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: currentColor;
-      opacity: 0;
-      margin-right: .5rem;
-      transform: scale(0);
-      transition: opacity .3s var(--ease), transform .3s var(--ease);
-    }
-    .radio-group input:checked + label[for="yes"]::before {
-      opacity: .85;
-      transform: scale(1);
     }
 
     /* Champagne bubbles on success */
