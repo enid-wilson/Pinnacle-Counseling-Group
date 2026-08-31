@@ -497,27 +497,30 @@
       .btn-calendar { justify-content: center; }
     }
 
-    /* Champagne bubbles on success */
-    .bubbles {
+    /* Ring pulse — single clay hairline expands and fades once on success */
+    .check-wrap {
       position: relative;
-      width: 100%; height: 60px;
-      margin-bottom: -.5rem;
-      pointer-events: none;
-      overflow: visible;
+      width: 52px; height: 52px;
+      margin: 0 auto 1.4rem;
     }
-    .bubble {
+    .check-wrap .check-mark { margin: 0; }
+    .check-ring {
       position: absolute;
-      bottom: 0;
-      width: var(--s, 10px); height: var(--s, 10px);
+      top: 50%; left: 50%;
+      width: 52px; height: 52px;
       border-radius: 50%;
-      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.9), var(--c, var(--clay-soft)) 60%, transparent 100%);
+      border: 1px solid var(--clay);
+      transform: translate(-50%, -50%) scale(1);
       opacity: 0;
-      animation: rise var(--dur, 2.2s) ease-out var(--delay, 0s) forwards;
+      pointer-events: none;
     }
-    @keyframes rise {
-      0%   { opacity: 0; transform: translate(0, 20px) scale(.6); }
+    .form-status.is-visible .check-ring {
+      animation: ringPulse 1.4s var(--ease) .5s forwards;
+    }
+    @keyframes ringPulse {
+      0%   { opacity: 0; transform: translate(-50%, -50%) scale(1); }
       20%  { opacity: .9; }
-      100% { opacity: 0; transform: translate(var(--sway, 20px), -180px) scale(1.1); }
+      100% { opacity: 0; transform: translate(-50%, -50%) scale(3.2); }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -642,11 +645,13 @@
       </form>
 
       <div class="form-status form-status--success" id="status-success">
-        <div class="bubbles" id="bubbles" aria-hidden="true"></div>
-        <svg class="check-mark" viewBox="0 0 60 60" aria-hidden="true">
-          <circle cx="30" cy="30" r="26" />
-          <path d="M18 31 L27 40 L43 22" />
-        </svg>
+        <div class="check-wrap">
+          <span class="check-ring" aria-hidden="true"></span>
+          <svg class="check-mark" viewBox="0 0 60 60" aria-hidden="true">
+            <circle cx="30" cy="30" r="26" />
+            <path d="M18 31 L27 40 L43 22" />
+          </svg>
+        </div>
         <h3>Thank <em>you</em>.</h3>
         <p>We&rsquo;ve got your reply and can&rsquo;t wait to see you.</p>
       </div>
@@ -709,25 +714,6 @@
       link.download = 'pinnacle-launch.ics';
     })();
 
-    // === Champagne bubbles on success ===
-    function popBubbles() {
-      const host = document.getElementById('bubbles');
-      if (!host) return;
-      const palette = ['#a36345', '#d49a7e', '#e5dfd3', '#8a9c99'];
-      const count = 14;
-      for (let i = 0; i < count; i++) {
-        const b = document.createElement('span');
-        b.className = 'bubble';
-        const size = 6 + Math.random() * 14;
-        const sway = (Math.random() * 60 - 30);
-        const dur  = 1.8 + Math.random() * 1.8;
-        const delay = Math.random() * 0.6;
-        const color = palette[i % palette.length];
-        b.style.cssText = `--s:${size}px; --sway:${sway}px; --dur:${dur}s; --delay:${delay}s; --c:${color}; left:${5 + Math.random()*90}%;`;
-        host.appendChild(b);
-        setTimeout(() => b.remove(), (dur + delay) * 1000 + 200);
-      }
-    }
 
 
     (() => {
@@ -748,7 +734,6 @@
           if (res.ok) {
             form.classList.add('is-hidden');
             success.classList.add('is-visible');
-            popBubbles();
           } else {
             throw new Error('Non-OK response');
           }
