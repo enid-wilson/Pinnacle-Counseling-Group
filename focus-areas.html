@@ -303,6 +303,46 @@
     }
     .specialty-card:hover .specialty-card__more { color: var(--clay-deep); gap: .8rem; }
 
+  
+    /* --- Sticky mobile book bar (calm, minimal, only on small screens) --- */
+    .mbar {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 45;
+      padding: .55rem .8rem calc(.55rem + env(safe-area-inset-bottom));
+      background: rgba(255,255,255,.94);
+      -webkit-backdrop-filter: saturate(140%) blur(14px);
+      backdrop-filter: saturate(140%) blur(14px);
+      border-top: 1px solid rgba(47,53,53,.08);
+      gap: .5rem;
+    }
+    .mbar a {
+      display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+      padding: .85rem 1rem;
+      border-radius: var(--radius-pill);
+      font-family: var(--sans); font-size: .7rem; font-weight: 500;
+      letter-spacing: .18em; text-transform: uppercase;
+      transition: background .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease);
+    }
+    .mbar__call {
+      flex: 1;
+      color: var(--ink);
+      border: 1px solid rgba(47,53,53,.28);
+      background: transparent;
+    }
+    .mbar__call:hover { background: rgba(47,53,53,.06); }
+    .mbar__book {
+      flex: 1.5;
+      color: #fff;
+      background: var(--clay);
+      border: 1px solid var(--clay);
+    }
+    .mbar__book:hover { background: var(--clay-deep); border-color: var(--clay-deep); }
+    @media (max-width: 720px) {
+      .mbar { display: flex; }
+      body { padding-bottom: 84px; }
+    }
   </style>
 
   <script type="application/ld+json">
@@ -364,7 +404,7 @@
       <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <a href="book.html" class="nav__cta" data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1" data-spwidget-scope-uri="pinnacle" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind>Book a Consultation</a>
+    <a href="book.html" class="nav__cta" data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1" data-spwidget-scope-uri="pinnacle" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind>Book a free consult</a>
     <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -385,7 +425,7 @@
       <a href="services.html">Services</a>
       <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
-      <a href="book.html" data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1" data-spwidget-scope-uri="pinnacle" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind><em>Book a Consultation</em></a>
+      <a href="book.html" data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1" data-spwidget-scope-uri="pinnacle" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind><em>Book a free consult</em></a>
     </nav>
   </div>
 
@@ -514,7 +554,7 @@
         <div class="footer__col">
           <h4>Services</h4>
           <ul>
-            <li><a href="book.html">Book a Consultation</a></li>
+            <li><a href="book.html">Book a free consult</a></li>
             <li><a href="individual-therapy.html">Individual Therapy</a></li>
             <li><a href="couples-counseling.html">Couples Counseling</a></li>
             <li><a href="children-and-teens.html">Children &amp; Teens</a></li>
@@ -607,5 +647,15 @@
   </script>
   <!-- SimplePractice booking widget — auto-binds [data-spwidget-autobind] triggers -->
   <script src="https://widget-cdn.simplepractice.com/assets/integration-1.0.js" defer></script>
+
+  <!-- Sticky mobile book bar (mobile only) -->
+  <div class="mbar" aria-label="Quick actions">
+    <a class="mbar__call" href="tel:+19169902326" aria-label="Call Pinnacle Counseling Group">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.78.66 2.62a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.46-1.46a2 2 0 0 1 2.11-.45c.84.32 1.72.54 2.62.66A2 2 0 0 1 22 16.92z"/></svg>
+      <span>Call</span>
+    </a>
+    <a class="mbar__book" href="book.html" data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1" data-spwidget-scope-uri="pinnacle" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind>Book a free consult</a>
+  </div>
+
 </body>
 </html>

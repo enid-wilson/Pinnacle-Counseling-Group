@@ -333,6 +333,31 @@
       text-shadow: 0 2px 24px rgba(0,0,0,.55), 0 0 2px rgba(0,0,0,.35);
       animation: fadeUp 1.4s .8s var(--ease) both;
     }
+    .hero__aside {
+      font-family: var(--serif); font-style: italic; font-weight: 300;
+      color: rgba(255,255,255,.9);
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      margin: 1.4rem auto 0;
+      text-shadow: 0 2px 24px rgba(0,0,0,.55), 0 0 2px rgba(0,0,0,.35);
+      animation: fadeUp 1.4s 1s var(--ease) both;
+    }
+    .hero__aside a {
+      color: #fff;
+      border-bottom: 1px solid rgba(255,255,255,.5);
+      padding-bottom: 1px;
+      transition: border-color .35s var(--ease);
+    }
+    .hero__aside a:hover { border-bottom-color: #fff; }
+    .hero__trust {
+      font-family: var(--sans); font-weight: 400;
+      color: rgba(255,255,255,.72);
+      font-size: clamp(.72rem, 1.1vw, .8rem);
+      letter-spacing: .18em; text-transform: uppercase;
+      margin: 2.6rem auto 0;
+      max-width: 40em;
+      text-shadow: 0 2px 24px rgba(0,0,0,.55);
+      animation: fadeUp 1.4s 1.2s var(--ease) both;
+    }
     .hero__tagline {
       font-family: var(--serif);
       font-style: italic;
@@ -549,6 +574,80 @@
       margin: 0 auto 2.6rem;
       max-width: 36em;
       color: rgba(229, 223, 211, 0.85);
+    }
+    .consult__steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1.4rem, 3vw, 2.4rem);
+      max-width: 640px;
+      margin: 0 auto 3rem;
+      padding: 0 1rem;
+    }
+    .consult__step { text-align: center; }
+    .consult__num {
+      display: block;
+      font-family: var(--sans); font-weight: 400;
+      font-size: .7rem; letter-spacing: .34em; text-transform: uppercase;
+      color: var(--clay-soft);
+      margin-bottom: .8rem;
+    }
+    .consult__step p {
+      font-family: var(--serif); font-weight: 300; font-style: italic;
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      line-height: 1.4;
+      color: rgba(229, 223, 211, 0.95);
+      margin: 0;
+      max-width: none;
+    }
+    @media (max-width: 640px) {
+      .consult__steps {
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+        max-width: 340px;
+      }
+    }
+
+    /* --- Endorsements from peer clinicians (cream, editorial, quiet) --- */
+    .endorsements {
+      background: var(--cream);
+      padding: clamp(5rem, 10vw, 8rem) var(--pad-x);
+    }
+    .endorsements__inner {
+      max-width: 780px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .endorsements .eyebrow {
+      display: block;
+      margin-bottom: 3rem;
+      color: var(--sage);
+    }
+    .endorsements__list {
+      display: flex; flex-direction: column;
+      gap: clamp(2.5rem, 5vw, 3.6rem);
+    }
+    .endorsement {
+      margin: 0;
+    }
+    .endorsement__quote {
+      font-family: var(--serif); font-weight: 300; font-style: italic;
+      font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+      line-height: 1.45;
+      color: var(--ink);
+      letter-spacing: -.005em;
+      max-width: 34ch;
+      margin: 0 auto 1.1rem;
+    }
+    .endorsement__quote em {
+      color: var(--clay);
+      font-style: italic;
+      font-weight: 400;
+    }
+    .endorsement__cite {
+      display: block;
+      font-family: var(--sans); font-weight: 400; font-style: normal;
+      font-size: .68rem; letter-spacing: .28em; text-transform: uppercase;
+      color: var(--ink-faint);
     }
 
     /* --- Photo break: sage band wraps a rounded image card --- */
@@ -1780,6 +1879,46 @@
       left: 0;
       top: 0;
     }
+  
+    /* --- Sticky mobile book bar (calm, minimal, only on small screens) --- */
+    .mbar {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 45;
+      padding: .55rem .8rem calc(.55rem + env(safe-area-inset-bottom));
+      background: rgba(255,255,255,.94);
+      -webkit-backdrop-filter: saturate(140%) blur(14px);
+      backdrop-filter: saturate(140%) blur(14px);
+      border-top: 1px solid rgba(47,53,53,.08);
+      gap: .5rem;
+    }
+    .mbar a {
+      display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+      padding: .85rem 1rem;
+      border-radius: var(--radius-pill);
+      font-family: var(--sans); font-size: .7rem; font-weight: 500;
+      letter-spacing: .18em; text-transform: uppercase;
+      transition: background .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease);
+    }
+    .mbar__call {
+      flex: 1;
+      color: var(--ink);
+      border: 1px solid rgba(47,53,53,.28);
+      background: transparent;
+    }
+    .mbar__call:hover { background: rgba(47,53,53,.06); }
+    .mbar__book {
+      flex: 1.5;
+      color: #fff;
+      background: var(--clay);
+      border: 1px solid var(--clay);
+    }
+    .mbar__book:hover { background: var(--clay-deep); border-color: var(--clay-deep); }
+    @media (max-width: 720px) {
+      .mbar { display: flex; }
+      body { padding-bottom: 84px; }
+    }
   </style>
 
   <!-- === SEO META — generated === -->
@@ -2443,7 +2582,7 @@
       <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <a href="book.html" class="nav__cta" data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1" data-spwidget-scope-uri="pinnacle" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind>Book a Consultation</a>
+    <a href="book.html" class="nav__cta" data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1" data-spwidget-scope-uri="pinnacle" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind>Book a free consult</a>
     <button class="nav__hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -2462,7 +2601,7 @@
       <a href="services.html">Services</a>
       <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
-      <a href="book.html" data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1" data-spwidget-scope-uri="pinnacle" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind><em>Book a Consultation</em></a>
+      <a href="book.html" data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1" data-spwidget-scope-uri="pinnacle" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind><em>Book a free consult</em></a>
     </nav>
     <div class="mobile-panel__foot">
       <p>Sacramento &nbsp;·&nbsp; California</p>
@@ -2487,11 +2626,13 @@
     </div>
     <div class="hero__inner">
       <img loading="eager" decoding="async" fetchpriority="high" class="hero__wordmark" src="pcg-wordmark-white.svg?v=1" alt="Pinnacle Counseling Group" width="600" height="217" />
-      <p class="hero__lede">A private, bespoke approach to psychotherapy.</p>
+      <p class="hero__lede">Our private counseling group offers clinical excellence with a high level of care.</p>
       <p class="hero__sublede">For individuals, couples, and families in California.</p>
       <a href="book.html" class="btn btn--light hero__cta" data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1" data-spwidget-scope-uri="pinnacle" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind>
-        Book a Consultation
+        Book a free consult
       </a>
+      <p class="hero__aside">or call <a href="tel:+19169902326">(916) 990-2326</a></p>
+      <p class="hero__trust">Aetna &amp; Optum accepted &nbsp;·&nbsp; Superbills provided &nbsp;·&nbsp; California-licensed clinicians</p>
     </div>
   </section>
 
@@ -2688,6 +2829,27 @@
     </div>
   </section>
 
+  <!-- ========== ENDORSEMENTS FROM PEER CLINICIANS ========== -->
+  <section class="endorsements">
+    <div class="endorsements__inner">
+      <span class="eyebrow reveal">From colleagues</span>
+      <div class="endorsements__list">
+        <blockquote class="endorsement reveal">
+          <p class="endorsement__quote">Enid&rsquo;s superpower is working with clients who&rsquo;ve experienced childhood trauma and want to work on creating a new worldview. She makes this process feel <em>safe and secure</em>.</p>
+          <cite class="endorsement__cite">Chad Fraga, LMFT</cite>
+        </blockquote>
+        <blockquote class="endorsement reveal reveal-delay-1">
+          <p class="endorsement__quote">Enid is warm, attentive, and genuinely dedicated to her clients. In her work with trauma and PTSD, she brings a <em>gentle presence</em> paired with practical, effective tools.</p>
+          <cite class="endorsement__cite">Raya Singh, LMFT</cite>
+        </blockquote>
+        <blockquote class="endorsement reveal reveal-delay-2">
+          <p class="endorsement__quote">Enid has a curious nature and a <em>grounding presence</em>. She has a knack for asking the right questions that can lead to real progress.</p>
+          <cite class="endorsement__cite">Samantha Mero, LCSW</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== CONSULTATION CTA (moved up) ========== -->
   <section class="consult" id="consult">
     <div class="consult__inner">
@@ -2696,8 +2858,24 @@
       <p class="reveal reveal-delay-2">
         Book a free 15-minute call directly with any of our therapists. To speak with our clinical director or for help finding the right fit, call or text (916) 990-2326 or email Info@PinnacleCounselingGroup.com.
       </p>
+
+      <div class="consult__steps reveal reveal-delay-3">
+        <div class="consult__step">
+          <span class="consult__num">01</span>
+          <p>Book a free 15-minute call.</p>
+        </div>
+        <div class="consult__step">
+          <span class="consult__num">02</span>
+          <p>We&rsquo;ll match you with the right fit.</p>
+        </div>
+        <div class="consult__step">
+          <span class="consult__num">03</span>
+          <p>Begin therapy, often within a week.</p>
+        </div>
+      </div>
+
       <a href="book.html" class="btn btn--clay reveal reveal-delay-3" data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1" data-spwidget-scope-uri="pinnacle" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind>
-        Book a Consultation
+        Book a free consult
       </a>
     </div>
   </section>
@@ -2787,7 +2965,7 @@
         <div class="footer__col">
           <h4>Services</h4>
           <ul>
-            <li><a href="book.html">Book a Consultation</a></li>
+            <li><a href="book.html">Book a free consult</a></li>
             <li><a href="individual-therapy.html">Individual Therapy</a></li>
             <li><a href="couples-counseling.html">Couples Counseling</a></li>
             <li><a href="children-and-teens.html">Children &amp; Teens</a></li>
@@ -2937,6 +3115,7 @@
         <p>Her approach is rooted in Solution-Focused Brief Therapy and informed by trauma and attachment theories. She uses a strengths-based, collaborative approach to help individuals, couples, and families navigate relationship difficulties, burnout, anxiety, depression, reproductive trauma, estrangement, and parenting challenges. Evangeline earned a Master&rsquo;s Degree in Marriage and Family Therapy from Seattle Pacific University and her Bachelor&rsquo;s Degree in Family, Child and Consumer Sciences from Florida State University. She completed her Gottman Method Couples Therapy Level 1 Training in 2017.</p>
         <p>As a bereaved parent, Evangeline volunteered for several years as a peer support group leader and provided a couples grief workshop for families who experienced pregnancy or infant loss in Washington state. She believes meaningful change is possible when people feel seen, supported, and empowered to draw upon their own strengths, and works alongside her clients to identify practical pathways forward and create lasting change.</p>
 
+        <p style="font-family:var(--sans);font-size:.85rem;color:var(--ink-soft);margin-top:1rem"><strong>Direct line:</strong> <a href="tel:+19165468697" style="color:var(--clay);border-bottom:1px solid rgba(163,99,69,.35)">(916) 546-8697</a></p>
         <a href="mailto:evangeline@pinnaclecounselinggroup.com" class="btn">Email Evangeline</a>
       </div>
     </div>
@@ -3328,5 +3507,15 @@
   </script>
   <!-- SimplePractice booking widget — auto-binds [data-spwidget-autobind] triggers -->
   <script src="https://widget-cdn.simplepractice.com/assets/integration-1.0.js" defer></script>
+
+  <!-- Sticky mobile book bar (mobile only) -->
+  <div class="mbar" aria-label="Quick actions">
+    <a class="mbar__call" href="tel:+19169902326" aria-label="Call Pinnacle Counseling Group">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.78.66 2.62a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.46-1.46a2 2 0 0 1 2.11-.45c.84.32 1.72.54 2.62.66A2 2 0 0 1 22 16.92z"/></svg>
+      <span>Call</span>
+    </a>
+    <a class="mbar__book" href="book.html" data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1" data-spwidget-scope-uri="pinnacle" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind>Book a free consult</a>
+  </div>
+
 </body>
 </html>
