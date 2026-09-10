@@ -607,47 +607,101 @@
       }
     }
 
-    /* --- Endorsements from peer clinicians (cream, editorial, quiet) --- */
+    /* --- Endorsements from peer clinicians (horizontal slider, calm) --- */
     .endorsements {
       background: var(--cream);
-      padding: clamp(5rem, 10vw, 8rem) var(--pad-x);
+      padding: clamp(4rem, 8vw, 6rem) 0;
     }
     .endorsements__inner {
       max-width: 780px;
       margin: 0 auto;
       text-align: center;
+      padding: 0 var(--pad-x);
     }
     .endorsements .eyebrow {
       display: block;
-      margin-bottom: 3rem;
+      margin-bottom: 1.2rem;
       color: var(--sage);
     }
-    .endorsements__list {
-      display: flex; flex-direction: column;
-      gap: clamp(2.5rem, 5vw, 3.6rem);
+    .endorsements__lede {
+      font-family: var(--serif); font-weight: 300; font-style: italic;
+      font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+      color: var(--ink-soft);
+      max-width: 38ch;
+      margin: 0 auto 2.6rem;
     }
+    .endorsements__lede em { color: var(--clay); font-style: italic; }
+
+    .endorsements__slider {
+      position: relative;
+    }
+    .endorsements__track {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      gap: 0;
+      scrollbar-width: none;
+    }
+    .endorsements__track::-webkit-scrollbar { display: none; }
+
     .endorsement {
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+      padding: 1rem 1.5rem 0;
       margin: 0;
     }
     .endorsement__quote {
       font-family: var(--serif); font-weight: 300; font-style: italic;
-      font-size: clamp(1.35rem, 2.4vw, 1.8rem);
+      font-size: clamp(1.25rem, 2.2vw, 1.65rem);
       line-height: 1.45;
       color: var(--ink);
       letter-spacing: -.005em;
-      max-width: 34ch;
-      margin: 0 auto 1.1rem;
+      max-width: 38ch;
+      margin: 0 auto 1.2rem;
+      min-height: clamp(5rem, 9vw, 7rem);
+      display: flex; align-items: center; justify-content: center;
     }
     .endorsement__quote em {
-      color: var(--clay);
-      font-style: italic;
-      font-weight: 400;
+      color: var(--clay); font-style: italic; font-weight: 400;
     }
     .endorsement__cite {
       display: block;
       font-family: var(--sans); font-weight: 400; font-style: normal;
-      font-size: .68rem; letter-spacing: .28em; text-transform: uppercase;
+      font-size: .66rem; letter-spacing: .28em; text-transform: uppercase;
       color: var(--ink-faint);
+    }
+
+    .endorsements__nav {
+      display: flex; justify-content: center; align-items: center;
+      gap: 1.4rem;
+      margin-top: 1.8rem;
+    }
+    .endorsements__arrow {
+      background: transparent;
+      border: 0;
+      color: var(--ink-faint);
+      font-family: var(--serif); font-size: 1.25rem;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: color .3s var(--ease), background .3s var(--ease);
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .endorsements__arrow:hover { color: var(--clay); background: rgba(163,99,69,.06); }
+    .endorsements__dots {
+      display: inline-flex; gap: .5rem;
+    }
+    .endorsements__dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: rgba(47,53,53,.15);
+      border: 0; padding: 0; cursor: pointer;
+      transition: background .3s var(--ease), transform .3s var(--ease);
+    }
+    .endorsements__dot.is-active {
+      background: var(--clay);
+      transform: scale(1.25);
     }
 
     /* --- Photo break: sage band wraps a rounded image card --- */
@@ -2626,8 +2680,8 @@
     </div>
     <div class="hero__inner">
       <img loading="eager" decoding="async" fetchpriority="high" class="hero__wordmark" src="pcg-wordmark-white.svg?v=1" alt="Pinnacle Counseling Group" width="600" height="217" />
-      <p class="hero__lede">Our private counseling group offers clinical excellence with a high level of care.</p>
-      <p class="hero__sublede">For individuals, couples, and families in California.</p>
+      <p class="hero__lede">We see each client as a whole person &mdash; not just a diagnosis.</p>
+      <p class="hero__sublede">Therapy for individuals, couples, and families in California.</p>
       <a href="book.html" class="btn btn--light hero__cta" data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1" data-spwidget-scope-uri="pinnacle" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind>
         Book a free consult
       </a>
@@ -2829,23 +2883,38 @@
     </div>
   </section>
 
-  <!-- ========== ENDORSEMENTS FROM PEER CLINICIANS ========== -->
+  <!-- ========== ENDORSEMENTS FROM PEER CLINICIANS (slider) ========== -->
   <section class="endorsements">
     <div class="endorsements__inner">
       <span class="eyebrow reveal">From colleagues</span>
-      <div class="endorsements__list">
-        <blockquote class="endorsement reveal">
-          <p class="endorsement__quote">Enid&rsquo;s superpower is working with clients who&rsquo;ve experienced childhood trauma and want to work on creating a new worldview. She makes this process feel <em>safe and secure</em>.</p>
-          <cite class="endorsement__cite">Chad Fraga, LMFT</cite>
-        </blockquote>
-        <blockquote class="endorsement reveal reveal-delay-1">
-          <p class="endorsement__quote">Enid is warm, attentive, and genuinely dedicated to her clients. In her work with trauma and PTSD, she brings a <em>gentle presence</em> paired with practical, effective tools.</p>
-          <cite class="endorsement__cite">Raya Singh, LMFT</cite>
-        </blockquote>
-        <blockquote class="endorsement reveal reveal-delay-2">
-          <p class="endorsement__quote">Enid has a curious nature and a <em>grounding presence</em>. She has a knack for asking the right questions that can lead to real progress.</p>
-          <cite class="endorsement__cite">Samantha Mero, LCSW</cite>
-        </blockquote>
+      <p class="endorsements__lede reveal reveal-delay-1">
+        Peer therapists on the care and approach our practice is <em>known for</em>.
+      </p>
+
+      <div class="endorsements__slider reveal reveal-delay-2" id="endorsements-slider">
+        <div class="endorsements__track" id="endorsements-track">
+          <blockquote class="endorsement">
+            <p class="endorsement__quote">A <em>gentle presence</em> paired with practical, effective tools. Clients often feel safe, understood, and well cared for.</p>
+            <cite class="endorsement__cite">Raya Singh, LMFT</cite>
+          </blockquote>
+          <blockquote class="endorsement">
+            <p class="endorsement__quote">A <em>curious nature</em> and a grounding presence. A knack for asking the right questions that can lead to real progress.</p>
+            <cite class="endorsement__cite">Samantha Mero, LCSW</cite>
+          </blockquote>
+          <blockquote class="endorsement">
+            <p class="endorsement__quote">Personable, open, welcoming, and growth-oriented. They go the extra mile to meet clients where they are and give them the <em>unique care</em> they need.</p>
+            <cite class="endorsement__cite">Martha Greenburg, LMFT</cite>
+          </blockquote>
+          <blockquote class="endorsement">
+            <p class="endorsement__quote">A superpower for working with clients who&rsquo;ve experienced childhood trauma and want to build a new worldview &mdash; makes the process feel <em>safe and secure</em>.</p>
+            <cite class="endorsement__cite">Chad Fraga, LMFT</cite>
+          </blockquote>
+        </div>
+        <div class="endorsements__nav" aria-hidden="true">
+          <button class="endorsements__arrow endorsements__arrow--prev" type="button" aria-label="Previous">&larr;</button>
+          <div class="endorsements__dots" id="endorsements-dots"></div>
+          <button class="endorsements__arrow endorsements__arrow--next" type="button" aria-label="Next">&rarr;</button>
+        </div>
       </div>
     </div>
   </section>
@@ -3503,6 +3572,54 @@
           }
         });
       });
+    })();
+
+    // === Endorsements slider ===
+    (() => {
+      const slider = document.getElementById('endorsements-slider');
+      if (!slider) return;
+      const track = document.getElementById('endorsements-track');
+      const dotsWrap = document.getElementById('endorsements-dots');
+      const slides = track.querySelectorAll('.endorsement');
+      const prev = slider.querySelector('.endorsements__arrow--prev');
+      const next = slider.querySelector('.endorsements__arrow--next');
+      if (!track || !slides.length) return;
+
+      // Build dots
+      slides.forEach((_, i) => {
+        const b = document.createElement('button');
+        b.className = 'endorsements__dot';
+        b.type = 'button';
+        b.setAttribute('aria-label', 'Go to quote ' + (i + 1));
+        b.addEventListener('click', () => scrollToSlide(i));
+        dotsWrap.appendChild(b);
+      });
+      const dots = dotsWrap.querySelectorAll('.endorsements__dot');
+
+      function currentIndex() {
+        const w = track.clientWidth;
+        return Math.round(track.scrollLeft / w);
+      }
+      function updateDots() {
+        const i = currentIndex();
+        dots.forEach((d, k) => d.classList.toggle('is-active', k === i));
+      }
+      function scrollToSlide(i) {
+        const clamped = Math.max(0, Math.min(slides.length - 1, i));
+        track.scrollTo({ left: clamped * track.clientWidth, behavior: 'smooth' });
+      }
+
+      updateDots();
+      let scrollTicking = false;
+      track.addEventListener('scroll', () => {
+        if (!scrollTicking) {
+          window.requestAnimationFrame(() => { updateDots(); scrollTicking = false; });
+          scrollTicking = true;
+        }
+      }, { passive: true });
+      prev.addEventListener('click', () => scrollToSlide(currentIndex() - 1));
+      next.addEventListener('click', () => scrollToSlide(currentIndex() + 1));
+      window.addEventListener('resize', () => scrollToSlide(currentIndex()));
     })();
   </script>
   <!-- SimplePractice booking widget — auto-binds [data-spwidget-autobind] triggers -->
