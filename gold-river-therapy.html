@@ -15,8 +15,8 @@
   <script src="/tracking.js?v=1" defer></script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Therapy Services — Pinnacle Counseling Group | Sacramento, CA</title>
-  <meta name="description" content="Psychotherapy services in Sacramento & Gold River, CA — individual therapy, couples counseling, children & teens, and clinical supervision. Telehealth statewide." />
+  <title>Therapy in Gold River, CA | Pinnacle Counseling Group</title>
+  <meta name="description" content="Individual, couples, and family psychotherapy at our Gold River, CA office (11201 Gold Express Drive, Suite 200). In-person and virtual sessions throughout California." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,7 +36,7 @@
       --white:        #ffffff;
       --cream:        #ffffff;
       --cream-warm:   #ddd5c3;
-      --cream-soft:   #ffffff;
+      --cream-soft:   #f4f1ea;
       --ink:          #2f3535;
       --ink-soft:     rgba(47, 53, 53, 0.90);
       --ink-faint:    rgba(47, 53, 53, 0.48);
@@ -74,9 +74,7 @@
       font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
       text-rendering: optimizeLegibility;
     }
-    h1, h2, h3, h4, h5,
-    .display, .lede, .hero__title, .hero__subtitle,
-    .topic h3, .approach h3, .contact-card__lead h3 {
+    h1, h2, h3, h4, h5 {
       font-feature-settings: "kern" 1, "liga" 1, "dlig" 1, "onum" 1, "calt" 1;
       font-variant-numeric: oldstyle-nums proportional-nums;
     }
@@ -84,9 +82,6 @@
     a { color: inherit; text-decoration: none; }
     ::selection { background: var(--clay); color: var(--cream-warm); }
 
-    /* Typography */
-    .display { font-family: var(--serif); font-weight: 300; line-height: 1.05; letter-spacing: -.01em; color: var(--ink); }
-    .display em { font-style: italic; color: var(--clay); font-weight: 300; }
     .eyebrow {
       font-family: var(--sans);
       font-weight: 400;
@@ -95,47 +90,12 @@
       text-transform: uppercase;
       color: var(--sage);
     }
-    .ornament {
-      display: block;
-      margin: 0 auto 2rem;
-      font-family: var(--serif);
-      font-size: 1.5rem;
-      color: var(--sage);
-      line-height: 1;
-      user-select: none;
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-flex; align-items: center; gap: .7rem;
-      padding: 1.05rem 1.9rem;
-      border: 1px solid var(--ink);
-      border-radius: var(--radius-pill);
-      color: var(--ink);
-      background: transparent;
-      font-family: var(--sans);
-      font-weight: 400;
-      font-size: .76rem;
-      letter-spacing: .24em;
-      text-transform: uppercase;
-      transition: background .5s var(--ease), color .5s var(--ease), border-color .5s var(--ease), padding .35s var(--ease);
-      cursor: pointer;
-    }
-    .btn:hover { background: var(--ink); color: var(--cream-warm); padding-right: 2.2rem; }
-    .btn--clay { background: var(--clay); border-color: var(--clay); color: #fff; }
-    .btn--clay:hover { background: var(--clay-deep); border-color: var(--clay-deep); color: #fff; }
-    .arrow { width: 14px; height: 1px; background: currentColor; position: relative; display: inline-block; }
-    .arrow::after {
-      content: ""; position: absolute; right: 0; top: -3px; width: 7px; height: 7px;
-      border-top: 1px solid currentColor; border-right: 1px solid currentColor;
-      transform: rotate(45deg);
-    }
 
     /* Sections */
     section { padding: var(--section-y) var(--pad-x); position: relative; }
     .container { max-width: 1280px; margin: 0 auto; }
 
-    /* Nav (shared) */
+    /* === NAV === */
     .nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 50;
       display: grid;
@@ -144,25 +104,19 @@
       padding: 1.4rem var(--pad-x);
       transition: transform .55s var(--ease), background .45s var(--ease), padding .4s var(--ease), border-color .55s var(--ease);
       border-bottom: 1px solid transparent;
-      transform: translateY(0);
       background: rgba(255, 255, 255, 0.92);
       backdrop-filter: saturate(140%) blur(12px);
       -webkit-backdrop-filter: saturate(140%) blur(12px);
       border-bottom-color: var(--line-soft);
     }
-    .nav__brand { justify-self: start; display: flex; align-items: center; height: 56px; width: 56px; position: relative; }
-    .nav__brand img { height: 100%; width: 100%; object-fit: contain; transition: opacity .35s var(--ease); }
+    .nav__brand { justify-self: start; display: flex; align-items: center; height: 56px; width: 56px; }
+    .nav__brand img { height: 100%; width: 100%; object-fit: contain; }
     .nav__links { justify-self: center; display: flex; align-items: center; gap: 2.6rem; }
     .nav__links a {
-      font-family: var(--sans);
-      font-weight: 400;
-      font-size: .74rem;
-      letter-spacing: .28em;
-      text-transform: uppercase;
-      color: var(--ink);
-      opacity: 1;
-      position: relative;
-      padding-bottom: 4px;
+      font-family: var(--sans); font-weight: 400;
+      font-size: .74rem; letter-spacing: .28em;
+      text-transform: uppercase; color: var(--ink);
+      position: relative; padding-bottom: 4px;
     }
     .nav__links a::after {
       content: ""; position: absolute; left: 0; bottom: 0;
@@ -175,10 +129,9 @@
     .nav__cta {
       justify-self: end;
       display: inline-flex; align-items: center; gap: .6rem;
-      font-family: var(--sans);
-      font-weight: 400; font-size: .74rem; letter-spacing: .26em;
-      text-transform: uppercase;
-      color: var(--ink);
+      font-family: var(--sans); font-weight: 400;
+      font-size: .74rem; letter-spacing: .26em;
+      text-transform: uppercase; color: var(--ink);
       padding: .85rem 1.4rem;
       border: 1px solid var(--ink);
       border-radius: var(--radius-pill);
@@ -187,10 +140,41 @@
     .nav__cta:hover { background: var(--ink); color: var(--cream-warm); border-color: var(--ink); }
     .nav.is-hidden { transform: translateY(-100%); }
     .nav__hamburger { display: none; width: 28px; height: 18px; position: relative; background: transparent; border: 0; padding: 0; cursor: pointer; }
-    .nav__hamburger span { position: absolute; left: 0; right: 0; height: 1px; background: var(--ink); transition: transform .4s var(--ease); }
+    .nav__hamburger span { position: absolute; left: 0; right: 0; height: 1px; background: var(--ink); }
     .nav__hamburger span:nth-child(1) { top: 2px; }
     .nav__hamburger span:nth-child(2) { top: 50%; }
     .nav__hamburger span:nth-child(3) { bottom: 2px; }
+
+    /* Services dropdown */
+    .nav__item-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .nav__item-dropdown > a { padding-right: .2rem; display: inline-flex; align-items: center; }
+    .nav__item-dropdown::after { content: ""; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); width: 100%; height: 18px; }
+    .nav__dropdown {
+      position: absolute; top: calc(100% + 18px); left: 50%;
+      transform: translateX(-50%) translateY(-8px);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: saturate(140%) blur(12px);
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-md);
+      padding: .9rem 0; min-width: 270px;
+      box-shadow: 0 24px 50px -22px rgba(47,53,53,.22);
+      opacity: 0; visibility: hidden; pointer-events: none;
+      transition: opacity .45s var(--ease), transform .45s var(--ease), visibility .45s var(--ease);
+      z-index: 51;
+    }
+    .nav__dropdown a {
+      display: block; padding: .85rem 1.7rem;
+      font-family: var(--serif); font-weight: 300; font-size: 1.04rem;
+      color: var(--ink);
+      transition: color .35s var(--ease), background .35s var(--ease), padding-left .35s var(--ease);
+    }
+    .nav__dropdown a::after { display: none; }
+    .nav__dropdown a:hover { color: var(--clay-deep); background: rgba(229, 223, 211, 0.45); padding-left: 2rem; }
+    .nav__item-dropdown:hover .nav__dropdown,
+    .nav__item-dropdown:focus-within .nav__dropdown {
+      opacity: 1; visibility: visible; pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
 
     /* Mobile panel */
     .mobile-panel {
@@ -210,18 +194,11 @@
     .mobile-panel__close::before { transform: rotate(45deg); }
     .mobile-panel__close::after  { transform: rotate(-45deg); }
     .mobile-panel__nav { margin-top: 4rem; display: flex; flex-direction: column; gap: 1.6rem; }
-    .mobile-panel__nav a { font-family: var(--serif); font-weight: 300; font-size: 2.2rem; color: var(--ink); line-height: 1; }
+    .mobile-panel__nav a { font-family: var(--serif); font-weight: 300; font-size: 2.2rem; color: var(--ink); }
     .mobile-panel__nav a em { font-style: italic; color: var(--clay-deep); }
 
     /* Scroll progress */
-    .scroll-progress {
-      position: fixed; top: 0; left: 0; right: 0;
-      height: 1px; background: var(--sage);
-      z-index: 60;
-      transform: scaleX(0); transform-origin: left center;
-      pointer-events: none;
-      opacity: .72;
-    }
+    .scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 1px; background: var(--sage); z-index: 60; transform: scaleX(0); transform-origin: left center; opacity: .72; }
 
     /* Reveal */
     .reveal {
@@ -242,230 +219,168 @@
         opacity: 1 !important; transform: none !important; transition: none !important;
       }
     }
+    .reveal.is-in { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: .12s; }
+    .reveal-delay-2 { transition-delay: .24s; }
 
-    /* PAGE HERO */
+    /* === HERO === */
     .hero {
-      padding: clamp(11rem, 18vw, 14rem) var(--pad-x) clamp(5rem, 9vw, 8rem);
+      padding: clamp(11rem, 18vw, 14rem) var(--pad-x) calc(clamp(5rem, 8vw, 7rem) + var(--radius-xl));
       text-align: center;
-      background: var(--cream);
+      background: var(--white);
     }
     .hero__inner { max-width: 920px; margin: 0 auto; }
-    .hero .eyebrow { display: block; margin-bottom: 1.5rem; }
+    .hero .eyebrow { display: block; margin-bottom: 1.6rem; }
     .hero__title {
-      font-family: var(--serif);
-      font-weight: 300;
+      font-family: var(--serif); font-weight: 300;
       font-size: clamp(3rem, 7vw, 5.5rem);
-      line-height: 1.0;
-      letter-spacing: -.015em;
-      color: var(--ink);
-      margin: 0 0 1.8rem;
+      line-height: 1.0; letter-spacing: -.015em;
+      color: var(--ink); margin: 0;
     }
     .hero__title em { font-style: italic; color: var(--clay); }
-    .hero__subtitle {
-      font-family: var(--serif);
-      font-style: italic;
-      font-weight: 400;
-      font-size: clamp(1.1rem, 1.7vw, 1.4rem);
-      color: var(--ink-soft);
-      max-width: 30em;
-      margin: 0 auto;
-      line-height: 1.5;
-    }
 
-    /* LEDE — italic statement */
-    .lede-section {
+    /* === LEGAL INTRO — cream zone === */
+    .legal-intro {
       background: var(--cream-warm);
-      padding-top: clamp(4rem, 8vw, 7rem);
-      padding-bottom: clamp(4rem, 8vw, 7rem);
       border-radius: var(--radius-xl) var(--radius-xl) 0 0;
       margin-top: calc(-1 * var(--radius-xl));
-      position: relative;
-      z-index: 1;
-    }
-    .hero { padding-bottom: calc(clamp(5rem, 9vw, 8rem) + var(--radius-xl)); }
-    .lede {
-      font-family: var(--serif);
-      font-weight: 300;
-      font-style: italic;
-      font-size: clamp(1.5rem, 3vw, 2.4rem);
-      line-height: 1.4;
-      color: var(--ink);
-      max-width: 38em;
-      margin: 0 auto;
+      position: relative; z-index: 1;
+      padding: clamp(5rem, 9vw, 8rem) var(--pad-x) clamp(4rem, 7vw, 6rem);
       text-align: center;
-      padding: 0 var(--pad-x);
     }
-    .lede em { color: var(--clay); font-style: italic; }
-
-    /* TOPICS — Support With */
-    .topics {
-      background: var(--cream);
+    .legal-intro__inner { max-width: 720px; margin: 0 auto; }
+    .legal-intro__date {
+      display: block;
+      font-family: var(--sans); font-weight: 400;
+      font-size: .68rem; letter-spacing: .32em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1.6rem;
     }
-    .topics__header {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto clamp(3rem, 5vw, 4.5rem);
-    }
-    .topics__header .eyebrow { display: block; margin-bottom: 1.4rem; }
-    .topics__header .ornament { margin-bottom: 1.6rem; }
-    .topics__header h2 {
-      font-family: var(--serif);
-      font-weight: 300;
-      font-size: clamp(2.4rem, 5vw, 4rem);
-      margin: 0 0 1rem;
-    }
-    .topics__header h2 em { color: var(--clay); font-style: italic; }
-    .topics__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: clamp(1.2rem, 2vw, 1.6rem);
-      max-width: 1180px;
-      margin: 0 auto;
-    }
-    .topic {
-      background: var(--white);
-      border: 1px solid var(--line-soft);
-      border-radius: var(--radius-lg);
-      padding: 2.2rem 1.9rem;
-      transition: transform .55s var(--ease), border-color .55s var(--ease), box-shadow .55s var(--ease);
-    }
-    .topic:hover {
-      transform: translateY(-4px);
-      border-color: var(--sage);
-      box-shadow: 0 18px 40px -24px rgba(47, 53, 53, .2);
-    }
-    .topic h3 {
-      font-family: var(--serif);
-      font-weight: 400;
-      font-size: 1.3rem;
-      line-height: 1.2;
-      margin: 0 0 .8rem;
-      color: var(--ink);
-    }
-    .topic p {
-      font-size: .94rem;
+    .legal-intro__lead {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(1.1rem, 1.5vw, 1.3rem);
       line-height: 1.6;
       color: var(--ink-soft);
-      margin: 0;
+      max-width: 44em; margin: 0 auto;
     }
-    .topic p strong { color: var(--ink); font-weight: 400; }
-
-    /* APPROACH — Our Approach */
-    .approach {
-      background: var(--cream-warm);
-      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-      margin-top: -1px;
-    }
-    .approach__header {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto clamp(3rem, 5vw, 4.5rem);
-    }
-    .approach__header .eyebrow { display: block; margin-bottom: 1.4rem; }
-    .approach__header .ornament { margin-bottom: 1.6rem; }
-    .approach__header h2 {
-      font-family: var(--serif);
-      font-weight: 300;
-      font-size: clamp(2.4rem, 5vw, 4rem);
-      margin: 0;
-    }
-    .approach__header h2 em { color: var(--clay); font-style: italic; }
-    .approach__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: clamp(1.5rem, 2.5vw, 2.2rem);
-      max-width: 1180px;
-      margin: 0 auto;
-    }
-    .approach__card {
-      background: var(--white);
-      border: 1px solid var(--line-soft);
-      border-radius: var(--radius-lg);
-      padding: 2.8rem 2.2rem;
-    }
-    .approach__num {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 1rem;
-      color: var(--sage);
+    .legal-intro__lead em { color: var(--clay); font-style: italic; }
+    .legal-intro__corp {
       display: block;
-      margin-bottom: 1.4rem;
+      margin-top: 1.4rem;
+      font-family: var(--serif); font-style: italic;
+      font-size: .98rem;
+      color: var(--ink-faint);
     }
-    .approach__card h3 {
-      font-family: var(--serif);
-      font-weight: 400;
-      font-size: clamp(1.4rem, 1.9vw, 1.75rem);
-      line-height: 1.2;
-      margin: 0 0 1.2rem;
+
+    /* === LEGAL BODY — white zone with editorial sections === */
+    .legal-body {
+      background: var(--white);
+      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+      margin-top: calc(-1 * var(--radius-xl));
+      position: relative; z-index: 2;
+      padding: clamp(6rem, 10vw, 9rem) var(--pad-x) clamp(8rem, 13vw, 11rem);
+    }
+    .legal-body__inner { max-width: 760px; margin: 0 auto; }
+    .legal-section {
+      padding-top: 1.4rem;
+      margin-bottom: clamp(3rem, 5.5vw, 4.5rem);
+      position: relative;
+    }
+    .legal-section:last-child { margin-bottom: 0; }
+    .legal-section::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 36px; height: 1px;
+      background: var(--clay);
+      opacity: .85;
+    }
+    .legal-section__num {
+      display: block;
+      font-family: var(--sans); font-weight: 400;
+      font-size: .66rem; letter-spacing: .32em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1rem;
+    }
+    .legal-section h2 {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(1.55rem, 2.4vw, 2rem);
+      line-height: 1.2; letter-spacing: -.005em;
+      margin: 0 0 1.4rem;
       color: var(--ink);
     }
-    .approach__card h3 em { font-style: italic; color: var(--clay-deep); font-weight: 400; }
-    .approach__card p { font-size: 1rem; line-height: 1.7; color: var(--ink-soft); margin: 0; }
-
-    /* Contact card (sage) */
-    .contact-band {
-      background: var(--white);
-      padding: 0 var(--pad-x) clamp(5rem, 9vw, 8rem);
-    }
-    .contact-card {
-      background: var(--sage);
-      color: var(--cream-warm);
-      border-radius: var(--radius-xl);
-      padding: clamp(2.4rem, 4.5vw, 4rem) clamp(2rem, 4vw, 3.5rem);
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .contact-card__inner {
-      display: grid;
-      grid-template-columns: 1.25fr 1fr;
-      gap: clamp(2rem, 4vw, 4rem);
-      align-items: center;
-    }
-    .contact-card__lead h3 {
-      font-family: var(--serif);
-      font-weight: 300;
-      font-size: clamp(2rem, 3.5vw, 2.9rem);
-      line-height: 1.1;
-      margin: 0 0 1.1rem;
-      color: var(--cream-warm);
-    }
-    .contact-card__lead h3 em { color: var(--clay-soft); font-style: italic; }
-    .contact-card__lead p {
-      font-family: var(--serif);
-      font-weight: 400;
-      font-size: 1.05rem;
-      line-height: 1.55;
-      color: rgba(229, 223, 211, .85);
-      margin: 0 0 1.5rem;
-      max-width: 30em;
-    }
-    .contact-card__info { display: flex; flex-direction: column; gap: 1.5rem; }
-    .contact-card__detail .label {
-      display: block;
-      font-family: var(--sans);
-      font-size: .65rem;
-      letter-spacing: .32em;
-      text-transform: uppercase;
-      color: rgba(229, 223, 211, .55);
-      margin-bottom: .45rem;
-    }
-    .contact-card__detail a {
-      font-family: var(--serif);
-      font-weight: 400;
+    .legal-section h2 em { color: var(--clay-deep); font-style: italic; }
+    .legal-section h3 {
+      font-family: var(--serif); font-weight: 400; font-style: italic;
       font-size: 1.15rem;
-      color: var(--cream-warm);
-      transition: color .4s var(--ease);
-      display: inline-block;
+      color: var(--ink);
+      margin: 1.4rem 0 .6rem;
     }
-    .contact-card__detail a:hover { color: var(--clay-soft); }
+    .legal-section p {
+      font-family: var(--serif); font-weight: 400;
+      font-size: 1.06rem;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      margin: 0 0 1.2rem;
+    }
+    .legal-section p:last-child { margin-bottom: 0; }
+    .legal-section p strong {
+      color: var(--ink);
+      font-weight: 400;
+      font-style: italic;
+    }
+    .legal-section ul {
+      font-family: var(--serif); font-weight: 400;
+      font-size: 1.06rem;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      margin: 0 0 1.2rem;
+      padding-left: 0;
+      list-style: none;
+    }
+    .legal-section ul li {
+      position: relative;
+      padding-left: 1.2rem;
+      margin-bottom: .4rem;
+    }
+    .legal-section ul li::before {
+      content: "·";
+      position: absolute; left: 0; top: -.15em;
+      color: var(--sage);
+      font-size: 1.4rem; line-height: 1;
+    }
+    .legal-section a {
+      color: var(--clay-deep);
+      border-bottom: 1px solid currentColor;
+      transition: opacity .35s var(--ease);
+    }
+    .legal-section a:hover { opacity: .7; }
+    .legal-contact-block {
+      margin-top: 1rem;
+      font-family: var(--serif); font-weight: 400;
+      font-size: 1.06rem;
+      line-height: 1.7;
+      color: var(--ink-soft);
+    }
+    .legal-contact-block strong {
+      display: block;
+      font-style: italic;
+      color: var(--ink);
+      font-weight: 400;
+      margin-bottom: .25rem;
+    }
+    .legal-contact-block a { color: var(--clay-deep); border-bottom: 1px solid currentColor; }
 
-    /* Footer (shared) */
+    /* === FOOTER === */
     .footer {
       background: var(--cream-warm);
       color: var(--ink);
       padding: clamp(5rem, 8vw, 7rem) var(--pad-x) 2rem;
       border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-      margin-top: -1px;
+      margin-top: calc(-1 * var(--radius-xl));
+      position: relative; z-index: 3;
     }
     .footer a { transition: color .35s var(--ease); }
     .footer a:hover { color: var(--clay-deep); }
@@ -477,21 +392,21 @@
       border-bottom: 1px solid rgba(43,38,32,.14);
     }
     .footer__brand img { width: 56px; height: 56px; }
+    .footer__brand a {
+      display: inline-block;
+      transition: opacity .35s var(--ease), transform .45s var(--ease);
+    }
+    .footer__brand a:hover { opacity: .75; transform: translateY(-2px); }
     .footer__brand p {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 1.1rem;
-      color: var(--ink-soft);
-      margin: 1.8rem 0 0;
-      line-height: 1.5;
+      font-family: var(--serif); font-style: italic;
+      font-size: 1.1rem; color: var(--ink-soft);
+      margin: 1.8rem 0 0; line-height: 1.5;
       max-width: 22em;
     }
     .footer__col h4 {
-      font-family: var(--sans);
-      font-weight: 400; font-size: .68rem;
+      font-family: var(--sans); font-weight: 400; font-size: .68rem;
       letter-spacing: .32em; text-transform: uppercase;
-      color: var(--ink-soft);
-      margin: 0 0 1.6rem;
+      color: var(--ink-soft); margin: 0 0 1.6rem;
     }
     .footer__col ul { list-style: none; }
     .footer__col li { margin-bottom: .9rem; }
@@ -508,8 +423,7 @@
       display: block;
       font-family: var(--sans); font-size: .65rem;
       letter-spacing: .3em; text-transform: uppercase;
-      color: var(--ink-soft);
-      margin-bottom: .35rem;
+      color: var(--ink-soft); margin-bottom: .35rem;
     }
     .footer__locations .hours { font-family: var(--serif); font-style: italic; color: var(--ink-soft); font-size: .98rem; line-height: 1.55; }
     .footer__locations a { font-family: var(--serif); font-size: 1.05rem; }
@@ -544,75 +458,12 @@
       border-left: 1px solid currentColor;
       transform: translate(-50%, -50%) rotate(45deg);
     }
-    .footer__bottom {
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 1rem;
-      font-family: var(--sans); font-size: .72rem;
-      letter-spacing: .15em; color: var(--ink-soft);
-    }
+    .footer__bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-family: var(--sans); font-size: .72rem; letter-spacing: .15em; color: var(--ink-soft); }
     .footer__bottom .legal a { margin-left: 1.4rem; color: var(--ink-soft); }
     .footer__bottom .legal a:first-child { margin-left: 0; }
 
-    /* Service cards (services overview) */
-    .service-card {
-      background: var(--white);
-      border: 1px solid var(--line-soft);
-      border-radius: var(--radius-xl);
-      padding: 3rem 2.4rem 2.6rem;
-      display: flex; flex-direction: column; align-items: flex-start;
-      transition: transform .55s var(--ease), border-color .55s var(--ease), box-shadow .55s var(--ease);
-      position: relative;
-      min-height: 280px;
-    }
-    .service-card:hover {
-      border-color: var(--sage);
-      transform: translateY(-6px);
-      box-shadow: 0 22px 50px -28px rgba(47, 53, 53, .25);
-    }
-    .service-card__num {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: .95rem;
-      color: var(--sage);
-      margin-bottom: 1.4rem;
-    }
-    .service-card h3 {
-      font-family: var(--serif);
-      font-weight: 400;
-      font-size: clamp(1.5rem, 1.9vw, 1.75rem);
-      line-height: 1.2;
-      margin: 0 0 .85rem;
-      color: var(--ink);
-    }
-    .service-card h3 em { font-style: italic; color: var(--clay); }
-    .service-card p {
-      font-size: .95rem;
-      line-height: 1.65;
-      color: var(--ink-soft);
-      margin: 0 0 1.5rem;
-      flex-grow: 1;
-    }
-    .service-card__link {
-      display: inline-flex; align-items: center; gap: .6rem;
-      font-family: var(--sans);
-      font-size: .7rem;
-      letter-spacing: .3em;
-      text-transform: uppercase;
-      color: var(--ink);
-      transition: gap .4s var(--ease), color .4s var(--ease);
-    }
-    .service-card__link::after {
-      content: ""; width: 18px; height: 1px; background: currentColor;
-      transition: width .4s var(--ease);
-    }
-    .service-card:hover .service-card__link { gap: .85rem; color: var(--clay-deep); }
-    .service-card:hover .service-card__link::after { width: 28px; }
-    .service-card__link.is-soon { color: var(--ink-faint); }
-
     /* Responsive */
     @media (max-width: 1024px) {
-      .topics__grid { grid-template-columns: repeat(2, 1fr); }
-      .approach__grid { grid-template-columns: 1fr; }
       .footer__top { grid-template-columns: 1fr 1fr; gap: 3rem; }
       .footer__brand { grid-column: span 2; }
     }
@@ -620,135 +471,11 @@
       .nav__links { display: none; }
       .nav__cta { display: none; }
       .nav__hamburger { display: block; }
-      .topics__grid { grid-template-columns: 1fr; }
-      .contact-card__inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .footer__top { grid-template-columns: 1fr; gap: 2.5rem; }
       .footer__brand { grid-column: auto; }
       .footer__bottom { flex-direction: column; align-items: flex-start; gap: 1rem; }
       .footer__bottom .legal a:first-child { margin-left: 0; }
     }
-  
-    /* Services dropdown in nav */
-.nav__item-dropdown::after {
-      content: ""; position: absolute;
-      top: 100%; left: 50%; transform: translateX(-50%);
-      width: 100%; height: 18px;
-    }
-    .nav__dropdown {
-      position: absolute;
-      top: calc(100% + 18px);
-      left: 50%;
-      transform: translateX(-50%) translateY(-8px);
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: saturate(140%) blur(12px);
-      -webkit-backdrop-filter: saturate(140%) blur(12px);
-      border: 1px solid var(--line-soft);
-      border-radius: var(--radius-md);
-      padding: .9rem 0;
-      min-width: 270px;
-      box-shadow: 0 24px 50px -22px rgba(47,53,53,.22);
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transition: opacity .45s var(--ease), transform .45s var(--ease), visibility .45s var(--ease);
-      z-index: 51;
-    }
-    .nav__dropdown a {
-      display: block;
-      padding: .85rem 1.7rem;
-      font-family: var(--serif);
-      font-weight: 300;
-      font-size: 1.04rem;
-      letter-spacing: 0;
-      text-transform: none;
-      color: var(--ink);
-      transition: color .35s var(--ease), background .35s var(--ease), padding-left .35s var(--ease);
-      position: static;
-    }
-    .nav__dropdown a::after { display: none; }
-    .nav__dropdown a:hover {
-      color: var(--clay-deep);
-      background: rgba(229, 223, 211, 0.45);
-      padding-left: 2rem;
-    }
-    .nav__item-dropdown:hover .nav__dropdown,
-    .nav__item-dropdown:focus-within .nav__dropdown {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-      transform: translateX(-50%) translateY(0);
-    }
-
-  
-    /* === LUXURY HOVER REFINEMENTS === */
-    .topic, .approach__card {
-      transition: transform .55s var(--ease), border-color .55s var(--ease),
-                  box-shadow .55s var(--ease), background .55s var(--ease);
-      position: relative;
-      overflow: hidden;
-    }
-    .topic::before, .approach__card::before {
-      content: "";
-      position: absolute;
-      width: 240px; height: 240px;
-      background: radial-gradient(circle at center, rgba(189,119,87,.10) 0%, rgba(189,119,87,0) 70%);
-      top: -80px; right: -80px;
-      border-radius: 999px;
-      opacity: 0;
-      transition: opacity .6s var(--ease);
-      pointer-events: none;
-    }
-    .topic:hover::before, .approach__card:hover::before { opacity: 1; }
-    .topic:hover { transform: translateY(-6px); border-color: var(--sage); box-shadow: 0 22px 50px -28px rgba(47,53,53,.22); }
-    .approach__card:hover { transform: translateY(-6px); border-color: var(--sage); box-shadow: 0 22px 50px -28px rgba(47,53,53,.22); }
-    .topic h3, .approach__card h3 { transition: transform .5s var(--ease), color .5s var(--ease); }
-    .topic:hover h3, .approach__card:hover h3 { transform: translateX(2px); }
-    .approach__card:hover .approach__num { letter-spacing: .12em; color: var(--sage-deep); }
-    .approach__num { transition: letter-spacing .55s var(--ease), color .55s var(--ease); }
-
-    /* Faux-link inside topic/approach: tiny arrow after */
-    .topic h3::after, .approach__card h3::after { display: none; }
-
-    /* Provider portraits — deeper hover */
-    .provider-card__portrait img { transition: transform 1.6s var(--ease), filter 1s var(--ease); }
-    .provider-card:hover .provider-card__portrait img { transform: scale(1.06); filter: saturate(1) brightness(1); }
-    .provider-card__name { transition: color .4s var(--ease), transform .55s var(--ease); }
-    .provider-card:hover .provider-card__name { color: var(--clay-deep); transform: translateX(3px); }
-
-    /* Sage card on consult/contact-card: subtle parallax on hover with a sheen */
-    .contact-card { position: relative; overflow: hidden; }
-    .contact-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at var(--cx, 50%) var(--cy, 50%), rgba(212,154,126,.18) 0%, transparent 60%);
-      opacity: 0;
-      transition: opacity .6s var(--ease);
-      pointer-events: none;
-    }
-    .contact-card::before { display: none !important; }
-    .contact-card:hover::before { opacity: 0; }
-
-      /* Services dropdown alignment fix */
-    .nav__item-dropdown {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-    }
-    .nav__item-dropdown > a {
-      padding-right: .2rem;
-      display: inline-flex;
-      align-items: center;
-    }
-    /* Remove the warm-glow hover on Support With cards */
-    .topic::before { display: none !important; }
-  
-    /* Footer brand logo link */
-    .footer__brand a {
-      display: inline-block;
-      transition: opacity .35s cubic-bezier(.2,.7,.2,1), transform .45s cubic-bezier(.2,.7,.2,1);
-    }
-    .footer__brand a:hover { opacity: .75; transform: translateY(-2px); }
   
     /* Skip-to-content link — accessibility + crawler signal */
     .skip-link {
@@ -770,7 +497,6 @@
       left: 0;
       top: 0;
     }
-  
   
     /* --- Sticky mobile book bar (calm, minimal, only on small screens) --- */
     .mbar {
@@ -814,7 +540,7 @@
   </style>
 
   <!-- === SEO META — generated === -->
-  <link rel="canonical" href="https://pinnaclecounselinggroup.com/services.html" />
+  <link rel="canonical" href="https://pinnaclecounselinggroup.com/gold-river-therapy.html" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#2f3535" />
   <meta name="author" content="Pinnacle Counseling Group" />
@@ -825,9 +551,9 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Therapy Services — Pinnacle Counseling Group | Sacramento, CA" />
-  <meta property="og:description" content="Psychotherapy services in Sacramento & Gold River, CA — individual therapy, couples counseling, children & teens, and clinical supervision. Telehealth statewide." />
-  <meta property="og:url" content="https://pinnaclecounselinggroup.com/services.html" />
+  <meta property="og:title" content="Privacy Policy — Pinnacle Counseling Group" />
+  <meta property="og:description" content="How Pinnacle Counseling Group collects, uses, and safeguards personal information through this website and our clinical practice. HIPAA and California CMIA disclosures." />
+  <meta property="og:url" content="https://pinnaclecounselinggroup.com/privacy.html" />
   <meta property="og:image" content="https://pinnaclecounselinggroup.com/social-preview.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -836,8 +562,8 @@
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Therapy Services — Pinnacle Counseling Group | Sacramento, CA" />
-  <meta name="twitter:description" content="Psychotherapy services in Sacramento & Gold River, CA — individual therapy, couples counseling, children & teens, and clinical supervision. Telehealth statewide." />
+  <meta name="twitter:title" content="Privacy Policy — Pinnacle Counseling Group" />
+  <meta name="twitter:description" content="How Pinnacle Counseling Group collects, uses, and safeguards personal information through this website and our clinical practice. HIPAA and California CMIA disclosures." />
   <meta name="twitter:image" content="https://pinnaclecounselinggroup.com/social-preview.jpg" />
   <meta name="twitter:image:alt" content="Pinnacle Counseling Group logo over a serene lake landscape" />
 
@@ -1065,200 +791,13 @@
       }
     },
     {
-      "@type": "Service",
-      "@id": "https://pinnaclecounselinggroup.com/individual-therapy.html#service",
-      "name": "Individual Therapy",
-      "serviceType": "Psychotherapy",
-      "category": "Mental health care",
-      "provider": {
-        "@id": "https://pinnaclecounselinggroup.com/#practice"
-      },
-      "areaServed": {
-        "@type": "AdministrativeArea",
-        "name": "California"
-      },
-      "availableChannel": [
-        {
-          "@type": "ServiceChannel",
-          "name": "In-person — Sacramento Office",
-          "servicePostalAddress": {
-            "@id": "https://pinnaclecounselinggroup.com/#sacramento-office"
-          }
-        },
-        {
-          "@type": "ServiceChannel",
-          "name": "In-person — Gold River Office",
-          "servicePostalAddress": {
-            "@id": "https://pinnaclecounselinggroup.com/#gold-river-office"
-          }
-        },
-        {
-          "@type": "ServiceChannel",
-          "name": "Telehealth — statewide California"
-        }
-      ],
-      "description": "Fifty-minute psychotherapy sessions for adults. Focus Areas include high-functioning anxiety, OCD with Exposure and Response Prevention (ERP), eating disorders, substance use and compulsive patterns (outpatient), attachment-based and modern relational work.",
-      "url": "https://pinnaclecounselinggroup.com/individual-therapy.html",
-      "audience": [
-        {
-          "@type": "Audience",
-          "audienceType": "Adults"
-        },
-        {
-          "@type": "Audience",
-          "audienceType": "High-functioning professionals"
-        },
-        {
-          "@type": "Audience",
-          "audienceType": "LGBTQ-affirming"
-        },
-        {
-          "@type": "Audience",
-          "audienceType": "Multicultural and immigrant communities"
-        },
-        {
-          "@type": "Audience",
-          "audienceType": "Veterans and military families"
-        }
-      ]
-    },
-    {
-      "@type": "Service",
-      "@id": "https://pinnaclecounselinggroup.com/couples-counseling.html#service",
-      "name": "Couples Counseling",
-      "serviceType": "Psychotherapy",
-      "category": "Mental health care",
-      "provider": {
-        "@id": "https://pinnaclecounselinggroup.com/#practice"
-      },
-      "areaServed": {
-        "@type": "AdministrativeArea",
-        "name": "California"
-      },
-      "availableChannel": [
-        {
-          "@type": "ServiceChannel",
-          "name": "In-person — Sacramento Office",
-          "servicePostalAddress": {
-            "@id": "https://pinnaclecounselinggroup.com/#sacramento-office"
-          }
-        },
-        {
-          "@type": "ServiceChannel",
-          "name": "In-person — Gold River Office",
-          "servicePostalAddress": {
-            "@id": "https://pinnaclecounselinggroup.com/#gold-river-office"
-          }
-        },
-        {
-          "@type": "ServiceChannel",
-          "name": "Telehealth — statewide California"
-        }
-      ],
-      "description": "Fifty- to seventy-five-minute couples sessions in modern relational and attachment-based traditions, including Emotionally Focused Therapy (EFT).",
-      "url": "https://pinnaclecounselinggroup.com/couples-counseling.html",
-      "audience": [
-        {
-          "@type": "Audience",
-          "audienceType": "Couples"
-        },
-        {
-          "@type": "Audience",
-          "audienceType": "LGBTQ-affirming"
-        },
-        {
-          "@type": "Audience",
-          "audienceType": "Multicultural and immigrant communities"
-        }
-      ]
-    },
-    {
-      "@type": "Service",
-      "@id": "https://pinnaclecounselinggroup.com/children-and-teens.html#service",
-      "name": "Children & Teens Therapy",
-      "serviceType": "Psychotherapy",
-      "category": "Mental health care",
-      "provider": {
-        "@id": "https://pinnaclecounselinggroup.com/#practice"
-      },
-      "areaServed": {
-        "@type": "AdministrativeArea",
-        "name": "California"
-      },
-      "availableChannel": [
-        {
-          "@type": "ServiceChannel",
-          "name": "In-person — Sacramento Office",
-          "servicePostalAddress": {
-            "@id": "https://pinnaclecounselinggroup.com/#sacramento-office"
-          }
-        },
-        {
-          "@type": "ServiceChannel",
-          "name": "In-person — Gold River Office",
-          "servicePostalAddress": {
-            "@id": "https://pinnaclecounselinggroup.com/#gold-river-office"
-          }
-        },
-        {
-          "@type": "ServiceChannel",
-          "name": "Telehealth — statewide California"
-        }
-      ],
-      "description": "Developmentally attuned, attachment-based therapy for children and adolescents, with parent collateral time.",
-      "url": "https://pinnaclecounselinggroup.com/children-and-teens.html",
-      "audience": [
-        {
-          "@type": "Audience",
-          "audienceType": "Adolescents and teens"
-        },
-        {
-          "@type": "Audience",
-          "audienceType": "Families"
-        }
-      ]
-    },
-    {
-      "@type": "Service",
-      "@id": "https://pinnaclecounselinggroup.com/organizational-consulting.html#service",
-      "name": "Organizational Consulting",
-      "serviceType": "Psychotherapy",
-      "category": "Mental health care",
-      "provider": {
-        "@id": "https://pinnaclecounselinggroup.com/#practice"
-      },
-      "areaServed": {
-        "@type": "AdministrativeArea",
-        "name": "California"
-      },
-      "availableChannel": [
-        {
-          "@type": "ServiceChannel",
-          "name": "In-person — Sacramento Office",
-          "servicePostalAddress": {
-            "@id": "https://pinnaclecounselinggroup.com/#sacramento-office"
-          }
-        },
-        {
-          "@type": "ServiceChannel",
-          "name": "In-person — Gold River Office",
-          "servicePostalAddress": {
-            "@id": "https://pinnaclecounselinggroup.com/#gold-river-office"
-          }
-        },
-        {
-          "@type": "ServiceChannel",
-          "name": "Telehealth — statewide California"
-        }
-      ],
-      "description": "Workplace mental health consulting for leaders and teams.",
-      "url": "https://pinnaclecounselinggroup.com/organizational-consulting.html",
-      "audience": [
-        {
-          "@type": "Audience",
-          "audienceType": "Organizations and leaders"
-        }
-      ]
+      "@type": "WebPage",
+      "@id": "https://pinnaclecounselinggroup.com/privacy.html#webpage",
+      "url": "https://pinnaclecounselinggroup.com/privacy.html",
+      "name": "Privacy Policy",
+      "isPartOf": {
+        "@id": "https://pinnaclecounselinggroup.com/#website"
+      }
     },
     {
       "@type": "BreadcrumbList",
@@ -1272,8 +811,8 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Services",
-          "item": "https://pinnaclecounselinggroup.com/services.html"
+          "name": "Privacy Policy",
+          "item": "https://pinnaclecounselinggroup.com/privacy.html"
         }
       ]
     }
@@ -1283,6 +822,121 @@
   <!-- === /SEO META === -->
 
   <script src="waitlist.js?v=5" defer></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "MedicalClinic",
+    "ProfessionalService"
+  ],
+  "name": "Pinnacle Counseling Group \u2014 Gold River Service",
+  "@id": "https://pinnaclecounselinggroup.com/gold-river-therapy.html#service",
+  "url": "https://pinnaclecounselinggroup.com/gold-river-therapy.html",
+  "telephone": "+1-916-990-2326",
+  "email": "Info@PinnacleCounselingGroup.com",
+  "priceRange": "$160\u2013$225",
+  "currenciesAccepted": "USD",
+  "parentOrganization": {
+    "@id": "https://pinnaclecounselinggroup.com/#practice"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "11201 Gold Express Drive, Suite 200",
+    "addressLocality": "Gold River",
+    "addressRegion": "CA",
+    "postalCode": "95670",
+    "addressCountry": "US"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "California"
+  },
+  "medicalSpecialty": [
+    "Psychiatric",
+    "PublicHealth"
+  ],
+  "hasMap": "https://maps.google.com/?q=11201+Gold+Express+Drive+Suite+200+Gold+River+CA+95670",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "20:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "09:00",
+      "closes": "16:00"
+    }
+  ]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Where is the Gold River office?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "11201 Gold Express Drive, Suite 200, in Gold River, CA 95670 \u2014 off Sunrise Boulevard just east of Highway 50. Free on-site parking."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you accept insurance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We accept Aetna, Optum, and United PPO plans directly. For most other PPO plans, we provide superbills for out-of-network reimbursement. Private-pay clients receive a Good Faith Estimate at intake."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long is a first session?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The initial consultation is a complimentary 15-minute call. The first therapy session runs 50 to 55 minutes. Intake sessions for couples or intensive work can run 75 minutes; those are scheduled in advance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I see the same therapist at Gold River and virtually?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every clinician on our team is licensed to practice throughout California and offers both in-person and virtual sessions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you see children and teens?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Several of our clinicians work with children, teens, and families. Whether your child or teen would be a fit depends on presenting concerns; we talk it through at the consultation call."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I am not sure who to book with?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Take the brief matching quiz on our providers page, or call or text (916) 990-2326. Our clinical director helps prospective clients find the right fit before any scheduling happens."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
 
@@ -1340,110 +994,94 @@
 
   <section class="hero">
     <div class="hero__inner">
-      <span class="eyebrow">Our Services</span>
-      <h1 class="hero__title">Specialized <em>care</em>, at every stage.</h1>
-      <p class="hero__subtitle">Psychotherapy and consultation for individuals, couples, families, and organizations.</p>
+      <span class="eyebrow">Gold River, California</span>
+      <h1 class="hero__title">Therapy in <em>Gold River</em>, California.</h1>
     </div>
   </section>
 
-  <!-- LEDE -->
-  <section class="lede-section">
-    <p class="lede reveal">
-      In person in Sacramento &amp; Gold River, and virtually throughout California — <em>tailored to the life you actually lead</em>.
-    </p>
-  </section>
+  <section class="legal-body">
+    <div class="legal-body__inner">
+      <article class="legal-section" style="border: 0; padding-top: 0;">
+        <p>Our Gold River office is open at 11201 Gold Express Drive, Suite 200, off Sunrise Boulevard just east of Highway 50. The space was designed to feel unlike a typical medical office &mdash; natural light, quiet materials, no drop-in waiting area, and a comfortable space for couples and family work. It is meant to be a place where the drive over settles you rather than adding to what you're already carrying.</p>
+        <p>We are a small, licensed group practice. The clinicians who see clients out of the Gold River office work with adults navigating anxiety, obsessive patterns, eating disorders, complex trauma, grief, relationship difficulty, life transitions, and the reproductive milestones that reorganize a person's sense of self. We also work with couples through Emotionally Focused Therapy and other relational modalities, with parents around motherhood and postpartum, and with families where a teen or a child is who's holding the room.</p>
+        <p>A first session is a conversation. You describe what has been going on and what you would like to be different, and we talk through what treatment might realistically look like &mdash; the modality, the pacing, the honest question of whether we are the right fit. If we are not, we tell you and help you find someone who is. If we are, we schedule a regular slot and begin. Most clients see us weekly; some come every other week during maintenance phases, and some come twice weekly during intensive work.</p>
+        <p>Our approach is trauma-informed and non-pathologizing. We do not treat symptoms in isolation from the person who has them, and we do not rush toward technique before we understand what is actually going on. That said, we are rigorous about method. When someone comes in with OCD, we use Exposure and Response Prevention, because the research is unambiguous that it works. When someone comes in for perinatal grief, we work with Solution-Focused Brief Therapy and attachment-informed care developed for that population. When someone comes in for trauma, we may use EMDR, or we may not &mdash; that decision is made in conversation, with the person, not before we've met them.</p>
+        <p>Sessions with our associate clinicians (registered AMFTs and APCCs) are $160. Sessions with our licensed clinicians are $200 to $225 depending on whether the work is individual or couples. We accept Aetna, Optum, and United PPO plans directly, and we provide superbills for out-of-network reimbursement through most other PPO plans.</p>
+        <p>The Gold River office is a natural fit for clients in Gold River, Rancho Cordova, Fair Oaks, Carmichael, Folsom, and El Dorado Hills. All of our clinicians are licensed throughout California and offer virtual sessions if that fits your life better.</p>
+      </article>
 
-  <!-- SERVICES GRID -->
-  <section class="topics">
-    <div class="container">
-      <div class="topics__grid" style="max-width: 1180px;">
-        <a class="service-card reveal" href="individual-therapy.html">
-          <span class="service-card__num">i.</span>
-          <h3><em>Individual</em> Therapy</h3>
-          <p>Individual psychotherapy for adults navigating relationship challenges, high-functioning anxiety, OCD, eating disorders, trauma, and significant life transitions. Deep, relational work is paired with evidence-based tools for lasting clarity.</p>
-          <span class="service-card__link">Learn more</span>
-        </a>
+      <article class="legal-section">
+        <span class="legal-section__num">A</span>
+        <h2>Common <em>questions</em></h2>
+      </article>
 
-        <a class="service-card reveal reveal-delay-1" href="couples-counseling.html">
-          <span class="service-card__num">ii.</span>
-          <h3><em>Couples</em> Counseling</h3>
-          <p>Couples counseling rooted in modern relational and attachment-based therapy, including Emotionally Focused Therapy (EFT) and Gottman frameworks. Designed for couples navigating transitions, deeper connection, or healing from rifts.</p>
-          <span class="service-card__link">Learn more</span>
-        </a>
+      <article class="legal-section">
+        <h3 style="font-family:var(--serif);font-weight:400;font-size:1.35rem;margin-bottom:.6rem;">Where is the Gold River office?</h3>
+        <p>11201 Gold Express Drive, Suite 200, in Gold River, CA 95670 &mdash; off Sunrise Boulevard just east of Highway 50. Free on-site parking.</p>
+      </article>
 
-        <a class="service-card reveal reveal-delay-2" href="children-and-teens.html">
-          <span class="service-card__num">iii.</span>
-          <h3>Children &amp; <em>Teens</em></h3>
-          <p>Specialized support for young people navigating identity, academic pressure, social challenges, family change, and the complexities of growing up.</p>
-          <span class="service-card__link">Learn more</span>
-        </a>
+      <article class="legal-section">
+        <h3 style="font-family:var(--serif);font-weight:400;font-size:1.35rem;margin-bottom:.6rem;">Do you accept insurance?</h3>
+        <p>We accept Aetna, Optum, and United PPO plans directly. For most other PPO plans, we provide superbills for out-of-network reimbursement. Private-pay clients receive a Good Faith Estimate at intake.</p>
+      </article>
 
-        <a class="service-card reveal" href="organizational-consulting.html">
-          <span class="service-card__num">iv.</span>
-          <h3>Organizational <em>Consulting</em></h3>
-          <p>Strategic support for leaders and organizations seeking to improve workplace culture, team dynamics, and organizational wellbeing. <em style="color:var(--clay)">Coming soon.</em></p>
-          <span class="service-card__link is-soon">Coming soon</span>
-        </a>
+      <article class="legal-section">
+        <h3 style="font-family:var(--serif);font-weight:400;font-size:1.35rem;margin-bottom:.6rem;">How long is a first session?</h3>
+        <p>The initial consultation is a complimentary 15-minute call. The first therapy session runs 50 to 55 minutes. Intake sessions for couples or intensive work can run 75 minutes; those are scheduled in advance.</p>
+      </article>
 
-        <a class="service-card reveal reveal-delay-1" href="providers.html#supervisors">
-          <span class="service-card__num">v.</span>
-          <h3>Clinical <em>Supervision</em></h3>
-          <p>Individual and group supervision for California AMFTs and APCCs, grounded in rigorous clinical standards, a psychodynamic approach, and a commitment to your growth in the field.</p>
-          <span class="service-card__link">Learn more</span>
-        </a>
+      <article class="legal-section">
+        <h3 style="font-family:var(--serif);font-weight:400;font-size:1.35rem;margin-bottom:.6rem;">Can I see the same therapist at Gold River and virtually?</h3>
+        <p>Yes. Every clinician on our team is licensed to practice throughout California and offers both in-person and virtual sessions.</p>
+      </article>
 
-        <a class="service-card reveal reveal-delay-2" href="contact.html">
-          <span class="service-card__num">✦</span>
-          <h3>Not sure where to <em>begin</em>?</h3>
-          <p>Book a complimentary consultation directly with one of our therapists. If you'd like help choosing, call or text (916) 990-2326 or email Info@PinnacleCounselingGroup.com.</p>
-          <span class="service-card__link">Request a consultation</span>
-        </a>
-      </div>
+      <article class="legal-section">
+        <h3 style="font-family:var(--serif);font-weight:400;font-size:1.35rem;margin-bottom:.6rem;">Do you see children and teens?</h3>
+        <p>Yes. Several of our clinicians work with children, teens, and families. Whether your child or teen would be a fit depends on presenting concerns; we talk it through at the consultation call.</p>
+      </article>
 
-      <!-- By location & focus (SEO landing pages) -->
-      <div class="services-by-location" style="max-width: 1080px; margin: clamp(4rem, 8vw, 6rem) auto 0; padding: 0 var(--pad-x);">
-        <div style="text-align: center; margin-bottom: clamp(2rem, 4vw, 3rem);">
-          <span class="eyebrow">By Focus &amp; Location</span>
-          <h2 style="font-family: var(--serif); font-weight: 300; font-size: clamp(1.85rem, 3.5vw, 2.6rem); line-height: 1.15; margin-top: .8rem;">More <em>specific</em> pages.</h2>
-        </div>
-        <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; font-family: var(--serif); font-size: 1.1rem;">
-          <li><a href="sacramento-couples-counseling.html" style="color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 2px;">Couples counseling in Sacramento</a></li>
-          <li><a href="therapy-for-moms-sacramento.html" style="color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 2px;">Therapy for moms in Sacramento</a></li>
-          <li><a href="military-families-therapy-sacramento.html" style="color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 2px;">Therapy for military families in Sacramento</a></li>
-          <li><a href="gold-river-therapy.html" style="color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 2px;">Therapy in Gold River</a></li>
-          <li><a href="gold-river-couples-counseling.html" style="color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 2px;">Couples counseling in Gold River</a></li>
-          <li><a href="gold-river-anxiety-therapy.html" style="color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 2px;">Anxiety therapy in Gold River</a></li>
-          <li><a href="gold-river-perinatal-therapy.html" style="color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 2px;">Perinatal therapy in Gold River</a></li>
-          <li><a href="gold-river-therapy-for-moms.html" style="color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 2px;">Therapy for moms in Gold River</a></li>
-          <li><a href="sacramento-anxiety-therapy.html" style="color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 2px;">Anxiety therapy in Sacramento</a></li>
-        </ul>
-      </div>
+      <article class="legal-section">
+        <h3 style="font-family:var(--serif);font-weight:400;font-size:1.35rem;margin-bottom:.6rem;">What if I am not sure who to book with?</h3>
+        <p>Take the brief matching quiz on our providers page, or call or text (916) 990-2326. Our clinical director helps prospective clients find the right fit before any scheduling happens.</p>
+      </article>
+
+      <article class="legal-section">
+        <span class="legal-section__num">B</span>
+        <h2>Meet the <em>clinicians</em></h2>
+      </article>
+
+      <article class="legal-section" style="text-align: left;">
+        <img loading="lazy" decoding="async" src="cheryl-runkle.jpg?v=1" alt="Cheryl Runkle, AMFT & APCC" style="width:96px;height:96px;border-radius:50%;object-fit:cover;margin-bottom:.9rem" />
+        <h3 style="font-family:var(--serif);font-weight:400;font-size:1.35rem;margin-bottom:.35rem;">Cheryl Runkle, AMFT & APCC</h3>
+        <span style="display:block;font-family:var(--sans);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.9rem">Registered Associate Marriage and Family Therapist &middot; Registered Associate Professional Clinical Counselor</span>
+        <p style="margin-bottom:.9rem"><a href="providers.html#cheryl" style="color:var(--clay-deep);border-bottom:1px solid rgba(163,99,69,.35)">Read full bio &rarr;</a></p>
+      </article>
+
+      <article class="legal-section" style="text-align: left;">
+        <img loading="lazy" decoding="async" src="evangeline-wilson.jpg?v=1" alt="Evangeline Wilson, AMFT" style="width:96px;height:96px;border-radius:50%;object-fit:cover;margin-bottom:.9rem" />
+        <h3 style="font-family:var(--serif);font-weight:400;font-size:1.35rem;margin-bottom:.35rem;">Evangeline Wilson, AMFT</h3>
+        <span style="display:block;font-family:var(--sans);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.9rem">Registered Associate Marriage and Family Therapist</span>
+        <p style="margin-bottom:.9rem"><a href="providers.html#evangeline" style="color:var(--clay-deep);border-bottom:1px solid rgba(163,99,69,.35)">Read full bio &rarr;</a></p>
+      </article>
+
+      <article class="legal-section" style="text-align: left;">
+        <img loading="lazy" decoding="async" src="maddy-stein.jpg?v=1" alt="Maddy Stein, AMFT" style="width:96px;height:96px;border-radius:50%;object-fit:cover;margin-bottom:.9rem" />
+        <h3 style="font-family:var(--serif);font-weight:400;font-size:1.35rem;margin-bottom:.35rem;">Maddy Stein, AMFT</h3>
+        <span style="display:block;font-family:var(--sans);font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:.9rem">Registered Associate Marriage and Family Therapist</span>
+        <p style="margin-bottom:.9rem"><a href="providers.html#maddy" style="color:var(--clay-deep);border-bottom:1px solid rgba(163,99,69,.35)">Read full bio &rarr;</a></p>
+      </article>
+
+      <article class="legal-section">
+        <span class="legal-section__num">C</span>
+        <h2>Visit or <em>book</em></h2>
+        <p><strong>Gold River office</strong><br/>11201 Gold Express Drive, Suite 200<br/>Gold River, CA 95670</p>
+        <p>Telephone: <a href="tel:+19169902326">(916) 990-2326</a><br/>Email: <a href="mailto:Info@PinnacleCounselingGroup.com">Info@PinnacleCounselingGroup.com</a></p>
+        <p style="margin-top:2rem"><a href="book.html" class="btn btn--clay" data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1" data-spwidget-scope-uri="pinnacle" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind>Book a free consult</a></p>
+      </article>
+
     </div>
   </section>
 
-    <!-- CONTACT CARD -->
-  <section class="contact-band">
-    <div class="contact-card reveal">
-      <div class="contact-card__inner">
-        <div class="contact-card__lead">
-          <h3>Schedule a <em>consultation</em>.</h3>
-          <p>Book a free 15-minute call directly with the therapist of your choice. To speak with our clinical director or for help matching, call or text (916) 990-2326 or email Info@PinnacleCounselingGroup.com.</p>
-        </div>
-        <div class="contact-card__info">
-          <div class="contact-card__detail">
-            <span class="label">Telephone</span>
-            <a href="tel:+19169902326">(916) 990-2326</a>
-          </div>
-          <div class="contact-card__detail">
-            <span class="label">Email</span>
-            <a href="mailto:Info@PinnacleCounselingGroup.com">Info@PinnacleCounselingGroup.com</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   </main>
 
   <footer class="footer">
@@ -1502,7 +1140,6 @@
   </footer>
 
   <script>
-    // Lenis smooth scroll
     window.__lenis = null;
     window.addEventListener('load', () => {
       if (typeof Lenis === 'undefined') return;
@@ -1518,19 +1155,8 @@
       window.__lenis = lenis;
       const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); };
       requestAnimationFrame(raf);
-      document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', (ev) => {
-          const id = a.getAttribute('href');
-          if (!id || id === '#') return;
-          const target = document.querySelector(id);
-          if (!target) return;
-          ev.preventDefault();
-          lenis.scrollTo(target, { offset: -20, duration: 1.3 });
-        });
-      });
     });
 
-    // Nav hide-on-scroll-down, show-on-scroll-up
     (() => {
       const nav = document.getElementById('nav');
       if (!nav) return;
@@ -1547,7 +1173,6 @@
       }, { passive: true });
     })();
 
-    // Mobile panel
     (() => {
       const panel = document.getElementById('mobilePanel');
       const openBtn = document.getElementById('hamburger');
@@ -1557,7 +1182,6 @@
       panel?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => panel.classList.remove('is-open')));
     })();
 
-    // Scroll progress
     (() => {
       const bar = document.getElementById('scrollProgress');
       if (!bar) return;
@@ -1573,7 +1197,6 @@
       update();
     })();
 
-    // Reveal on intersect
     (() => {
       const io = new IntersectionObserver((entries) => {
         entries.forEach(e => {
@@ -1582,20 +1205,6 @@
       }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
       document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     })();
-  
-    // Sheen-tracker on the sage contact card
-    (() => {
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduce) return;
-      document.querySelectorAll('.contact-card').forEach(c => {
-        c.addEventListener('mousemove', (e) => {
-          const r = c.getBoundingClientRect();
-          c.style.setProperty('--cx', ((e.clientX - r.left) / r.width) * 100 + '%');
-          c.style.setProperty('--cy', ((e.clientY - r.top) / r.height) * 100 + '%');
-        });
-      });
-    })();
-
   
     // Back to top
     (() => {

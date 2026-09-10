@@ -2,6 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Google tag (gtag.js) — HIPAA-aware config; loaded early so page_view isn't delayed -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5NPRRT63D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-C5NPRRT63D', {'anonymize_ip': true,'allow_google_signals': false,'allow_ad_personalization_signals': false});
+  </script>
+  <script src="/tracking.js?v=1" defer></script>
+
   <title>Redirecting — Pinnacle Counseling Group</title>
   <link rel="canonical" href="https://pinnaclecounselinggroup.com/focus-areas.html" />
   <meta http-equiv="refresh" content="0; url=/focus-areas.html" />
@@ -10,5 +22,22 @@
 </head>
 <body>
   <p>This page has moved. <a href="/focus-areas.html">Continue to Focus Areas</a>.</p>
+
+  <script>
+    /* reveal-failsafe: guarantee content is visible even if IO / animation stalls */
+    (function () {
+      var force = function () {
+        document.querySelectorAll('.reveal:not(.is-in):not(.is-visible)').forEach(function (el) {
+          el.classList.add('is-in');
+          el.classList.add('is-visible');
+        });
+      };
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function () { setTimeout(force, 1200); });
+      } else {
+        setTimeout(force, 1200);
+      }
+    })();
+  </script>
 </body>
 </html>

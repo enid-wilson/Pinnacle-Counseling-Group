@@ -15,8 +15,9 @@
   <script src="/tracking.js?v=1" defer></script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rates & Insurance — Pinnacle Counseling Group | Sacramento Therapy</title>
-  <meta name="description" content="Therapy rates at Pinnacle Counseling Group: licensed clinicians $200–225, associate clinicians $160 per session. Aetna and Optum accepted; superbills provided for out-of-network." />
+  <title>Thank you — Pinnacle Counseling Group</title>
+  <meta name="description" content="Thank you — your message has been received. We&rsquo;ll respond within one business day." />
+  <meta name="robots" content="noindex, follow" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -36,7 +37,7 @@
       --white:        #ffffff;
       --cream:        #ffffff;
       --cream-warm:   #ddd5c3;
-      --cream-soft:   #ffffff;
+      --cream-soft:   #f4f1ea;
       --ink:          #2f3535;
       --ink-soft:     rgba(47, 53, 53, 0.90);
       --ink-faint:    rgba(47, 53, 53, 0.48);
@@ -74,9 +75,7 @@
       font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
       text-rendering: optimizeLegibility;
     }
-    h1, h2, h3, h4, h5,
-    .display, .lede, .hero__title, .hero__subtitle,
-    .topic h3, .approach h3, .contact-card__lead h3 {
+    h1, h2, h3, h4, h5 {
       font-feature-settings: "kern" 1, "liga" 1, "dlig" 1, "onum" 1, "calt" 1;
       font-variant-numeric: oldstyle-nums proportional-nums;
     }
@@ -84,9 +83,6 @@
     a { color: inherit; text-decoration: none; }
     ::selection { background: var(--clay); color: var(--cream-warm); }
 
-    /* Typography */
-    .display { font-family: var(--serif); font-weight: 300; line-height: 1.05; letter-spacing: -.01em; color: var(--ink); }
-    .display em { font-style: italic; color: var(--clay); font-weight: 300; }
     .eyebrow {
       font-family: var(--sans);
       font-weight: 400;
@@ -95,47 +91,12 @@
       text-transform: uppercase;
       color: var(--sage);
     }
-    .ornament {
-      display: block;
-      margin: 0 auto 2rem;
-      font-family: var(--serif);
-      font-size: 1.5rem;
-      color: var(--sage);
-      line-height: 1;
-      user-select: none;
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-flex; align-items: center; gap: .7rem;
-      padding: 1.05rem 1.9rem;
-      border: 1px solid var(--ink);
-      border-radius: var(--radius-pill);
-      color: var(--ink);
-      background: transparent;
-      font-family: var(--sans);
-      font-weight: 400;
-      font-size: .76rem;
-      letter-spacing: .24em;
-      text-transform: uppercase;
-      transition: background .5s var(--ease), color .5s var(--ease), border-color .5s var(--ease), padding .35s var(--ease);
-      cursor: pointer;
-    }
-    .btn:hover { background: var(--ink); color: var(--cream-warm); padding-right: 2.2rem; }
-    .btn--clay { background: var(--clay); border-color: var(--clay); color: #fff; }
-    .btn--clay:hover { background: var(--clay-deep); border-color: var(--clay-deep); color: #fff; }
-    .arrow { width: 14px; height: 1px; background: currentColor; position: relative; display: inline-block; }
-    .arrow::after {
-      content: ""; position: absolute; right: 0; top: -3px; width: 7px; height: 7px;
-      border-top: 1px solid currentColor; border-right: 1px solid currentColor;
-      transform: rotate(45deg);
-    }
 
     /* Sections */
     section { padding: var(--section-y) var(--pad-x); position: relative; }
     .container { max-width: 1280px; margin: 0 auto; }
 
-    /* Nav (shared) */
+    /* === NAV === */
     .nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 50;
       display: grid;
@@ -144,25 +105,19 @@
       padding: 1.4rem var(--pad-x);
       transition: transform .55s var(--ease), background .45s var(--ease), padding .4s var(--ease), border-color .55s var(--ease);
       border-bottom: 1px solid transparent;
-      transform: translateY(0);
       background: rgba(255, 255, 255, 0.92);
       backdrop-filter: saturate(140%) blur(12px);
       -webkit-backdrop-filter: saturate(140%) blur(12px);
       border-bottom-color: var(--line-soft);
     }
-    .nav__brand { justify-self: start; display: flex; align-items: center; height: 56px; width: 56px; position: relative; }
-    .nav__brand img { height: 100%; width: 100%; object-fit: contain; transition: opacity .35s var(--ease); }
+    .nav__brand { justify-self: start; display: flex; align-items: center; height: 56px; width: 56px; }
+    .nav__brand img { height: 100%; width: 100%; object-fit: contain; }
     .nav__links { justify-self: center; display: flex; align-items: center; gap: 2.6rem; }
     .nav__links a {
-      font-family: var(--sans);
-      font-weight: 400;
-      font-size: .74rem;
-      letter-spacing: .28em;
-      text-transform: uppercase;
-      color: var(--ink);
-      opacity: 1;
-      position: relative;
-      padding-bottom: 4px;
+      font-family: var(--sans); font-weight: 400;
+      font-size: .74rem; letter-spacing: .28em;
+      text-transform: uppercase; color: var(--ink);
+      position: relative; padding-bottom: 4px;
     }
     .nav__links a::after {
       content: ""; position: absolute; left: 0; bottom: 0;
@@ -175,10 +130,9 @@
     .nav__cta {
       justify-self: end;
       display: inline-flex; align-items: center; gap: .6rem;
-      font-family: var(--sans);
-      font-weight: 400; font-size: .74rem; letter-spacing: .26em;
-      text-transform: uppercase;
-      color: var(--ink);
+      font-family: var(--sans); font-weight: 400;
+      font-size: .74rem; letter-spacing: .26em;
+      text-transform: uppercase; color: var(--ink);
       padding: .85rem 1.4rem;
       border: 1px solid var(--ink);
       border-radius: var(--radius-pill);
@@ -187,10 +141,41 @@
     .nav__cta:hover { background: var(--ink); color: var(--cream-warm); border-color: var(--ink); }
     .nav.is-hidden { transform: translateY(-100%); }
     .nav__hamburger { display: none; width: 28px; height: 18px; position: relative; background: transparent; border: 0; padding: 0; cursor: pointer; }
-    .nav__hamburger span { position: absolute; left: 0; right: 0; height: 1px; background: var(--ink); transition: transform .4s var(--ease); }
+    .nav__hamburger span { position: absolute; left: 0; right: 0; height: 1px; background: var(--ink); }
     .nav__hamburger span:nth-child(1) { top: 2px; }
     .nav__hamburger span:nth-child(2) { top: 50%; }
     .nav__hamburger span:nth-child(3) { bottom: 2px; }
+
+    /* Services dropdown */
+    .nav__item-dropdown { position: relative; display: inline-flex; align-items: center; }
+    .nav__item-dropdown > a { padding-right: .2rem; display: inline-flex; align-items: center; }
+    .nav__item-dropdown::after { content: ""; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); width: 100%; height: 18px; }
+    .nav__dropdown {
+      position: absolute; top: calc(100% + 18px); left: 50%;
+      transform: translateX(-50%) translateY(-8px);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: saturate(140%) blur(12px);
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-md);
+      padding: .9rem 0; min-width: 270px;
+      box-shadow: 0 24px 50px -22px rgba(47,53,53,.22);
+      opacity: 0; visibility: hidden; pointer-events: none;
+      transition: opacity .45s var(--ease), transform .45s var(--ease), visibility .45s var(--ease);
+      z-index: 51;
+    }
+    .nav__dropdown a {
+      display: block; padding: .85rem 1.7rem;
+      font-family: var(--serif); font-weight: 300; font-size: 1.04rem;
+      color: var(--ink);
+      transition: color .35s var(--ease), background .35s var(--ease), padding-left .35s var(--ease);
+    }
+    .nav__dropdown a::after { display: none; }
+    .nav__dropdown a:hover { color: var(--clay-deep); background: rgba(229, 223, 211, 0.45); padding-left: 2rem; }
+    .nav__item-dropdown:hover .nav__dropdown,
+    .nav__item-dropdown:focus-within .nav__dropdown {
+      opacity: 1; visibility: visible; pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
 
     /* Mobile panel */
     .mobile-panel {
@@ -210,18 +195,11 @@
     .mobile-panel__close::before { transform: rotate(45deg); }
     .mobile-panel__close::after  { transform: rotate(-45deg); }
     .mobile-panel__nav { margin-top: 4rem; display: flex; flex-direction: column; gap: 1.6rem; }
-    .mobile-panel__nav a { font-family: var(--serif); font-weight: 300; font-size: 2.2rem; color: var(--ink); line-height: 1; }
+    .mobile-panel__nav a { font-family: var(--serif); font-weight: 300; font-size: 2.2rem; color: var(--ink); }
     .mobile-panel__nav a em { font-style: italic; color: var(--clay-deep); }
 
     /* Scroll progress */
-    .scroll-progress {
-      position: fixed; top: 0; left: 0; right: 0;
-      height: 1px; background: var(--sage);
-      z-index: 60;
-      transform: scaleX(0); transform-origin: left center;
-      pointer-events: none;
-      opacity: .72;
-    }
+    .scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 1px; background: var(--sage); z-index: 60; transform: scaleX(0); transform-origin: left center; opacity: .72; }
 
     /* Reveal */
     .reveal {
@@ -242,233 +220,161 @@
         opacity: 1 !important; transform: none !important; transition: none !important;
       }
     }
+    .reveal.is-in { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: .12s; }
+    .reveal-delay-2 { transition-delay: .24s; }
 
-    /* PAGE HERO */
+    /* === HERO === */
     .hero {
-      padding: clamp(11rem, 18vw, 14rem) var(--pad-x) clamp(5rem, 9vw, 8rem);
+      padding: clamp(11rem, 18vw, 14rem) var(--pad-x) calc(clamp(5rem, 8vw, 7rem) + var(--radius-xl));
       text-align: center;
-      background: var(--cream);
+      background: var(--white);
     }
     .hero__inner { max-width: 920px; margin: 0 auto; }
-    .hero .eyebrow { display: block; margin-bottom: 1.5rem; }
+    .hero .eyebrow { display: block; margin-bottom: 1.6rem; }
     .hero__title {
-      font-family: var(--serif);
-      font-weight: 300;
+      font-family: var(--serif); font-weight: 300;
       font-size: clamp(3rem, 7vw, 5.5rem);
-      line-height: 1.0;
-      letter-spacing: -.015em;
-      color: var(--ink);
-      margin: 0 0 1.8rem;
+      line-height: 1.0; letter-spacing: -.015em;
+      color: var(--ink); margin: 0;
     }
     .hero__title em { font-style: italic; color: var(--clay); }
-    .hero__subtitle {
-      font-family: var(--serif);
-      font-style: italic;
-      font-weight: 400;
-      font-size: clamp(1.1rem, 1.7vw, 1.4rem);
-      color: var(--ink-soft);
-      max-width: 30em;
-      margin: 0 auto;
-      line-height: 1.5;
-    }
 
-    /* LEDE — italic statement */
-    .lede-section {
-      background: var(--cream-warm);
-      padding-top: clamp(4rem, 8vw, 7rem);
-      padding-bottom: clamp(4rem, 8vw, 7rem);
-      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-      margin-top: calc(-1 * var(--radius-xl));
-      position: relative;
-      z-index: 1;
-    }
-    .hero { padding-bottom: calc(clamp(5rem, 9vw, 8rem) + var(--radius-xl)); }
-    .lede {
-      font-family: var(--serif);
-      font-weight: 300;
-      font-style: italic;
-      font-size: clamp(1.5rem, 3vw, 2.4rem);
-      line-height: 1.4;
-      color: var(--ink);
-      max-width: 38em;
-      margin: 0 auto;
-      text-align: center;
-      padding: 0 var(--pad-x);
-    }
-    .lede em { color: var(--clay); font-style: italic; }
-
-    /* TOPICS — Session Rates (white zone, rounded shoulder over the cream Approach section above) */
-    .topics {
-      background: var(--white);
-      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-      margin-top: calc(-1 * var(--radius-xl));
-      position: relative; z-index: 2;
-      padding-top: clamp(6rem, 10vw, 9rem);
-      padding-bottom: clamp(8rem, 13vw, 11rem);
-    }
-    .topics__header {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto clamp(3rem, 5vw, 4.5rem);
-    }
-    .topics__header .eyebrow { display: block; margin-bottom: 1.4rem; }
-    .topics__header .ornament { margin-bottom: 1.6rem; }
-    .topics__header h2 {
-      font-family: var(--serif);
-      font-weight: 300;
-      font-size: clamp(2.4rem, 5vw, 4rem);
-      margin: 0 0 1rem;
-    }
-    .topics__header h2 em { color: var(--clay); font-style: italic; }
-    .topics__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: clamp(1.2rem, 2vw, 1.6rem);
-      max-width: 1180px;
-      margin: 0 auto;
-    }
-    .topic {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      padding: 2.2rem 1.9rem;
-      box-shadow: 0 6px 18px -14px rgba(47,53,53,.10);
-      transition: transform .55s var(--ease), border-color .55s var(--ease), box-shadow .55s var(--ease);
-    }
-    .topic:hover {
-      transform: translateY(-4px);
-      border-color: var(--sage);
-      box-shadow: 0 18px 40px -24px rgba(47, 53, 53, .2);
-    }
-    .topic h3 {
-      font-family: var(--serif);
-      font-weight: 400;
-      font-size: 1.3rem;
-      line-height: 1.2;
-      margin: 0 0 .8rem;
-      color: var(--ink);
-    }
-    .topic p {
-      font-size: .94rem;
-      line-height: 1.6;
-      color: var(--ink-soft);
-      margin: 0;
-    }
-    .topic p strong { color: var(--ink); font-weight: 400; }
-
-    /* APPROACH — How billing works (cream-warm zone, rounded shoulder over hero) */
-    .approach {
+    /* === LEGAL INTRO — cream zone === */
+    .legal-intro {
       background: var(--cream-warm);
       border-radius: var(--radius-xl) var(--radius-xl) 0 0;
       margin-top: calc(-1 * var(--radius-xl));
       position: relative; z-index: 1;
-      padding-top: clamp(6rem, 10vw, 9rem);
-      padding-bottom: clamp(8rem, 13vw, 11rem);
-    }
-    .approach__header {
+      padding: clamp(5rem, 9vw, 8rem) var(--pad-x) clamp(4rem, 7vw, 6rem);
       text-align: center;
-      max-width: 720px;
-      margin: 0 auto clamp(3rem, 5vw, 4.5rem);
     }
-    .approach__header .eyebrow { display: block; margin-bottom: 1.4rem; }
-    .approach__header .ornament { margin-bottom: 1.6rem; }
-    .approach__header h2 {
-      font-family: var(--serif);
-      font-weight: 300;
-      font-size: clamp(2.4rem, 5vw, 4rem);
-      margin: 0;
-    }
-    .approach__header h2 em { color: var(--clay); font-style: italic; }
-    .approach__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: clamp(1.5rem, 2.5vw, 2.2rem);
-      max-width: 1180px;
-      margin: 0 auto;
-    }
-    .approach__card {
-      background: var(--white);
-      border: 1px solid var(--line-soft);
-      border-radius: var(--radius-lg);
-      padding: 2.8rem 2.2rem;
-    }
-    .approach__num {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 1rem;
-      color: var(--sage);
+    .legal-intro__inner { max-width: 720px; margin: 0 auto; }
+    .legal-intro__date {
       display: block;
-      margin-bottom: 1.4rem;
+      font-family: var(--sans); font-weight: 400;
+      font-size: .68rem; letter-spacing: .32em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1.6rem;
     }
-    .approach__card h3 {
-      font-family: var(--serif);
-      font-weight: 400;
-      font-size: clamp(1.4rem, 1.9vw, 1.75rem);
-      line-height: 1.2;
-      margin: 0 0 1.2rem;
+    .legal-intro__lead {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+      line-height: 1.6;
+      color: var(--ink-soft);
+      max-width: 44em; margin: 0 auto;
+    }
+    .legal-intro__lead em { color: var(--clay); font-style: italic; }
+    .legal-intro__corp {
+      display: block;
+      margin-top: 1.4rem;
+      font-family: var(--serif); font-style: italic;
+      font-size: .98rem;
+      color: var(--ink-faint);
+    }
+
+    /* === LEGAL BODY — white zone with editorial sections === */
+    .legal-body {
+      background: var(--white);
+      border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+      margin-top: calc(-1 * var(--radius-xl));
+      position: relative; z-index: 2;
+      padding: clamp(6rem, 10vw, 9rem) var(--pad-x) clamp(8rem, 13vw, 11rem);
+    }
+    .legal-body__inner { max-width: 760px; margin: 0 auto; }
+    .legal-section {
+      padding-top: 1.4rem;
+      margin-bottom: clamp(3rem, 5.5vw, 4.5rem);
+      position: relative;
+    }
+    .legal-section:last-child { margin-bottom: 0; }
+    .legal-section::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 36px; height: 1px;
+      background: var(--clay);
+      opacity: .85;
+    }
+    .legal-section__num {
+      display: block;
+      font-family: var(--sans); font-weight: 400;
+      font-size: .66rem; letter-spacing: .32em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1rem;
+    }
+    .legal-section h2 {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(1.55rem, 2.4vw, 2rem);
+      line-height: 1.2; letter-spacing: -.005em;
+      margin: 0 0 1.4rem;
       color: var(--ink);
     }
-    .approach__card h3 em { font-style: italic; color: var(--clay-deep); font-weight: 400; }
-    .approach__card p { font-size: 1rem; line-height: 1.7; color: var(--ink-soft); margin: 0; }
-
-    /* Contact card (sage) — continues the white zone after topics, no shoulder needed */
-    .contact-band {
-      background: var(--white);
-      padding: 0 var(--pad-x) clamp(9rem, 14vw, 12rem);
-    }
-    .contact-card {
-      background: var(--sage);
-      color: var(--cream-warm);
-      border-radius: var(--radius-xl);
-      padding: clamp(2.4rem, 4.5vw, 4rem) clamp(2rem, 4vw, 3.5rem);
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .contact-card__inner {
-      display: grid;
-      grid-template-columns: 1.25fr 1fr;
-      gap: clamp(2rem, 4vw, 4rem);
-      align-items: center;
-    }
-    .contact-card__lead h3 {
-      font-family: var(--serif);
-      font-weight: 300;
-      font-size: clamp(2rem, 3.5vw, 2.9rem);
-      line-height: 1.1;
-      margin: 0 0 1.1rem;
-      color: var(--cream-warm);
-    }
-    .contact-card__lead h3 em { color: var(--clay-soft); font-style: italic; }
-    .contact-card__lead p {
-      font-family: var(--serif);
-      font-weight: 400;
-      font-size: 1.05rem;
-      line-height: 1.55;
-      color: rgba(229, 223, 211, .85);
-      margin: 0 0 1.5rem;
-      max-width: 30em;
-    }
-    .contact-card__info { display: flex; flex-direction: column; gap: 1.5rem; }
-    .contact-card__detail .label {
-      display: block;
-      font-family: var(--sans);
-      font-size: .65rem;
-      letter-spacing: .32em;
-      text-transform: uppercase;
-      color: rgba(229, 223, 211, .55);
-      margin-bottom: .45rem;
-    }
-    .contact-card__detail a {
-      font-family: var(--serif);
-      font-weight: 400;
+    .legal-section h2 em { color: var(--clay-deep); font-style: italic; }
+    .legal-section h3 {
+      font-family: var(--serif); font-weight: 400; font-style: italic;
       font-size: 1.15rem;
-      color: var(--cream-warm);
-      transition: color .4s var(--ease);
-      display: inline-block;
+      color: var(--ink);
+      margin: 1.4rem 0 .6rem;
     }
-    .contact-card__detail a:hover { color: var(--clay-soft); }
+    .legal-section p {
+      font-family: var(--serif); font-weight: 400;
+      font-size: 1.06rem;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      margin: 0 0 1.2rem;
+    }
+    .legal-section p:last-child { margin-bottom: 0; }
+    .legal-section p strong {
+      color: var(--ink);
+      font-weight: 400;
+      font-style: italic;
+    }
+    .legal-section ul {
+      font-family: var(--serif); font-weight: 400;
+      font-size: 1.06rem;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      margin: 0 0 1.2rem;
+      padding-left: 0;
+      list-style: none;
+    }
+    .legal-section ul li {
+      position: relative;
+      padding-left: 1.2rem;
+      margin-bottom: .4rem;
+    }
+    .legal-section ul li::before {
+      content: "·";
+      position: absolute; left: 0; top: -.15em;
+      color: var(--sage);
+      font-size: 1.4rem; line-height: 1;
+    }
+    .legal-section a {
+      color: var(--clay-deep);
+      border-bottom: 1px solid currentColor;
+      transition: opacity .35s var(--ease);
+    }
+    .legal-section a:hover { opacity: .7; }
+    .legal-contact-block {
+      margin-top: 1rem;
+      font-family: var(--serif); font-weight: 400;
+      font-size: 1.06rem;
+      line-height: 1.7;
+      color: var(--ink-soft);
+    }
+    .legal-contact-block strong {
+      display: block;
+      font-style: italic;
+      color: var(--ink);
+      font-weight: 400;
+      margin-bottom: .25rem;
+    }
+    .legal-contact-block a { color: var(--clay-deep); border-bottom: 1px solid currentColor; }
 
-    /* Footer (shared) — cream-warm zone, rounded shoulder over white contact band */
+    /* === FOOTER === */
     .footer {
       background: var(--cream-warm);
       color: var(--ink);
@@ -487,21 +393,21 @@
       border-bottom: 1px solid rgba(43,38,32,.14);
     }
     .footer__brand img { width: 56px; height: 56px; }
+    .footer__brand a {
+      display: inline-block;
+      transition: opacity .35s var(--ease), transform .45s var(--ease);
+    }
+    .footer__brand a:hover { opacity: .75; transform: translateY(-2px); }
     .footer__brand p {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 1.1rem;
-      color: var(--ink-soft);
-      margin: 1.8rem 0 0;
-      line-height: 1.5;
+      font-family: var(--serif); font-style: italic;
+      font-size: 1.1rem; color: var(--ink-soft);
+      margin: 1.8rem 0 0; line-height: 1.5;
       max-width: 22em;
     }
     .footer__col h4 {
-      font-family: var(--sans);
-      font-weight: 400; font-size: .68rem;
+      font-family: var(--sans); font-weight: 400; font-size: .68rem;
       letter-spacing: .32em; text-transform: uppercase;
-      color: var(--ink-soft);
-      margin: 0 0 1.6rem;
+      color: var(--ink-soft); margin: 0 0 1.6rem;
     }
     .footer__col ul { list-style: none; }
     .footer__col li { margin-bottom: .9rem; }
@@ -518,8 +424,7 @@
       display: block;
       font-family: var(--sans); font-size: .65rem;
       letter-spacing: .3em; text-transform: uppercase;
-      color: var(--ink-soft);
-      margin-bottom: .35rem;
+      color: var(--ink-soft); margin-bottom: .35rem;
     }
     .footer__locations .hours { font-family: var(--serif); font-style: italic; color: var(--ink-soft); font-size: .98rem; line-height: 1.55; }
     .footer__locations a { font-family: var(--serif); font-size: 1.05rem; }
@@ -554,88 +459,12 @@
       border-left: 1px solid currentColor;
       transform: translate(-50%, -50%) rotate(45deg);
     }
-    .footer__bottom {
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 1rem;
-      font-family: var(--sans); font-size: .72rem;
-      letter-spacing: .15em; color: var(--ink-soft);
-    }
+    .footer__bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-family: var(--sans); font-size: .72rem; letter-spacing: .15em; color: var(--ink-soft); }
     .footer__bottom .legal a { margin-left: 1.4rem; color: var(--ink-soft); }
     .footer__bottom .legal a:first-child { margin-left: 0; }
 
-    /* Rates summary — two-tier price card directly below the Topics header */
-    .rates-summary {
-      max-width: 980px;
-      margin: 0 auto clamp(3.5rem, 6vw, 5rem);
-    }
-    .rates-summary__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: 0 8px 24px -16px rgba(47,53,53,.12);
-    }
-    .rates-summary__tier {
-      padding: clamp(2.4rem, 4.5vw, 3.4rem) clamp(1.8rem, 3vw, 2.6rem);
-      display: flex; flex-direction: column;
-      align-items: center; text-align: center;
-      gap: .6rem;
-      position: relative;
-    }
-    .rates-summary__tier + .rates-summary__tier {
-      border-left: 1px solid var(--line);
-    }
-    .rates-summary__label {
-      font-family: var(--sans);
-      font-weight: 400;
-      font-size: .68rem;
-      letter-spacing: .32em;
-      text-transform: uppercase;
-      color: var(--sage);
-    }
-    .rates-summary__amount {
-      font-family: var(--serif);
-      font-weight: 300;
-      font-size: clamp(2.4rem, 5vw, 3.6rem);
-      line-height: 1.05;
-      letter-spacing: -.01em;
-      color: var(--clay);
-      font-feature-settings: "kern" 1, "liga" 1, "dlig" 1, "lnum" 1;
-      font-variant-numeric: lining-nums proportional-nums;
-    }
-    .rates-summary__note {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 1rem;
-      color: var(--ink-soft);
-    }
-    .rates-summary__footnote {
-      font-family: var(--serif);
-      font-style: italic;
-      font-weight: 400;
-      font-size: clamp(.98rem, 1.1vw, 1.05rem);
-      line-height: 1.55;
-      color: var(--ink-soft);
-      margin: 1.4rem auto 0;
-      max-width: 48em;
-      text-align: center;
-    }
-    .rates-summary__link {
-      color: var(--clay-deep);
-      border-bottom: 1px solid currentColor;
-      font-style: normal;
-      transition: opacity .35s var(--ease);
-      white-space: nowrap;
-    }
-    .rates-summary__link:hover { opacity: .7; }
-
     /* Responsive */
     @media (max-width: 1024px) {
-      .topics__grid { grid-template-columns: repeat(2, 1fr); }
-      .approach__grid { grid-template-columns: 1fr; }
       .footer__top { grid-template-columns: 1fr 1fr; gap: 3rem; }
       .footer__brand { grid-column: span 2; }
     }
@@ -643,138 +472,11 @@
       .nav__links { display: none; }
       .nav__cta { display: none; }
       .nav__hamburger { display: block; }
-      .topics__grid { grid-template-columns: 1fr; }
-      .rates-summary__grid { grid-template-columns: 1fr; }
-      .rates-summary__tier + .rates-summary__tier { border-left: 0; border-top: 1px solid var(--line); }
-      .contact-card__inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .footer__top { grid-template-columns: 1fr; gap: 2.5rem; }
       .footer__brand { grid-column: auto; }
       .footer__bottom { flex-direction: column; align-items: flex-start; gap: 1rem; }
       .footer__bottom .legal a:first-child { margin-left: 0; }
     }
-  
-    /* Services dropdown in nav */
-.nav__item-dropdown::after {
-      content: ""; position: absolute;
-      top: 100%; left: 50%; transform: translateX(-50%);
-      width: 100%; height: 18px;
-    }
-    .nav__dropdown {
-      position: absolute;
-      top: calc(100% + 18px);
-      left: 50%;
-      transform: translateX(-50%) translateY(-8px);
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: saturate(140%) blur(12px);
-      -webkit-backdrop-filter: saturate(140%) blur(12px);
-      border: 1px solid var(--line-soft);
-      border-radius: var(--radius-md);
-      padding: .9rem 0;
-      min-width: 270px;
-      box-shadow: 0 24px 50px -22px rgba(47,53,53,.22);
-      opacity: 0;
-      visibility: hidden;
-      pointer-events: none;
-      transition: opacity .45s var(--ease), transform .45s var(--ease), visibility .45s var(--ease);
-      z-index: 51;
-    }
-    .nav__dropdown a {
-      display: block;
-      padding: .85rem 1.7rem;
-      font-family: var(--serif);
-      font-weight: 300;
-      font-size: 1.04rem;
-      letter-spacing: 0;
-      text-transform: none;
-      color: var(--ink);
-      transition: color .35s var(--ease), background .35s var(--ease), padding-left .35s var(--ease);
-      position: static;
-    }
-    .nav__dropdown a::after { display: none; }
-    .nav__dropdown a:hover {
-      color: var(--clay-deep);
-      background: rgba(229, 223, 211, 0.45);
-      padding-left: 2rem;
-    }
-    .nav__item-dropdown:hover .nav__dropdown,
-    .nav__item-dropdown:focus-within .nav__dropdown {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-      transform: translateX(-50%) translateY(0);
-    }
-
-  
-    /* === LUXURY HOVER REFINEMENTS === */
-    .topic, .approach__card {
-      transition: transform .55s var(--ease), border-color .55s var(--ease),
-                  box-shadow .55s var(--ease), background .55s var(--ease);
-      position: relative;
-      overflow: hidden;
-    }
-    .topic::before, .approach__card::before {
-      content: "";
-      position: absolute;
-      width: 240px; height: 240px;
-      background: radial-gradient(circle at center, rgba(189,119,87,.10) 0%, rgba(189,119,87,0) 70%);
-      top: -80px; right: -80px;
-      border-radius: 999px;
-      opacity: 0;
-      transition: opacity .6s var(--ease);
-      pointer-events: none;
-    }
-    .topic::before, .approach__card::before { display: none !important; }
-    .topic:hover::before, .approach__card:hover::before { opacity: 0; }
-    .topic:hover { transform: translateY(-6px); border-color: var(--sage); box-shadow: 0 22px 50px -28px rgba(47,53,53,.22); }
-    .approach__card:hover { transform: translateY(-6px); border-color: var(--sage); box-shadow: 0 22px 50px -28px rgba(47,53,53,.22); }
-    .topic h3, .approach__card h3 { transition: transform .5s var(--ease), color .5s var(--ease); }
-    .topic:hover h3, .approach__card:hover h3 { transform: translateX(2px); }
-    .approach__card:hover .approach__num { letter-spacing: .12em; color: var(--sage-deep); }
-    .approach__num { transition: letter-spacing .55s var(--ease), color .55s var(--ease); }
-
-    /* Faux-link inside topic/approach: tiny arrow after */
-    .topic h3::after, .approach__card h3::after { display: none; }
-
-    /* Provider portraits — deeper hover */
-    .provider-card__portrait img { transition: transform 1.6s var(--ease), filter 1s var(--ease); }
-    .provider-card:hover .provider-card__portrait img { transform: scale(1.06); filter: saturate(1) brightness(1); }
-    .provider-card__name { transition: color .4s var(--ease), transform .55s var(--ease); }
-    .provider-card:hover .provider-card__name { color: var(--clay-deep); transform: translateX(3px); }
-
-    /* Sage card on consult/contact-card: subtle parallax on hover with a sheen */
-    .contact-card { position: relative; overflow: hidden; }
-    .contact-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at var(--cx, 50%) var(--cy, 50%), rgba(212,154,126,.18) 0%, transparent 60%);
-      opacity: 0;
-      transition: opacity .6s var(--ease);
-      pointer-events: none;
-    }
-    .contact-card::before { display: none !important; }
-    .contact-card:hover::before { opacity: 0; }
-
-      /* Services dropdown alignment fix */
-    .nav__item-dropdown {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-    }
-    .nav__item-dropdown > a {
-      padding-right: .2rem;
-      display: inline-flex;
-      align-items: center;
-    }
-    /* Remove the warm-glow hover on Support With cards */
-    .topic::before { display: none !important; }
-  
-    /* Footer brand logo link */
-    .footer__brand a {
-      display: inline-block;
-      transition: opacity .35s cubic-bezier(.2,.7,.2,1), transform .45s cubic-bezier(.2,.7,.2,1);
-    }
-    .footer__brand a:hover { opacity: .75; transform: translateY(-2px); }
   
     /* Skip-to-content link — accessibility + crawler signal */
     .skip-link {
@@ -839,7 +541,6 @@
   </style>
 
   <!-- === SEO META — generated === -->
-  <link rel="canonical" href="https://pinnaclecounselinggroup.com/rates.html" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#2f3535" />
   <meta name="author" content="Pinnacle Counseling Group" />
@@ -849,22 +550,8 @@
   <meta name="ICBM" content="38.5816, -121.4944" />
 
   <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Rates & Insurance — Pinnacle Counseling Group | Sacramento Therapy" />
-  <meta property="og:description" content="Therapy rates at Pinnacle Counseling Group: licensed clinicians $200–225, associate clinicians $160 per session. Aetna and Optum accepted; superbills provided for out-of-network." />
-  <meta property="og:url" content="https://pinnaclecounselinggroup.com/rates.html" />
-  <meta property="og:image" content="https://pinnaclecounselinggroup.com/social-preview.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Pinnacle Counseling Group logo over a serene lake landscape" />
-  <meta property="og:locale" content="en_US" />
 
   <!-- Twitter / X -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Rates & Insurance — Pinnacle Counseling Group | Sacramento Therapy" />
-  <meta name="twitter:description" content="Therapy rates at Pinnacle Counseling Group: licensed clinicians $200–225, associate clinicians $160 per session. Aetna and Optum accepted; superbills provided for out-of-network." />
-  <meta name="twitter:image" content="https://pinnaclecounselinggroup.com/social-preview.jpg" />
-  <meta name="twitter:image:alt" content="Pinnacle Counseling Group logo over a serene lake landscape" />
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -1091,9 +778,9 @@
     },
     {
       "@type": "WebPage",
-      "@id": "https://pinnaclecounselinggroup.com/rates.html#webpage",
-      "url": "https://pinnaclecounselinggroup.com/rates.html",
-      "name": "Rates & Payments",
+      "@id": "https://pinnaclecounselinggroup.com/privacy.html#webpage",
+      "url": "https://pinnaclecounselinggroup.com/privacy.html",
+      "name": "Privacy Policy",
       "isPartOf": {
         "@id": "https://pinnaclecounselinggroup.com/#website"
       }
@@ -1110,8 +797,8 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Rates & Payments",
-          "item": "https://pinnaclecounselinggroup.com/rates.html"
+          "name": "Privacy Policy",
+          "item": "https://pinnaclecounselinggroup.com/privacy.html"
         }
       ]
     }
@@ -1121,6 +808,21 @@
   <!-- === /SEO META === -->
 
   <script src="waitlist.js?v=5" defer></script>
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var from = params.get('from') || 'contact';
+      var formLoc = ({ contact: 'contact_page', careers: 'careers_page', rsvp: 'launch_rsvp' })[from] || 'contact_page';
+      function fire() {
+        if (typeof window.gtag === 'function') {
+          window.gtag('event', 'contact_form_submit', { form_location: formLoc });
+        }
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', fire);
+      } else { fire(); }
+    })();
+  </script>
 </head>
 <body>
 
@@ -1178,120 +880,33 @@
 
   <section class="hero">
     <div class="hero__inner">
-      <span class="eyebrow">Rates &amp; Payments</span>
-      <h1 class="hero__title">Transparent <em>fees</em>.</h1>
-      <p class="hero__subtitle">A clear picture of session rates, insurance, and the options for paying for your care.</p>
+      <span class="eyebrow">Received</span>
+      <h1 class="hero__title">Thank <em>you</em>.</h1>
     </div>
   </section>
 
-  <!-- INSURANCE / PAYMENTS — billing overview comes first now -->
-  <section class="approach">
-    <div class="container">
-      <header class="approach__header">
-        <span class="eyebrow reveal">Insurance &amp; Payment</span>
-        <span class="ornament reveal reveal-delay-1" aria-hidden="true">&#10038;</span>
-        <h2 class="reveal reveal-delay-1">How <em>billing</em> works.</h2>
-      </header>
-      <div class="approach__grid">
-        <article class="approach__card reveal">
-          <span class="approach__num">— 01</span>
-          <h3>In-network <em>PPO insurance</em></h3>
-          <p>We accept select PPO plans, including <strong>Aetna</strong> and <strong>Optum</strong>. Our practice manager will verify your benefits before your first appointment so you know your copay and deductible up front. We bill insurance directly.</p>
-        </article>
-        <article class="approach__card reveal reveal-delay-1">
-          <span class="approach__num">— 02</span>
-          <h3>Private pay</h3>
-          <p>Many clients choose to pay out of pocket for the flexibility, privacy, and ability for decisions about their treatment to be fully between themselves and their therapist, not an insurance company. Payment is due at the time of session.</p>
-        </article>
-        <article class="approach__card reveal reveal-delay-2">
-          <span class="approach__num">— 03</span>
-          <h3>Out-of-network <em>superbills</em></h3>
-          <p>For clients with out-of-network insurance who plan to seek reimbursement, we provide detailed superbills that you can submit to your insurer.</p>
-        </article>
-      </div>
+  <section class="legal-intro">
+    <div class="legal-intro__inner">
+      <p class="legal-intro__lead">
+        Your message is on its way to us. We&rsquo;ll respond within <em>one business day</em>.
+      </p>
     </div>
   </section>
 
-  <!-- SESSION RATES -->
-  <section class="topics">
-    <div class="container">
-      <header class="topics__header">
-        <span class="eyebrow reveal">Session Rates</span>
-        <span class="ornament reveal reveal-delay-1" aria-hidden="true">&#10038;</span>
-        <h2 class="reveal reveal-delay-1">What you can <em>expect</em>.</h2>
-      </header>
-
-      <div class="rates-summary reveal">
-        <div class="rates-summary__grid">
-          <div class="rates-summary__tier">
-            <span class="rates-summary__label">Licensed Clinicians</span>
-            <span class="rates-summary__amount">$200&ndash;225</span>
-            <span class="rates-summary__note">per session</span>
-          </div>
-          <div class="rates-summary__tier">
-            <span class="rates-summary__label">Associate Clinicians</span>
-            <span class="rates-summary__amount">$160</span>
-            <span class="rates-summary__note">per session</span>
-            <span class="rates-summary__note" style="font-size:.82rem;opacity:.7;margin-top:.2rem">Sliding scale available. Please inquire.</span>
-          </div>
-        </div>
-        <p class="rates-summary__footnote">
-          Individual rates are listed on each therapist's bio. <a href="providers.html" class="rates-summary__link">View our providers &rarr;</a>
+  <section class="legal-body">
+    <div class="legal-body__inner" style="text-align: center;">
+      <article class="legal-section" style="border: 0; padding-top: 0;">
+        <p class="legal-contact-block" style="font-family: var(--serif); font-size: 1.15rem; line-height: 1.7;">
+          Prefer to talk sooner? Call or text <a href="tel:+19169902326"><strong>(916) 990-2326</strong></a><br/>
+          or <a href="mailto:Info@PinnacleCounselingGroup.com">email us directly</a>.
         </p>
-      </div>
-
-      <div class="topics__grid">
-        <article class="topic reveal">
-          <h3>Individual Therapy</h3>
-          <p>Fifty-minute sessions with a licensed or associate clinician. Rates vary by provider; specific fees are in each therapist's bio and will be confirmed at intake.</p>
-        </article>
-        <article class="topic reveal reveal-delay-1">
-          <h3>Couples Counseling</h3>
-          <p>Fifty- to seventy-five-minute sessions designed for the depth couples work requires.</p>
-        </article>
-        <article class="topic reveal reveal-delay-2">
-          <h3>Children &amp; Teens</h3>
-          <p>Developmentally attuned sessions, with parent collateral time billed at the standard session rate.</p>
-        </article>
-        <article class="topic reveal">
-          <h3>Clinical Supervision</h3>
-          <p>Individual and group supervision rates for California AMFTs and APCCs. Please inquire directly for current rates and availability.</p>
-        </article>
-        <article class="topic reveal reveal-delay-1">
-          <h3>Initial Consultation</h3>
-          <p>A complimentary, no-pressure conversation booked directly with the therapist of your choice — or with our clinical director if you'd like help matching. Reach us at (916) 990-2326 or Info@PinnacleCounselingGroup.com.</p>
-        </article>
-        <article class="topic reveal reveal-delay-2">
-          <h3>Cancellation Policy</h3>
-          <p>We ask for at least twenty-four (24) hours' notice for cancellations or reschedules; late cancels may be billed at the full session rate.</p>
-        </article>
-      </div>
+        <p style="margin-top: 2.4rem;">
+          <a href="providers.html" class="btn btn--clay" style="display: inline-block;">Meet our clinicians</a>
+        </p>
+      </article>
     </div>
   </section>
 
-  <!-- CONTACT CARD -->
-  <section class="contact-band">
-    <div class="contact-card reveal">
-      <div class="contact-card__inner">
-        <div class="contact-card__lead">
-          <h3>Questions about <em>rates</em>?</h3>
-          <p>Our practice manager will verify benefits, explain options, and confirm specific rates for your clinician of choice.</p>
-        </div>
-        <div class="contact-card__info">
-          <div class="contact-card__detail">
-            <span class="label">Telephone</span>
-            <a href="tel:+19169902326">(916) 990-2326</a>
-          </div>
-          <div class="contact-card__detail">
-            <span class="label">Email</span>
-            <a href="mailto:Info@PinnacleCounselingGroup.com">Info@PinnacleCounselingGroup.com</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
   </main>
 
   <footer class="footer">
@@ -1350,7 +965,6 @@
   </footer>
 
   <script>
-    // Lenis smooth scroll
     window.__lenis = null;
     window.addEventListener('load', () => {
       if (typeof Lenis === 'undefined') return;
@@ -1366,19 +980,8 @@
       window.__lenis = lenis;
       const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); };
       requestAnimationFrame(raf);
-      document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', (ev) => {
-          const id = a.getAttribute('href');
-          if (!id || id === '#') return;
-          const target = document.querySelector(id);
-          if (!target) return;
-          ev.preventDefault();
-          lenis.scrollTo(target, { offset: -20, duration: 1.3 });
-        });
-      });
     });
 
-    // Nav hide-on-scroll-down, show-on-scroll-up
     (() => {
       const nav = document.getElementById('nav');
       if (!nav) return;
@@ -1395,7 +998,6 @@
       }, { passive: true });
     })();
 
-    // Mobile panel
     (() => {
       const panel = document.getElementById('mobilePanel');
       const openBtn = document.getElementById('hamburger');
@@ -1405,7 +1007,6 @@
       panel?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => panel.classList.remove('is-open')));
     })();
 
-    // Scroll progress
     (() => {
       const bar = document.getElementById('scrollProgress');
       if (!bar) return;
@@ -1421,7 +1022,6 @@
       update();
     })();
 
-    // Reveal on intersect
     (() => {
       const io = new IntersectionObserver((entries) => {
         entries.forEach(e => {
@@ -1430,20 +1030,6 @@
       }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
       document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     })();
-  
-    // Sheen-tracker on the sage contact card
-    (() => {
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduce) return;
-      document.querySelectorAll('.contact-card').forEach(c => {
-        c.addEventListener('mousemove', (e) => {
-          const r = c.getBoundingClientRect();
-          c.style.setProperty('--cx', ((e.clientX - r.left) / r.width) * 100 + '%');
-          c.style.setProperty('--cy', ((e.clientY - r.top) / r.height) * 100 + '%');
-        });
-      });
-    })();
-
   
     // Back to top
     (() => {

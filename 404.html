@@ -2,6 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- Google tag (gtag.js) — HIPAA-aware config; loaded early so page_view isn't delayed -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5NPRRT63D"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-C5NPRRT63D', {'anonymize_ip': true,'allow_google_signals': false,'allow_ad_personalization_signals': false});
+  </script>
+  <script src="/tracking.js?v=1" defer></script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Page Not Found — Pinnacle Counseling Group</title>
   <meta name="description" content="The page you were looking for could not be found. Return to Pinnacle Counseling Group's homepage or contact us directly." />
@@ -110,18 +122,6 @@
     .notfound__btn--clay { background: var(--clay); border-color: var(--clay); color: #fff; }
     .notfound__btn--clay:hover { background: var(--clay-deep); border-color: var(--clay-deep); color: #fff; }
   </style>
-  <!-- Google tag (gtag.js) — HIPAA-aware config -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5NPRRT63D"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-C5NPRRT63D', {
-      'anonymize_ip': true,
-      'allow_google_signals': false,
-      'allow_ad_personalization_signals': false
-    });
-  </script>
 
   <script src="waitlist.js?v=5" defer></script>
 </head>
@@ -138,5 +138,22 @@
   </main>
   <!-- SimplePractice booking widget — auto-binds [data-spwidget-autobind] triggers -->
   <script src="https://widget-cdn.simplepractice.com/assets/integration-1.0.js" defer></script>
+
+  <script>
+    /* reveal-failsafe: guarantee content is visible even if IO / animation stalls */
+    (function () {
+      var force = function () {
+        document.querySelectorAll('.reveal:not(.is-in):not(.is-visible)').forEach(function (el) {
+          el.classList.add('is-in');
+          el.classList.add('is-visible');
+        });
+      };
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function () { setTimeout(force, 1200); });
+      } else {
+        setTimeout(force, 1200);
+      }
+    })();
+  </script>
 </body>
 </html>
