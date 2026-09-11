@@ -682,10 +682,11 @@
       max-width: none;
     }
     .consult__aside {
-      margin: 1.8rem auto 0;
+      margin: clamp(3rem, 6vw, 4.5rem) auto 0;
       font-family: var(--serif); font-style: italic; font-weight: 300;
-      font-size: clamp(1rem, 1.5vw, 1.15rem);
-      color: rgba(244, 241, 234, 0.85);
+      font-size: clamp(1.2rem, 1.9vw, 1.45rem);
+      line-height: 1.5;
+      color: rgba(244, 241, 234, 0.9);
       max-width: 42em;
     }
     .consult__aside a {
@@ -706,30 +707,27 @@
       }
     }
 
-    /* --- Endorsements from peer clinicians (horizontal slider, calm) --- */
+    /* --- Testimonials slider — evenly padded, header-only --- */
     .endorsements {
       background: var(--cream);
-      padding: clamp(5rem, 9vw, 7rem) 0;
+      padding: clamp(6rem, 10vw, 8rem) 0;
     }
     .endorsements__inner {
-      max-width: 780px;
+      max-width: 900px;
       margin: 0 auto;
       text-align: center;
       padding: 0 var(--pad-x);
     }
-    .endorsements .eyebrow {
-      display: block;
-      margin-bottom: 1.2rem;
-      color: var(--sage);
+    .endorsements__title {
+      font-family: var(--serif); font-weight: 300;
+      font-size: clamp(1.85rem, 3.6vw, 2.75rem);
+      line-height: 1.15;
+      color: var(--ink);
+      letter-spacing: -.01em;
+      margin: 0 auto clamp(2.8rem, 5vw, 4rem);
+      max-width: 24ch;
     }
-    .endorsements__lede {
-      font-family: var(--serif); font-weight: 300; font-style: italic;
-      font-size: clamp(1.05rem, 1.7vw, 1.25rem);
-      color: var(--ink-soft);
-      max-width: 38ch;
-      margin: 0 auto 2.6rem;
-    }
-    .endorsements__lede em { color: var(--clay); font-style: italic; }
+    .endorsements__title em { font-style: italic; color: var(--clay); font-weight: 300; }
 
     .endorsements__slider {
       position: relative;
@@ -748,19 +746,22 @@
     .endorsement {
       flex: 0 0 100%;
       scroll-snap-align: center;
-      padding: 1rem 1.5rem 0;
+      padding: 0 1.5rem;
       margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: clamp(9rem, 16vw, 13rem);
     }
     .endorsement__quote {
       font-family: var(--serif); font-weight: 300; font-style: italic;
       font-size: clamp(1.25rem, 2.2vw, 1.65rem);
-      line-height: 1.5;
+      line-height: 1.55;
       color: var(--ink);
       letter-spacing: -.005em;
-      max-width: 38ch;
+      max-width: 40ch;
       margin: 0 auto;
-      min-height: clamp(7rem, 12vw, 9rem);
-      /* Do NOT use display:flex here — em children become flex items and break text flow */
     }
     .endorsement__quote em {
       color: var(--clay); font-style: italic; font-weight: 400;
@@ -770,12 +771,13 @@
       font-family: var(--sans); font-weight: 400; font-style: normal;
       font-size: .66rem; letter-spacing: .28em; text-transform: uppercase;
       color: var(--ink-faint);
+      margin-top: 1.4rem;
     }
 
     .endorsements__nav {
       display: flex; justify-content: center; align-items: center;
       gap: 1.4rem;
-      margin-top: 1.8rem;
+      margin-top: clamp(2.4rem, 4vw, 3rem);
     }
     .endorsements__arrow {
       background: transparent;
@@ -2974,24 +2976,25 @@
   <!-- ========== TESTIMONIALS (slider) ========== -->
   <section class="endorsements">
     <div class="endorsements__inner">
-      <span class="eyebrow reveal">Kind words</span>
-      <p class="endorsements__lede reveal reveal-delay-1">
-        What colleagues &amp; clients are <em>saying</em>.
-      </p>
+      <h2 class="endorsements__title reveal">What colleagues &amp; clients are <em>saying</em>.</h2>
 
-      <div class="endorsements__slider reveal reveal-delay-2" id="endorsements-slider">
+      <div class="endorsements__slider reveal reveal-delay-1" id="endorsements-slider">
         <div class="endorsements__track" id="endorsements-track">
           <blockquote class="endorsement">
-            <p class="endorsement__quote">&ldquo;A gentle presence paired with practical, effective tools. Clients often feel safe, understood, and well cared for.&rdquo;</p>
+            <p class="endorsement__quote">&ldquo;Enid&rsquo;s sense of commitment and dedication to working with her clients is inspiring! Enid&rsquo;s superpower is working with clients who&rsquo;ve experienced childhood trauma, and want to work on creating a new worldview. Enid makes this process feel safe and secure!&rdquo;</p>
+            <cite class="endorsement__cite">Chad Fraga, LMFT</cite>
           </blockquote>
           <blockquote class="endorsement">
-            <p class="endorsement__quote">&ldquo;A curious nature and a grounding presence. A knack for asking the right questions that lead to real progress.&rdquo;</p>
+            <p class="endorsement__quote">&ldquo;She has a curious nature and a grounding presence. She has a knack for asking the right questions that can lead to real progress.&rdquo;</p>
+            <cite class="endorsement__cite">Samantha Mero, LCSW</cite>
           </blockquote>
           <blockquote class="endorsement">
-            <p class="endorsement__quote">&ldquo;Personable, open, welcoming, and growth-oriented. They go the extra mile to meet clients where they are and give them the unique care they need.&rdquo;</p>
+            <p class="endorsement__quote">&ldquo;Enid is a wonderful therapist and colleague. She is personable, open, welcoming, and growth oriented. She cares deeply for her clients and goes the extra mile to meet them where they are and give them the unique care they need. I always value her consult!&rdquo;</p>
+            <cite class="endorsement__cite">Martha Greenburg, LMFT</cite>
           </blockquote>
           <blockquote class="endorsement">
-            <p class="endorsement__quote">&ldquo;A superpower for working with clients who&rsquo;ve experienced childhood trauma and want to build a new worldview &mdash; makes the process feel safe and secure.&rdquo;</p>
+            <p class="endorsement__quote">&ldquo;She is warm, attentive, and genuinely dedicated to her clients. In her work with trauma and PTSD, she brings a gentle presence paired with practical, effective tools. Clients often feel safe, understood, and well cared for with her.&rdquo;</p>
+            <cite class="endorsement__cite">Raya Singh, LMFT</cite>
           </blockquote>
         </div>
         <div class="endorsements__nav" aria-hidden="true">
@@ -3190,7 +3193,6 @@
       <div class="gs-modal__options">
         <a class="gs-opt gs-opt--call" href="tel:+19169902326">Call (916) 990-2326</a>
         <a class="gs-opt gs-opt--email" href="mailto:Info@PinnacleCounselingGroup.com?subject=Getting%20started%20at%20Pinnacle">Email us</a>
-        <a class="gs-opt gs-opt--book" href="book.html" data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1" data-spwidget-scope-uri="pinnacle" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind>Book online</a>
       </div>
     </div>
   </div>

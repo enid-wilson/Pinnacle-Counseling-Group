@@ -1401,24 +1401,63 @@
       </div>
 
       <!-- Focus Areas -->
-      <div class="services-by-location" style="max-width: 1080px; margin: clamp(4rem, 8vw, 6rem) auto 0; padding: 0 var(--pad-x);">
-        <div style="text-align: center; margin-bottom: clamp(2rem, 4vw, 3rem);">
-          <span class="eyebrow">Focus Areas</span>
-          <h2 style="font-family: var(--serif); font-weight: 300; font-size: clamp(1.85rem, 3.5vw, 2.6rem); line-height: 1.15; margin-top: .8rem;">Areas of <em>focus</em>.</h2>
+      <div class="focus-list-band">
+        <div class="focus-list-band__head">
+          <h2>Areas of <em>focus</em>.</h2>
         </div>
-        <ul style="list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; font-family: var(--serif); font-size: 1.1rem;">
-          <li><a href="anxiety.html" style="color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 2px;">Anxiety therapy</a></li>
-          <li><a href="ocd.html" style="color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 2px;">OCD (with ERP)</a></li>
-          <li><a href="eating-disorders.html" style="color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 2px;">Eating disorders</a></li>
-          <li><a href="trauma-therapy.html" style="color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 2px;">Trauma (EMDR &amp; brainspotting)</a></li>
-          <li><a href="perinatal-mental-health.html" style="color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 2px;">Perinatal mental health</a></li>
-          <li><a href="motherhood.html" style="color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 2px;">Motherhood</a></li>
-          <li><a href="infertility.html" style="color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 2px;">Fertility, loss &amp; reproductive mental health</a></li>
-          <li><a href="veterans-military-families.html" style="color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 2px;">Veterans &amp; military families</a></li>
-          <li><a href="play-therapy.html" style="color: var(--ink); border-bottom: 1px solid var(--line); padding-bottom: 2px;">Play therapy for children</a></li>
+        <ul class="focus-list">
+          <li><a href="anxiety.html">Anxiety therapy</a></li>
+          <li><a href="ocd.html">OCD (with ERP)</a></li>
+          <li><a href="eating-disorders.html">Eating disorders</a></li>
+          <li><a href="trauma-therapy.html">Trauma (EMDR &amp; brainspotting)</a></li>
+          <li><a href="perinatal-mental-health.html">Perinatal mental health</a></li>
+          <li><a href="motherhood.html">Motherhood</a></li>
+          <li><a href="infertility.html">Fertility, loss &amp; reproductive mental health</a></li>
+          <li><a href="veterans-military-families.html">Veterans &amp; military families</a></li>
+          <li><a href="play-therapy.html">Play therapy for children</a></li>
         </ul>
-        <p style="text-align: center; margin-top: 2rem; font-family: var(--serif); font-style: italic; color: var(--ink-soft);"><a href="focus-areas.html" style="color: var(--clay-deep); border-bottom: 1px solid rgba(163,99,69,.35);">See all focus areas &rarr;</a></p>
+        <p class="focus-list__more"><a href="focus-areas.html">See all focus areas &rarr;</a></p>
       </div>
+      <style>
+        .focus-list-band { max-width: 1080px; margin: clamp(4rem, 8vw, 6rem) auto 0; padding: 0 var(--pad-x); }
+        .focus-list-band__head { text-align: center; margin-bottom: clamp(2.4rem, 5vw, 3.5rem); }
+        .focus-list-band__head h2 { font-family: var(--serif); font-weight: 300; font-size: clamp(1.85rem, 3.5vw, 2.6rem); line-height: 1.15; color: var(--ink); }
+        .focus-list-band__head h2 em { font-style: italic; color: var(--clay); font-weight: 300; }
+        .focus-list {
+          list-style: none; padding: 0; margin: 0;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: clamp(1.5rem, 3vw, 2.2rem) clamp(2rem, 4vw, 3rem);
+          font-family: var(--serif); font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+        }
+        .focus-list li {
+          border-bottom: 1px solid var(--line);
+          padding-bottom: .9rem;
+        }
+        .focus-list a {
+          display: block;
+          color: var(--ink);
+          padding: .2rem 0;
+          transition: color .3s var(--ease), padding-left .3s var(--ease);
+        }
+        .focus-list a:hover {
+          color: var(--clay-deep);
+          padding-left: .35rem;
+        }
+        .focus-list__more {
+          text-align: center;
+          margin-top: clamp(2.6rem, 5vw, 3.6rem);
+          font-family: var(--serif); font-style: italic;
+        }
+        .focus-list__more a {
+          font-size: clamp(1.15rem, 1.7vw, 1.35rem);
+          color: var(--clay-deep);
+          border-bottom: 1px solid rgba(163,99,69,.35);
+          padding-bottom: 2px;
+          transition: color .3s var(--ease), border-color .3s var(--ease);
+        }
+        .focus-list__more a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+      </style>
     </div>
   </section>
 
