@@ -282,8 +282,8 @@
     /* --- Hero --- */
     .hero {
       position: relative;
-      min-height: clamp(560px, 78vh, 780px);
-      padding: clamp(6rem, 12vh, 9rem) 0 clamp(4rem, 8vh, 6rem);
+      min-height: clamp(720px, 92vh, 940px);
+      padding: clamp(7rem, 14vh, 10rem) 0 clamp(5rem, 10vh, 7rem);
       display: flex; align-items: center; justify-content: center;
       overflow: hidden;
       isolation: isolate;
@@ -321,43 +321,42 @@
          which makes it a potential LCP candidate. Paint at final state. */
     }
     /* Hero typography — two systems only:
-       1) Serif italic for the voice (lede + sublede)
-       2) Sans small-caps for the utility strip (trust + phone) */
+       1) Serif italic for the voice (lede)
+       2) Sans small-caps for the utility strip (trust + focus areas) */
     .hero__lede {
       font-family: var(--serif);
       font-weight: 300;
       font-style: italic;
       font-size: clamp(1.5rem, 2.8vw, 2.1rem);
       color: #fff;
-      margin: 1.8rem auto 0;
-      max-width: 28em;
-      line-height: 1.3;
+      margin: clamp(2.4rem, 5vh, 3.2rem) auto 0;
+      max-width: 26em;
+      line-height: 1.35;
       letter-spacing: -.005em;
       text-shadow: 0 2px 24px rgba(0,0,0,.55), 0 0 2px rgba(0,0,0,.35);
       animation: fadeUp 1.4s .6s var(--ease) both;
     }
-    .hero__sublede {
-      font-family: var(--serif);
-      font-weight: 300;
-      font-style: italic;
-      font-size: clamp(1.05rem, 1.7vw, 1.25rem);
-      color: rgba(255,255,255,.85);
-      margin: .6rem auto 2.4rem;
-      max-width: 36em;
-      line-height: 1.5;
-      letter-spacing: 0;
-      text-shadow: 0 2px 24px rgba(0,0,0,.55), 0 0 2px rgba(0,0,0,.35);
-      animation: fadeUp 1.4s .8s var(--ease) both;
+    .hero__cta {
+      margin-top: clamp(2.4rem, 5vh, 3.2rem);
     }
     .hero__trust {
       font-family: var(--sans); font-weight: 400;
       color: rgba(255,255,255,.78);
       font-size: clamp(.7rem, 1.1vw, .78rem);
       letter-spacing: .22em; text-transform: uppercase;
-      margin: 2.6rem auto 0;
+      margin: clamp(2.6rem, 5vh, 3.4rem) auto 0;
       max-width: 44em;
       text-shadow: 0 2px 24px rgba(0,0,0,.55);
       animation: fadeUp 1.4s 1s var(--ease) both;
+    }
+    .hero__trust--focus {
+      margin-top: 1rem;
+      color: rgba(255,255,255,.62);
+      font-size: clamp(.66rem, 1vw, .72rem);
+      letter-spacing: .22em;
+      max-width: 52em;
+      line-height: 1.85;
+      animation-delay: 1.2s;
     }
     .hero__trust a {
       color: #fff;
@@ -2760,11 +2759,11 @@
     <div class="hero__inner">
       <img loading="eager" decoding="async" fetchpriority="high" class="hero__wordmark" src="pcg-wordmark-white.svg?v=1" alt="Pinnacle Counseling Group" width="600" height="217" />
       <h1 class="hero__lede">Psychotherapy in Sacramento and virtually throughout California &mdash; for individuals, couples, and the next generation.</h1>
-      <p class="hero__sublede">We view each client as a whole person &mdash; not a diagnosis &mdash; so your therapy is tailored entirely to your life and goals.</p>
       <button type="button" class="btn btn--light hero__cta" data-open="getstarted">
         Get started
       </button>
       <p class="hero__trust">Insurance &amp; Superbills &nbsp;·&nbsp; In-person &amp; Virtual Sessions</p>
+      <p class="hero__trust hero__trust--focus">Anxiety &nbsp;·&nbsp; OCD &nbsp;·&nbsp; Trauma &nbsp;·&nbsp; ADHD &nbsp;·&nbsp; Relationships &nbsp;·&nbsp; Perinatal &nbsp;·&nbsp; Military &nbsp;·&nbsp; Eating Disorders &nbsp;·&nbsp; and more</p>
     </div>
   </section>
 
@@ -3169,7 +3168,6 @@
       <button class="gs-modal__close" type="button" data-close="getstarted" aria-label="Close">&#10005;</button>
       <span class="gs-modal__eyebrow">Let's connect</span>
       <h3 class="gs-modal__title" id="gs-title">How would you like to <em>reach us</em>?</h3>
-      <p class="gs-modal__sub">We'll find you the right fit and get you scheduled for a free consult.</p>
       <div class="gs-modal__options">
         <a class="gs-opt gs-opt--call" href="tel:+19169902326">Call (916) 990-2326</a>
         <a class="gs-opt gs-opt--email" href="mailto:Info@PinnacleCounselingGroup.com?subject=Getting%20started%20at%20Pinnacle">Email us</a>
