@@ -282,8 +282,8 @@
     /* --- Hero --- */
     .hero {
       position: relative;
-      min-height: 100vh;
-      min-height: 100svh;
+      min-height: clamp(560px, 78vh, 780px);
+      padding: clamp(6rem, 12vh, 9rem) 0 clamp(4rem, 8vh, 6rem);
       display: flex; align-items: center; justify-content: center;
       overflow: hidden;
       isolation: isolate;
@@ -366,6 +366,81 @@
       transition: border-color .35s var(--ease);
     }
     .hero__trust a:hover { border-bottom-color: #fff; }
+
+    /* Get-started modal — two options: email or call */
+    .gs-overlay {
+      position: fixed; inset: 0; z-index: 200;
+      background: rgba(15, 10, 6, .58);
+      -webkit-backdrop-filter: saturate(140%) blur(6px);
+      backdrop-filter: saturate(140%) blur(6px);
+      opacity: 0; visibility: hidden;
+      transition: opacity .35s var(--ease), visibility .35s var(--ease);
+      display: flex; align-items: center; justify-content: center;
+      padding: 1rem;
+    }
+    .gs-overlay.is-open { opacity: 1; visibility: visible; }
+    .gs-modal {
+      background: var(--cream); color: var(--ink);
+      border-radius: 24px;
+      max-width: 460px; width: 100%;
+      padding: clamp(2.4rem, 5vw, 3.4rem) clamp(1.8rem, 4vw, 2.6rem);
+      text-align: center;
+      position: relative;
+      transform: scale(.94) translateY(10px);
+      transition: transform .45s var(--ease);
+      box-shadow: 0 40px 90px -40px rgba(15,10,6,.5);
+    }
+    .gs-overlay.is-open .gs-modal { transform: scale(1) translateY(0); }
+    .gs-modal__close {
+      position: absolute; top: .8rem; right: .8rem;
+      width: 34px; height: 34px; border-radius: 50%;
+      background: transparent; border: 0; cursor: pointer;
+      font-size: 1.1rem; color: var(--ink-soft);
+      transition: background .3s var(--ease), color .3s var(--ease);
+    }
+    .gs-modal__close:hover { background: rgba(47,53,53,.06); color: var(--ink); }
+    .gs-modal__eyebrow {
+      display: block;
+      font-family: var(--sans); font-size: .64rem; font-weight: 500;
+      letter-spacing: .32em; text-transform: uppercase; color: var(--sage);
+      margin-bottom: 1rem;
+    }
+    .gs-modal__title {
+      font-family: var(--serif); font-weight: 300;
+      font-size: clamp(1.7rem, 3vw, 2.2rem); line-height: 1.15;
+      margin-bottom: .5rem;
+    }
+    .gs-modal__title em { font-style: italic; color: var(--clay); }
+    .gs-modal__sub {
+      font-family: var(--serif); font-style: italic; font-weight: 300;
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+      max-width: 32ch; margin: 0 auto 2rem;
+    }
+    .gs-modal__options {
+      display: flex; flex-direction: column; gap: .7rem;
+    }
+    .gs-opt {
+      display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
+      padding: 1rem 1.4rem;
+      border-radius: var(--radius-pill);
+      font-family: var(--sans); font-weight: 500;
+      font-size: .74rem; letter-spacing: .24em; text-transform: uppercase;
+      transition: background .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease), transform .3s var(--ease);
+    }
+    .gs-opt--call {
+      background: var(--clay); color: #fff; border: 1px solid var(--clay);
+    }
+    .gs-opt--call:hover { background: var(--clay-deep); border-color: var(--clay-deep); transform: translateY(-1px); }
+    .gs-opt--email {
+      background: transparent; color: var(--ink); border: 1px solid var(--ink);
+    }
+    .gs-opt--email:hover { background: var(--ink); color: var(--cream); transform: translateY(-1px); }
+    .gs-opt--book {
+      background: transparent; color: var(--sage-deep); border: 1px solid var(--sage);
+    }
+    .gs-opt--book:hover { background: var(--sage); color: #fff; border-color: var(--sage); transform: translateY(-1px); }
+    body.gs-open { overflow: hidden; }
     .hero__tagline {
       font-family: var(--serif);
       font-style: italic;
@@ -594,16 +669,16 @@
     .consult__step { text-align: center; }
     .consult__num {
       display: block;
-      font-family: var(--sans); font-weight: 400;
-      font-size: .7rem; letter-spacing: .34em; text-transform: uppercase;
+      font-family: var(--sans); font-weight: 500;
+      font-size: .82rem; letter-spacing: .34em; text-transform: uppercase;
       color: var(--clay-soft);
-      margin-bottom: .8rem;
+      margin-bottom: 1rem;
     }
     .consult__step p {
       font-family: var(--serif); font-weight: 300; font-style: italic;
-      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      font-size: clamp(1.15rem, 1.9vw, 1.4rem);
       line-height: 1.4;
-      color: rgba(229, 223, 211, 0.95);
+      color: rgba(229, 223, 211, 0.98);
       margin: 0;
       max-width: none;
     }
@@ -618,7 +693,7 @@
     /* --- Endorsements from peer clinicians (horizontal slider, calm) --- */
     .endorsements {
       background: var(--cream);
-      padding: clamp(4rem, 8vw, 6rem) 0;
+      padding: clamp(5rem, 9vw, 7rem) 0;
     }
     .endorsements__inner {
       max-width: 780px;
@@ -663,13 +738,13 @@
     .endorsement__quote {
       font-family: var(--serif); font-weight: 300; font-style: italic;
       font-size: clamp(1.25rem, 2.2vw, 1.65rem);
-      line-height: 1.45;
+      line-height: 1.5;
       color: var(--ink);
       letter-spacing: -.005em;
       max-width: 38ch;
-      margin: 0 auto 1.2rem;
-      min-height: clamp(5rem, 9vw, 7rem);
-      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto;
+      min-height: clamp(7rem, 12vw, 9rem);
+      /* Do NOT use display:flex here — em children become flex items and break text flow */
     }
     .endorsement__quote em {
       color: var(--clay); font-style: italic; font-weight: 400;
@@ -2684,12 +2759,12 @@
     </div>
     <div class="hero__inner">
       <img loading="eager" decoding="async" fetchpriority="high" class="hero__wordmark" src="pcg-wordmark-white.svg?v=1" alt="Pinnacle Counseling Group" width="600" height="217" />
-      <p class="hero__lede">We see each client as a whole person &mdash; not just a diagnosis.</p>
-      <p class="hero__sublede">Therapy for individuals, couples, and families in California.</p>
-      <a href="book.html" class="btn btn--light hero__cta" data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1" data-spwidget-scope-uri="pinnacle" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind>
-        Book a free consult
-      </a>
-      <p class="hero__trust">Insurance + Superbill Options &nbsp;·&nbsp; California-based clinicians &nbsp;·&nbsp; <a href="tel:+19169902326">(916) 990-2326</a></p>
+      <h1 class="hero__lede">Psychotherapy in Sacramento and virtually throughout California &mdash; for individuals, couples, and the next generation.</h1>
+      <p class="hero__sublede">We view each client as a whole person &mdash; not a diagnosis &mdash; so your therapy is tailored entirely to your life and goals.</p>
+      <button type="button" class="btn btn--light hero__cta" data-open="getstarted">
+        Get started
+      </button>
+      <p class="hero__trust">Insurance &amp; Superbills &nbsp;·&nbsp; In-person &amp; Virtual Sessions</p>
     </div>
   </section>
 
@@ -2698,16 +2773,10 @@
     <div class="keymsg__inner">
       <span class="eyebrow reveal">Our Practice</span>
       <span class="ornament reveal reveal-delay-1" aria-hidden="true">&#10038;</span>
-      <h1 class="keymsg__headline" data-split-words>
-        Psychotherapy in <em>Sacramento</em> and virtually throughout California — for <em>individuals, couples,</em> and the <em>next generation</em>.
-      </h1>
-      <p class="keymsg__sub reveal reveal-delay-2">
-        We view each client as a whole person — not a diagnosis — so your therapy is tailored entirely to your life and goals. Our clinical expertise includes relational therapy, trauma, anxiety, obsessions, and eating disorders, with focused focus area in parenthood, adoption, multicultural families, and veterans and military families.
-      </p>
-      <a href="about.html" class="link-quiet reveal reveal-delay-3">
-        About Pinnacle
-        <span class="arrow" aria-hidden="true"></span>
-      </a>
+      <h2 class="keymsg__headline">
+        We view each client as a <em>whole person</em> &mdash; not a diagnosis &mdash; so your therapy is tailored entirely to your life and goals.
+      </h2>
+      <a href="about.html" class="btn btn--clay reveal reveal-delay-2" style="margin-top: 2.4rem;">About Pinnacle</a>
     </div>
   </section>
 
@@ -2886,31 +2955,27 @@
     </div>
   </section>
 
-  <!-- ========== ENDORSEMENTS FROM PEER CLINICIANS (slider) ========== -->
+  <!-- ========== TESTIMONIALS (slider) ========== -->
   <section class="endorsements">
     <div class="endorsements__inner">
-      <span class="eyebrow reveal">From colleagues</span>
+      <span class="eyebrow reveal">Kind words</span>
       <p class="endorsements__lede reveal reveal-delay-1">
-        Peer therapists on the care and approach our practice is <em>known for</em>.
+        What colleagues &amp; clients are <em>saying</em>.
       </p>
 
       <div class="endorsements__slider reveal reveal-delay-2" id="endorsements-slider">
         <div class="endorsements__track" id="endorsements-track">
           <blockquote class="endorsement">
-            <p class="endorsement__quote">A <em>gentle presence</em> paired with practical, effective tools. Clients often feel safe, understood, and well cared for.</p>
-            <cite class="endorsement__cite">Raya Singh, LMFT</cite>
+            <p class="endorsement__quote">&ldquo;A gentle presence paired with practical, effective tools. Clients often feel safe, understood, and well cared for.&rdquo;</p>
           </blockquote>
           <blockquote class="endorsement">
-            <p class="endorsement__quote">A <em>curious nature</em> and a grounding presence. A knack for asking the right questions that can lead to real progress.</p>
-            <cite class="endorsement__cite">Samantha Mero, LCSW</cite>
+            <p class="endorsement__quote">&ldquo;A curious nature and a grounding presence. A knack for asking the right questions that lead to real progress.&rdquo;</p>
           </blockquote>
           <blockquote class="endorsement">
-            <p class="endorsement__quote">Personable, open, welcoming, and growth-oriented. They go the extra mile to meet clients where they are and give them the <em>unique care</em> they need.</p>
-            <cite class="endorsement__cite">Martha Greenburg, LMFT</cite>
+            <p class="endorsement__quote">&ldquo;Personable, open, welcoming, and growth-oriented. They go the extra mile to meet clients where they are and give them the unique care they need.&rdquo;</p>
           </blockquote>
           <blockquote class="endorsement">
-            <p class="endorsement__quote">A superpower for working with clients who&rsquo;ve experienced childhood trauma and want to build a new worldview &mdash; makes the process feel <em>safe and secure</em>.</p>
-            <cite class="endorsement__cite">Chad Fraga, LMFT</cite>
+            <p class="endorsement__quote">&ldquo;A superpower for working with clients who&rsquo;ve experienced childhood trauma and want to build a new worldview &mdash; makes the process feel safe and secure.&rdquo;</p>
           </blockquote>
         </div>
         <div class="endorsements__nav" aria-hidden="true">
@@ -3097,6 +3162,21 @@
       </div>
     </div>
   </footer>
+
+  <!-- ========== GET STARTED MODAL ========== -->
+  <div class="gs-overlay" id="getstarted" aria-hidden="true" role="dialog" aria-labelledby="gs-title">
+    <div class="gs-modal">
+      <button class="gs-modal__close" type="button" data-close="getstarted" aria-label="Close">&#10005;</button>
+      <span class="gs-modal__eyebrow">Let's connect</span>
+      <h3 class="gs-modal__title" id="gs-title">How would you like to <em>reach us</em>?</h3>
+      <p class="gs-modal__sub">We'll find you the right fit and get you scheduled for a free consult.</p>
+      <div class="gs-modal__options">
+        <a class="gs-opt gs-opt--call" href="tel:+19169902326">Call (916) 990-2326</a>
+        <a class="gs-opt gs-opt--email" href="mailto:Info@PinnacleCounselingGroup.com?subject=Getting%20started%20at%20Pinnacle">Email us</a>
+        <a class="gs-opt gs-opt--book" href="book.html" data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1" data-spwidget-scope-uri="pinnacle" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind>Book online</a>
+      </div>
+    </div>
+  </div>
 
   <!-- ========== LIGHTBOX: ENID ========== -->
   <div class="lightbox" id="lightbox-enid" aria-hidden="true" role="dialog" aria-labelledby="lb-enid-name">
@@ -3575,6 +3655,26 @@
           }
         });
       });
+    })();
+
+    // === Get-started modal ===
+    (() => {
+      const modal = document.getElementById('getstarted');
+      if (!modal) return;
+      const open = () => {
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('gs-open');
+      };
+      const close = () => {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('gs-open');
+      };
+      document.querySelectorAll('[data-open="getstarted"]').forEach(el => el.addEventListener('click', open));
+      document.querySelectorAll('[data-close="getstarted"]').forEach(el => el.addEventListener('click', close));
+      modal.addEventListener('click', e => { if (e.target === modal) close(); });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('is-open')) close(); });
     })();
 
     // === Endorsements slider ===
