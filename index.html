@@ -53,7 +53,7 @@
       --clay:         #a36345;   /* terracotta — warm accent */
       --clay-deep:    #9a5a3d;
       --clay-soft:    #d49a7e;
-      --sage:         #4f6361;   /* muted sage/teal — cool secondary accent */
+      --sage:         #3d5251;   /* muted sage/teal — cool secondary accent */
       --sage-deep:    #3a4b49;
       --sage-soft:    #8a9c99;
       --line:         rgba(47, 53, 53, 0.12);
@@ -629,7 +629,7 @@
     /* --- Consultation CTA (sage panel, rises from cream services with rounded top) --- */
     .consult {
       background: var(--sage);
-      color: var(--cream-warm);
+      color: var(--cream-soft);
       text-align: center;
       padding-top: clamp(5rem, 10vw, 9rem);
       padding-bottom: clamp(5rem, 10vw, 9rem);
@@ -641,21 +641,21 @@
     /* Services pads its bottom enough that consult's overlap doesn't cover content */
     .services { padding-bottom: calc(var(--section-y) + var(--radius-xl)); }
     .consult__inner { max-width: 740px; margin: 0 auto; }
-    .consult .eyebrow { display: block; margin-bottom: 1.8rem; color: rgba(229, 223, 211, 0.75); }
+    .consult .eyebrow { display: block; margin-bottom: 1.8rem; color: rgba(244, 241, 234, 0.8); }
     .consult h2 {
       font-family: var(--serif);
       font-weight: 300;
       font-size: clamp(2.4rem, 5vw, 4rem);
       line-height: 1.1;
       margin: 0 0 1.8rem;
-      color: var(--cream-warm);
+      color: var(--cream-soft);
     }
     .consult h2 em { color: var(--clay-soft); font-style: italic; }
     .consult p {
       font-size: 1.1rem;
       margin: 0 auto 2.6rem;
       max-width: 36em;
-      color: rgba(229, 223, 211, 0.85);
+      color: rgba(244, 241, 234, 0.9);
     }
     .consult__steps {
       display: grid;
@@ -677,9 +677,26 @@
       font-family: var(--serif); font-weight: 300; font-style: italic;
       font-size: clamp(1.15rem, 1.9vw, 1.4rem);
       line-height: 1.4;
-      color: rgba(229, 223, 211, 0.98);
+      color: rgba(244, 241, 234, 1);
       margin: 0;
       max-width: none;
+    }
+    .consult__aside {
+      margin: 1.8rem auto 0;
+      font-family: var(--serif); font-style: italic; font-weight: 300;
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      color: rgba(244, 241, 234, 0.85);
+      max-width: 42em;
+    }
+    .consult__aside a {
+      color: var(--clay-soft);
+      border-bottom: 1px solid rgba(212, 154, 126, 0.5);
+      padding-bottom: 1px;
+      transition: color .3s var(--ease), border-color .3s var(--ease);
+    }
+    .consult__aside a:hover {
+      color: #fff;
+      border-bottom-color: #fff;
     }
     @media (max-width: 640px) {
       .consult__steps {
@@ -1098,7 +1115,7 @@
       font-weight: 400;
       font-size: 1.05rem;
       line-height: 1.55;
-      color: rgba(229, 223, 211, 0.85);
+      color: rgba(244, 241, 234, 0.9);
       margin: 0 0 1.5rem;
       max-width: 30em;
     }
@@ -2913,7 +2930,7 @@
 
         <article class="provider reveal reveal-delay-1">
           <a class="provider__portrait" href="#lucie" data-lightbox="lightbox-lucie" aria-label="View Lucie Hendrickson's profile">
-            <div class="provider__portrait provider__portrait--placeholder" style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--cream-warm);border-radius:var(--radius-lg)"><span aria-hidden="true" style="font-family:var(--serif);font-size:2rem;color:var(--sage)">&#10038;</span></div>
+            <img loading="lazy" decoding="async" src="lucie-hendrickson.jpg?v=1" alt="Lucie Hendrickson" />
           </a>
           <div class="provider__meta">
             <h3 class="provider__name">Lucie Hendrickson</h3>
@@ -2991,18 +3008,15 @@
     <div class="consult__inner">
       <span class="eyebrow reveal">Begin</span>
       <h2 class="reveal reveal-delay-1">Schedule a <em>complimentary</em> consultation.</h2>
-      <p class="reveal reveal-delay-2">
-        Book a free 15-minute call directly with any of our therapists. To speak with our clinical director or for help finding the right fit, call or text (916) 990-2326 or email Info@PinnacleCounselingGroup.com.
-      </p>
 
-      <div class="consult__steps reveal reveal-delay-3">
+      <div class="consult__steps reveal reveal-delay-2">
         <div class="consult__step">
           <span class="consult__num">01</span>
-          <p>Book a free 15-minute call.</p>
+          <p>Call, text, or email.</p>
         </div>
         <div class="consult__step">
           <span class="consult__num">02</span>
-          <p>We&rsquo;ll match you with the right fit.</p>
+          <p>We&rsquo;ll help you find the right therapist.</p>
         </div>
         <div class="consult__step">
           <span class="consult__num">03</span>
@@ -3010,9 +3024,14 @@
         </div>
       </div>
 
-      <a href="book.html" class="btn btn--clay reveal reveal-delay-3" data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1" data-spwidget-scope-uri="pinnacle" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind>
-        Book a free consult
-      </a>
+      <button type="button" class="btn btn--clay reveal reveal-delay-3" data-open="getstarted">
+        Get started
+      </button>
+      <p class="consult__aside reveal reveal-delay-3">
+        Already know which therapist you want to work with?
+        <a href="book.html" data-spwidget-scope-id="6d676cc9-ad0b-46d9-b9a0-f5058ea590f1" data-spwidget-scope-uri="pinnacle" data-spwidget-application-id="7c72cb9f9a9b913654bb89d6c7b4e71a77911b30192051da35384b4d0c6d505b" data-spwidget-type="OAR" data-spwidget-scope-global data-spwidget-autobind>Schedule a free consult here.</a>
+      </p>
+
     </div>
   </section>
 
@@ -3320,7 +3339,7 @@
     <div class="lightbox__inner">
       <button class="lightbox__close" data-lightbox-close aria-label="Close">&#10005;</button>
       <div class="lightbox__media">
-        <div style="aspect-ratio:4/5;width:100%;background:var(--cream-warm);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:center"><span aria-hidden="true" style="font-family:var(--serif);font-size:3rem;color:var(--sage)">&#10038;</span></div>
+        <img loading="lazy" decoding="async" src="lucie-hendrickson.jpg?v=1" alt="Lucie Hendrickson" />
       </div>
       <div class="lightbox__bio" data-lenis-prevent>
         <h3 class="lightbox__name" id="lb-lucie-name">Lucie Hendrickson</h3>

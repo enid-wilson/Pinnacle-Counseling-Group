@@ -43,7 +43,7 @@
       --clay:         #a36345;
       --clay-deep:    #9a5a3d;
       --clay-soft:    #d49a7e;
-      --sage:         #4f6361;
+      --sage:         #3d5251;
       --sage-deep:    #3a4b49;
       --sage-soft:    #8a9c99;
       --line:         rgba(47, 53, 53, 0.12);
@@ -753,7 +753,7 @@
     .find-your-fit-band__inner {
       max-width: 1080px;
       margin: 0 auto;
-      background: #4f6361;
+      background: #3d5251;
       color: #ffffff;
       padding: clamp(3.5rem, 7vw, 5.5rem) clamp(2rem, 5vw, 4rem);
       border-radius: var(--radius-xl);
@@ -797,22 +797,19 @@
     .lightbox--quiz .lightbox__inner {
       grid-template-columns: 1fr;
       max-width: 560px;
-    }
-    .lightbox--quiz .lightbox__inner {
-      max-height: min(90vh, 720px);
-      overflow: hidden;
-    }
-    .quiz {
-      padding: clamp(2.4rem, 5vw, 3.6rem) clamp(2rem, 5vw, 3.2rem);
-      display: flex; flex-direction: column;
-      max-height: min(90vh, 720px);
+      max-height: min(92vh, 760px);
       overflow-y: auto;
+      overflow-x: hidden;
       -webkit-overflow-scrolling: touch;
       overscroll-behavior: contain;
     }
-    .quiz::-webkit-scrollbar { width: 6px; }
-    .quiz::-webkit-scrollbar-track { background: transparent; }
-    .quiz::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+    .lightbox--quiz .lightbox__inner::-webkit-scrollbar { width: 6px; }
+    .lightbox--quiz .lightbox__inner::-webkit-scrollbar-track { background: transparent; }
+    .lightbox--quiz .lightbox__inner::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+    .quiz {
+      padding: clamp(2.4rem, 5vw, 3.6rem) clamp(1.8rem, 5vw, 3rem);
+      display: block;
+    }
     .quiz__header {
       text-align: center;
       margin-bottom: 2.4rem;
@@ -843,8 +840,8 @@
     .quiz__progress span.is-current,
     .quiz__progress span.is-done { background: var(--clay); }
 
-    .quiz__step { display: none; flex: 1; flex-direction: column; }
-    .quiz__step.is-active { display: flex; }
+    .quiz__step { display: none; }
+    .quiz__step.is-active { display: block; }
     .quiz__q {
       font-family: var(--serif); font-weight: 300;
       font-size: clamp(1.25rem, 2vw, 1.5rem);
@@ -872,7 +869,9 @@
     }
     .quiz__opt:hover { border-color: rgba(47,53,53,.42); }
     .quiz__opt input {
-      position: absolute; opacity: 0; pointer-events: none;
+      position: absolute; opacity: 0;
+      width: 100%; height: 100%; left: 0; top: 0;
+      cursor: pointer; margin: 0;
     }
     .quiz__opt.is-selected {
       background: var(--clay);
@@ -881,8 +880,9 @@
     }
     .quiz__nav {
       display: flex; justify-content: space-between; align-items: center;
-      margin-top: auto; padding-top: 1.4rem;
+      margin-top: 2rem; padding-top: 1.4rem;
       gap: 1rem;
+      border-top: 1px solid var(--line-soft);
     }
     .quiz__back, .quiz__next {
       font-family: var(--sans); font-weight: 500;
@@ -1302,6 +1302,21 @@
       .mbar { display: flex; }
       body { padding-bottom: 84px; }
     }
+  
+    .find-your-fit-help {
+      max-width: 720px;
+      margin: 1.4rem auto 0;
+      text-align: center;
+      font-family: var(--serif); font-style: italic; font-weight: 300;
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      color: var(--ink-soft);
+    }
+    .find-your-fit-help a {
+      color: var(--clay-deep);
+      border-bottom: 1px solid rgba(163,99,69,.35);
+      transition: color .3s var(--ease);
+    }
+    .find-your-fit-help a:hover { color: var(--ink); }
   </style>
 
   <!-- === SEO META — generated === -->
@@ -1984,17 +1999,6 @@
     </div>
   </section>
 
-  <!-- FIND YOUR FIT — promoted, rounded band -->
-  <section class="find-your-fit-band">
-    <div class="find-your-fit-band__inner reveal">
-      <h2 class="find-your-fit-band__title">Not sure who to <em>book with</em>?</h2>
-      <p class="find-your-fit-band__sub">Answer three short questions and we&rsquo;ll recommend the clinician most likely to be a good fit.</p>
-      <button type="button" class="find-your-fit-band__btn" data-lightbox="lightbox-quiz">
-        Find your fit <span aria-hidden="true">&rarr;</span>
-      </button>
-    </div>
-  </section>
-
   <!-- PROVIDERS LIST (cream zone — all team members in one unified grid) -->
   <section class="providers-list">
     <div class="team-grid">
@@ -2080,7 +2084,7 @@
 
       <article class="provider-card reveal reveal-delay-1">
         <a class="provider-card__portrait" href="#lucie" data-lightbox="lightbox-lucie" aria-label="Read Lucie Hendrickson's full bio">
-          <div class="provider-card__portrait provider-card__portrait--placeholder"><span class="provider-card__mark" aria-hidden="true">&#10038;</span></div>
+          <img loading="lazy" decoding="async" src="lucie-hendrickson.jpg?v=1" alt="Lucie Hendrickson" />
         </a>
         <h3 class="provider-card__name">Lucie Hendrickson</h3>
         <span class="provider-card__role">Joining our team &middot; Registration Pending</span>
@@ -2094,25 +2098,20 @@
 
     </div>
 
-    <!-- Sage CTA card — sits directly below the provider grid -->
-    <div class="contact-card reveal">
-      <div class="contact-card__inner">
-        <div class="contact-card__lead">
-          <h3>Find the <em>right fit</em>.</h3>
-          <p>Book a free 15-minute consultation directly with the therapist you choose. If you'd like help selecting, call or text (916) 990-2326 or email Info@PinnacleCounselingGroup.com — our clinical director will help you find the right fit.</p>
-        </div>
-        <div class="contact-card__info">
-          <div class="contact-card__detail">
-            <span class="label">Telephone</span>
-            <a href="tel:+19169902326">(916) 990-2326</a>
-          </div>
-          <div class="contact-card__detail">
-            <span class="label">Email</span>
-            <a href="mailto:Info@PinnacleCounselingGroup.com">Info@PinnacleCounselingGroup.com</a>
-          </div>
-        </div>
-      </div>
+  </section>
+
+  <!-- FIND YOUR FIT — promoted quiz band, now below providers -->
+  <section class="find-your-fit-band">
+    <div class="find-your-fit-band__inner reveal">
+      <h2 class="find-your-fit-band__title">Not sure who to <em>book with</em>?</h2>
+      <p class="find-your-fit-band__sub">Answer three short questions and we&rsquo;ll recommend the clinician most likely to be a good fit.</p>
+      <button type="button" class="find-your-fit-band__btn" data-lightbox="lightbox-quiz">
+        Start here <span aria-hidden="true">&rarr;</span>
+      </button>
     </div>
+    <p class="find-your-fit-help reveal reveal-delay-1">
+      Need support getting started? <a href="tel:+19169902326">(916) 990-2326</a> &middot; <a href="mailto:Info@PinnacleCounselingGroup.com">Info@PinnacleCounselingGroup.com</a>
+    </p>
   </section>
 
   <!-- FOOTER -->
@@ -2304,7 +2303,7 @@
     <div class="lightbox__inner">
       <button class="lightbox__close" data-lightbox-close aria-label="Close">&#10005;</button>
       <div class="lightbox__media">
-        <div class="provider-card__portrait provider-card__portrait--placeholder" style="aspect-ratio:4/5;border-radius:var(--radius-lg);width:100%;display:flex;align-items:center;justify-content:center"><span class="provider-card__mark" aria-hidden="true" style="font-size:2rem">&#10038;</span></div>
+        <img loading="lazy" decoding="async" src="lucie-hendrickson.jpg?v=1" alt="Lucie Hendrickson" />
       </div>
       <div class="lightbox__bio" data-lenis-prevent>
         <h3 class="lightbox__name" id="lb-lucie-name">Lucie Hendrickson</h3>
@@ -2539,19 +2538,16 @@
           if (backBtn) backBtn.disabled = state.step === 0;
         }
 
-        // Wire up all radio options
-        quiz.querySelectorAll('.quiz__opt').forEach(label => {
-          const input = label.querySelector('input');
-          label.addEventListener('click', () => {
-            // Small delay so the click sets the checked property first
-            setTimeout(() => {
-              // Update state
-              state[input.name] = input.value;
-              // Visual selection swap within this group
-              label.parentElement.querySelectorAll('.quiz__opt').forEach(o => o.classList.remove('is-selected'));
-              label.classList.add('is-selected');
-              updateNextBtn();
-            }, 0);
+        // Wire up all radio options via the reliable 'change' event
+        quiz.querySelectorAll('.quiz__opt input[type="radio"]').forEach(input => {
+          input.addEventListener('change', () => {
+            if (!input.checked) return;
+            state[input.name] = input.value;
+            const label = input.closest('.quiz__opt');
+            const group = label.parentElement;
+            group.querySelectorAll('.quiz__opt').forEach(o => o.classList.remove('is-selected'));
+            label.classList.add('is-selected');
+            updateNextBtn();
           });
         });
 
