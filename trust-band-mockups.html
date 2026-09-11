@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trust Band — Mobile Redesign Options</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" />
+  <style>
+    :root {
+      --cream: #ffffff; --cream-warm: #ddd5c3; --cream-soft: #f4f1ea;
+      --ink: #2f3535; --ink-soft: rgba(47, 53, 53, 0.90); --ink-faint: rgba(47, 53, 53, 0.48);
+      --clay: #a36345; --clay-deep: #9a5a3d; --clay-soft: #d49a7e;
+      --sage: #3d5251; --sage-deep: #2b3d3c;
+      --line: rgba(47, 53, 53, 0.14); --line-soft: rgba(47, 53, 53, 0.08);
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--sans); font-weight: 300;
+      background: #efe9dc; color: var(--ink);
+      padding: 3rem 2rem;
+      min-height: 100vh;
+    }
+    h1 {
+      font-family: var(--serif); font-weight: 300;
+      font-size: 2rem; text-align: center;
+      margin-bottom: .5rem;
+    }
+    .subhead {
+      text-align: center;
+      font-family: var(--serif); font-style: italic;
+      color: var(--ink-soft);
+      margin-bottom: 3rem;
+      font-size: 1.05rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 3rem;
+      max-width: 1400px; margin: 0 auto;
+    }
+    .col {
+      display: flex; flex-direction: column;
+      align-items: center;
+    }
+    .col__label {
+      font-family: var(--sans); font-weight: 500;
+      font-size: .72rem; letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: .5rem;
+    }
+    .col__name {
+      font-family: var(--serif); font-style: italic; font-weight: 400;
+      color: var(--clay);
+      font-size: 1.15rem;
+      margin-bottom: 1.2rem;
+    }
+    .phone {
+      width: 375px; max-width: 100%;
+      background: var(--cream);
+      border-radius: 38px;
+      box-shadow: 0 30px 60px -20px rgba(47,53,53,.22), 0 0 0 1px rgba(47,53,53,.08);
+      overflow: hidden;
+    }
+    /* fake nav strip for context */
+    .phone__nav {
+      background: rgba(255,255,255,.94);
+      padding: .9rem 1.2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid var(--line-soft);
+      font-size: .58rem; letter-spacing: .24em; text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+    .phone__hero {
+      background: linear-gradient(180deg, #6a5541 0%, #2a1e14 100%);
+      height: 220px;
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,.85);
+      font-family: var(--serif); font-style: italic;
+      font-size: .82rem;
+      letter-spacing: .04em;
+    }
+
+    /* ============================
+       OPTION A — Editorial Stack
+       Small uppercase labels, serif italic lines,
+       hairline separators between each block
+       ============================ */
+    .band-a {
+      background: var(--cream-warm);
+      padding: 2.4rem 1.6rem;
+      text-align: center;
+    }
+    .band-a__block { padding: 1.1rem 0; }
+    .band-a__block + .band-a__block {
+      border-top: 1px solid rgba(47,53,53,.14);
+    }
+    .band-a__eyebrow {
+      display: block;
+      font-family: var(--sans); font-weight: 400;
+      font-size: .58rem; letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: .6rem;
+    }
+    .band-a__line {
+      font-family: var(--serif); font-weight: 400;
+      font-size: 1.05rem; line-height: 1.5;
+      color: var(--ink);
+      max-width: 22em; margin: 0 auto;
+    }
+    .band-a__line--italic { font-style: italic; color: var(--ink-soft); }
+    .band-a__line a {
+      color: var(--ink); text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color .2s ease, color .2s ease;
+    }
+    .band-a__line a:hover { color: var(--clay); }
+
+    /* ============================
+       OPTION B — Vertical Whisper
+       Serif italic lines only, ornament ✽ between,
+       generous vertical rhythm, no labels
+       ============================ */
+    .band-b {
+      background: var(--cream-warm);
+      padding: 3rem 1.6rem;
+      text-align: center;
+    }
+    .band-b__line {
+      font-family: var(--serif); font-weight: 400;
+      font-size: 1.1rem; line-height: 1.5;
+      color: var(--ink);
+      max-width: 20em; margin: 0 auto;
+    }
+    .band-b__line--italic { font-style: italic; color: var(--ink-soft); }
+    .band-b__line a {
+      color: var(--ink); text-decoration: none;
+      transition: color .2s ease;
+    }
+    .band-b__line a:hover { color: var(--clay); }
+    .band-b__ornament {
+      display: block;
+      font-family: var(--serif);
+      color: var(--sage); opacity: .5;
+      font-size: .8rem;
+      margin: 1.35rem auto;
+    }
+
+    /* ============================
+       OPTION C — Chip Row
+       Small uppercase pills for locations + focus areas,
+       italic serif line for payment in the middle
+       ============================ */
+    .band-c {
+      background: var(--cream-warm);
+      padding: 2.4rem 1.4rem 2.6rem;
+      text-align: center;
+    }
+    .band-c__row {
+      display: flex; flex-wrap: wrap;
+      justify-content: center;
+      gap: .5rem;
+      margin-bottom: 1.6rem;
+    }
+    .band-c__chip {
+      display: inline-block;
+      padding: .5rem .9rem;
+      border: 1px solid rgba(47,53,53,.22);
+      border-radius: 999px;
+      font-family: var(--sans); font-weight: 400;
+      font-size: .62rem; letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--ink);
+      background: rgba(255,255,255,.32);
+      transition: background .2s ease, color .2s ease, border-color .2s ease;
+      text-decoration: none;
+    }
+    .band-c__chip:hover { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+    .band-c__note {
+      font-family: var(--serif); font-style: italic; font-weight: 400;
+      font-size: 1rem; line-height: 1.5;
+      color: var(--ink-soft);
+      max-width: 22em; margin: 0 auto 1.6rem;
+      padding: .6rem 0;
+      border-top: 1px solid rgba(47,53,53,.14);
+      border-bottom: 1px solid rgba(47,53,53,.14);
+    }
+
+    /* Comparison — current (for reference) */
+    .band-current {
+      background: var(--cream-warm);
+      padding: 1.9rem 1rem;
+      text-align: center;
+    }
+    .band-current p {
+      font-family: var(--sans); font-weight: 400;
+      font-size: .58rem;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: var(--ink-soft);
+      line-height: 2;
+    }
+    .band-current p + p { margin-top: .5rem; }
+    .band-current .italic { font-style: italic; }
+    .band-current a { color: inherit; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <h1>Mobile Trust Band — Three Directions</h1>
+  <p class="subhead">All shown at iPhone width (375px). Same content, three different feelings.</p>
+
+  <div class="grid">
+
+    <!-- CURRENT (baseline) -->
+    <div class="col">
+      <span class="col__label">Current</span>
+      <span class="col__name">— for reference —</span>
+      <div class="phone">
+        <div class="phone__nav"><span>Pinnacle</span><span>Book</span></div>
+        <div class="phone__hero">[ hero image · wordmark · lede ]</div>
+        <div class="band-current">
+          <p>Sacramento · Gold River · Telehealth in California</p>
+          <p class="italic">Private Pay · Superbills · Aetna, Optum, and United Insurance</p>
+          <p>
+            <a href="#">Anxiety</a> · <a href="#">OCD</a> · <a href="#">Trauma</a> ·
+            <a href="#">Perinatal</a> · <a href="#">Couples</a> · <a href="#">ADHD</a> · <a href="#">Military</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION A -->
+    <div class="col">
+      <span class="col__label">Option A</span>
+      <span class="col__name">Editorial Stack</span>
+      <div class="phone">
+        <div class="phone__nav"><span>Pinnacle</span><span>Book</span></div>
+        <div class="phone__hero">[ hero image · wordmark · lede ]</div>
+        <div class="band-a">
+          <div class="band-a__block">
+            <span class="band-a__eyebrow">Where</span>
+            <p class="band-a__line">Sacramento · Gold River · Telehealth in California</p>
+          </div>
+          <div class="band-a__block">
+            <span class="band-a__eyebrow">Payment</span>
+            <p class="band-a__line band-a__line--italic">Private Pay · Superbills · Aetna, Optum &amp; United Insurance</p>
+          </div>
+          <div class="band-a__block">
+            <span class="band-a__eyebrow">Focus Areas</span>
+            <p class="band-a__line">
+              <a href="#">Anxiety</a> · <a href="#">OCD</a> · <a href="#">Trauma</a> · <a href="#">Perinatal</a> · <a href="#">Couples</a> · <a href="#">ADHD</a> · <a href="#">Military</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION B -->
+    <div class="col">
+      <span class="col__label">Option B</span>
+      <span class="col__name">Vertical Whisper</span>
+      <div class="phone">
+        <div class="phone__nav"><span>Pinnacle</span><span>Book</span></div>
+        <div class="phone__hero">[ hero image · wordmark · lede ]</div>
+        <div class="band-b">
+          <p class="band-b__line">Sacramento · Gold River · Telehealth in California</p>
+          <span class="band-b__ornament">&#10038;</span>
+          <p class="band-b__line band-b__line--italic">Private Pay · Superbills · Aetna, Optum &amp; United Insurance</p>
+          <span class="band-b__ornament">&#10038;</span>
+          <p class="band-b__line">
+            <a href="#">Anxiety</a> · <a href="#">OCD</a> · <a href="#">Trauma</a> · <a href="#">Perinatal</a> · <a href="#">Couples</a> · <a href="#">ADHD</a> · <a href="#">Military</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION C -->
+    <div class="col">
+      <span class="col__label">Option C</span>
+      <span class="col__name">Chip Row</span>
+      <div class="phone">
+        <div class="phone__nav"><span>Pinnacle</span><span>Book</span></div>
+        <div class="phone__hero">[ hero image · wordmark · lede ]</div>
+        <div class="band-c">
+          <div class="band-c__row">
+            <span class="band-c__chip">Sacramento</span>
+            <span class="band-c__chip">Gold River</span>
+            <span class="band-c__chip">Telehealth · CA</span>
+          </div>
+          <p class="band-c__note">Private pay &middot; Superbills &middot; Aetna, Optum &amp; United</p>
+          <div class="band-c__row" style="margin-bottom:0;">
+            <a class="band-c__chip" href="#">Anxiety</a>
+            <a class="band-c__chip" href="#">OCD</a>
+            <a class="band-c__chip" href="#">Trauma</a>
+            <a class="band-c__chip" href="#">Perinatal</a>
+            <a class="band-c__chip" href="#">Couples</a>
+            <a class="band-c__chip" href="#">ADHD</a>
+            <a class="band-c__chip" href="#">Military</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
