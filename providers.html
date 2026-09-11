@@ -746,7 +746,7 @@
 
     /* === Find-your-fit promoted band (teal, rounded card) === */
     .find-your-fit-band {
-      padding: clamp(2rem, 4vw, 3rem) var(--pad-x);
+      padding: clamp(2rem, 4vw, 3rem) var(--pad-x) clamp(5rem, 10vw, 8rem);
       background: transparent;
     }
     .find-your-fit-band__inner {
@@ -2680,6 +2680,29 @@
             alt.innerHTML = '';
           }
           dots.forEach(d => { d.classList.remove('is-current'); d.classList.add('is-done'); });
+
+          // Close the quiz lightbox when the result CTA (or "also consider" link) is clicked,
+          // so the bio lightbox comes forward cleanly.
+          const closeQuizAndOpenBio = (ev) => {
+            ev.preventDefault();
+            const targetId = ev.currentTarget.getAttribute('data-lightbox');
+            const quizLb = document.getElementById('lightbox-quiz');
+            if (quizLb) {
+              quizLb.classList.remove('is-open');
+              quizLb.setAttribute('aria-hidden', 'true');
+            }
+            const bioLb = document.getElementById(targetId);
+            if (bioLb) {
+              setTimeout(() => {
+                bioLb.classList.add('is-open');
+                bioLb.setAttribute('aria-hidden', 'false');
+                setTimeout(() => bioLb.querySelector('.lightbox__close')?.focus(), 60);
+              }, 250);
+            }
+          };
+          cta.onclick = closeQuizAndOpenBio;
+          const altLink = alt.querySelector('a');
+          if (altLink) altLink.onclick = closeQuizAndOpenBio;
         }
 
         // Reset quiz when the lightbox is closed
