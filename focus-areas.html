@@ -361,36 +361,34 @@
     }
 
 
-    /* --- Sticky contact bar (always visible, transparent, minimal) --- */
+    /* --- Sticky contact bar (bottom-right, small, transparent) --- */
     .contact-bar {
       position: fixed;
-      bottom: 1.4rem;
-      left: 50%;
-      transform: translateX(-50%);
+      bottom: 1.2rem;
+      right: 1.2rem;
       z-index: 45;
       background: rgba(255, 255, 255, 0.72);
       -webkit-backdrop-filter: saturate(140%) blur(16px);
       backdrop-filter: saturate(140%) blur(16px);
       border-radius: 999px;
       border: 1px solid rgba(47, 53, 53, 0.06);
-      box-shadow: 0 10px 30px -12px rgba(47, 53, 53, 0.18);
-      padding: .3rem;
+      box-shadow: 0 8px 22px -10px rgba(47, 53, 53, 0.18);
+      padding: .22rem;
       display: inline-flex;
       align-items: center;
-      gap: .1rem;
-      max-width: calc(100vw - 1.6rem);
+      gap: .08rem;
     }
     .contact-bar__opt {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: .5rem;
-      padding: .7rem 1.1rem;
+      gap: .38rem;
+      padding: .5rem .85rem;
       border-radius: 999px;
       font-family: var(--sans);
       font-weight: 500;
-      font-size: .66rem;
-      letter-spacing: .22em;
+      font-size: .56rem;
+      letter-spacing: .2em;
       text-transform: uppercase;
       color: var(--ink);
       text-decoration: none;
@@ -402,21 +400,20 @@
     .contact-bar__opt--primary { background: var(--clay); color: #fff; }
     .contact-bar__opt--primary:hover,
     .contact-bar__opt--primary:focus { background: var(--clay-deep); color: #fff; }
-    .contact-bar__opt svg { width: 13px; height: 13px; flex-shrink: 0; }
+    .contact-bar__opt svg { width: 11px; height: 11px; flex-shrink: 0; }
     @media (max-width: 560px) {
       .contact-bar {
-        left: .8rem; right: .8rem; bottom: .8rem;
-        transform: none;
+        bottom: .8rem; right: .8rem; left: .8rem;
         display: flex; justify-content: center;
       }
       .contact-bar__opt {
         flex: 1;
-        padding: .8rem .5rem;
-        font-size: .6rem;
+        padding: .65rem .5rem;
+        font-size: .58rem;
         letter-spacing: .18em;
       }
     }
-    body { padding-bottom: 88px; }
+    body { padding-bottom: 72px; }
 </style>
 
   <script type="application/ld+json">
@@ -453,7 +450,6 @@
     gtag('config', 'G-C5NPRRT63D', { 'anonymize_ip': true, 'allow_google_signals': false, 'allow_ad_personalization_signals': false });
   </script>
 
-  <script src="waitlist.js?v=5" defer></script>
 </head>
 <body>
 
