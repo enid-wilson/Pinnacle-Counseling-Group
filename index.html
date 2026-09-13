@@ -420,7 +420,7 @@
       line-height: 1.35;
       letter-spacing: -.005em;
       text-shadow: 0 2px 24px rgba(0,0,0,.55), 0 0 2px rgba(0,0,0,.35);
-      animation: fadeUp 1.4s .6s var(--ease) both;
+      animation: fadeUp .7s .2s var(--ease) both;
     }
     .hero__cta {
       margin-top: clamp(2.4rem, 5vh, 3.2rem);
@@ -466,7 +466,7 @@
     }
     .hero__cta {
       margin-top: 2.8rem;
-      animation: fadeUp 1.4s .95s var(--ease) both;
+      animation: fadeUp .7s .45s var(--ease) both;
       display: inline-block;
     }
 
@@ -3838,12 +3838,18 @@
   </div>
 
 <script>
-    /* reveal-failsafe: guarantee content is visible even if IO / animation stalls */
+    /* reveal-failsafe: guarantee content is visible even if IO / animation stalls.
+       Only forces elements currently in the viewport — below-fold reveals still
+       animate normally as the user scrolls to them. */
     (function () {
       var force = function () {
+        var vh = window.innerHeight || document.documentElement.clientHeight;
         document.querySelectorAll('.reveal:not(.is-in):not(.is-visible)').forEach(function (el) {
-          el.classList.add('is-in');
-          el.classList.add('is-visible');
+          var r = el.getBoundingClientRect();
+          if (r.top < vh && r.bottom > 0) {
+            el.classList.add('is-in');
+            el.classList.add('is-visible');
+          }
         });
       };
       if (document.readyState === 'loading') {
