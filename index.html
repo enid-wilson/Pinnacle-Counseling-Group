@@ -537,9 +537,19 @@
     .keymsg .ornament.reveal.reveal-delay-1 { transition-delay: .18s; }
     .keymsg .keymsg__headline.reveal.reveal-delay-2 { transition-delay: .34s; }
     .keymsg .btn.reveal.reveal-delay-3 { transition-delay: .58s; }
-    /* Add a whisper of transition to the headline itself: slower, deeper */
+    /* Headline flies in from below — bigger travel, slower, deeper easing */
     .keymsg .keymsg__headline.reveal {
-      transition-duration: 1.4s;
+      transition: opacity 1.6s var(--ease), transform 1.6s var(--ease);
+      transition-delay: .34s;
+    }
+    html.js .keymsg .keymsg__headline.reveal:not(.is-in):not(.is-visible) {
+      opacity: 0;
+      transform: translateY(70px);
+    }
+    .keymsg .keymsg__headline.reveal.is-in,
+    .keymsg .keymsg__headline.reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     .keymsg__sub {
       font-family: var(--serif);
@@ -2652,7 +2662,7 @@
       "worksFor": {
         "@id": "https://pinnaclecounselinggroup.com/#practice"
       },
-      "image": "https://pinnaclecounselinggroup.com/Giana%20Azizeh%20copy.png",
+      "image": "https://pinnaclecounselinggroup.com/giana-azizeh.jpg",
       "url": "https://pinnaclecounselinggroup.com/providers.html#giana",
       "identifier": [
         {
@@ -3033,7 +3043,7 @@
 
         <article class="provider reveal reveal-delay-1">
           <a class="provider__portrait" href="#giana" data-lightbox="lightbox-giana" aria-label="View Giana Azizeh's profile">
-            <img loading="lazy" decoding="async" src="Giana%20Azizeh%20copy.png?v=1" alt="Giana Azizeh" style="object-position: center 28%;" />
+            <img loading="lazy" decoding="async" src="giana-azizeh.jpg?v=3" alt="Giana Azizeh" style="object-position: center 18%;" />
           </a>
           <div class="provider__meta">
             <h3 class="provider__name">Giana Azizeh</h3>
@@ -3335,7 +3345,7 @@
     <div class="lightbox__inner">
       <button class="lightbox__close" data-lightbox-close aria-label="Close">&#10005;</button>
       <div class="lightbox__media">
-        <img loading="lazy" decoding="async" src="Giana%20Azizeh%20copy.png?v=1" alt="Giana Azizeh" style="object-position: center 28%;" />
+        <img loading="lazy" decoding="async" src="giana-azizeh.jpg?v=3" alt="Giana Azizeh" style="object-position: center 18%;" />
       </div>
       <div class="lightbox__bio" data-lenis-prevent>
         <h3 class="lightbox__name" id="lb-giana-name">Giana Azizeh, LMFT</h3>
