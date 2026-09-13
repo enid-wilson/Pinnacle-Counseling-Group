@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sticky Contact — Four Options</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" />
+  <style>
+    :root {
+      --cream: #ffffff; --cream-warm: #ddd5c3; --cream-soft: #f4f1ea;
+      --ink: #2f3535; --ink-soft: rgba(47, 53, 53, 0.90); --ink-faint: rgba(47, 53, 53, 0.48);
+      --clay: #a36345; --clay-deep: #9a5a3d; --clay-soft: #d49a7e;
+      --sage: #3d5251; --sage-deep: #2b3d3c;
+      --line: rgba(47, 53, 53, 0.14); --line-soft: rgba(47, 53, 53, 0.08);
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+      --ease: cubic-bezier(.2, .7, .2, 1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--sans); font-weight: 300;
+      background: #efe9dc; color: var(--ink);
+      padding: 3rem 2rem 5rem;
+    }
+    h1 {
+      font-family: var(--serif); font-weight: 300;
+      font-size: 2.2rem; text-align: center; margin-bottom: .5rem;
+    }
+    .subhead {
+      text-align: center;
+      font-family: var(--serif); font-style: italic;
+      color: var(--ink-soft);
+      margin-bottom: 3rem;
+      font-size: 1.05rem;
+      max-width: 44em; margin-left: auto; margin-right: auto;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+      gap: 2.5rem;
+      max-width: 1400px; margin: 0 auto;
+    }
+    .col { display: flex; flex-direction: column; align-items: center; }
+    .col__label {
+      font-family: var(--sans); font-weight: 500;
+      font-size: .72rem; letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: .5rem;
+    }
+    .col__name {
+      font-family: var(--serif); font-style: italic; font-weight: 400;
+      color: var(--clay);
+      font-size: 1.15rem;
+      margin-bottom: .5rem;
+    }
+    .col__note {
+      font-family: var(--sans);
+      font-size: .78rem; color: var(--ink-soft);
+      text-align: center; max-width: 30em;
+      margin-bottom: 1.2rem; line-height: 1.5;
+    }
+
+    /* Mock browser frame */
+    .frame {
+      width: 100%; max-width: 560px;
+      background: var(--cream);
+      border-radius: 14px;
+      box-shadow: 0 30px 60px -20px rgba(47,53,53,.22), 0 0 0 1px rgba(47,53,53,.08);
+      overflow: hidden;
+      position: relative;
+      aspect-ratio: 3 / 4;
+    }
+    .frame__nav {
+      background: rgba(255,255,255,.94);
+      padding: .9rem 1.2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      border-bottom: 1px solid var(--line-soft);
+      font-size: .58rem; letter-spacing: .24em; text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+    .frame__hero {
+      background: linear-gradient(180deg, #6a5541 0%, #2a1e14 100%);
+      height: 200px;
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,.85);
+      font-family: var(--serif); font-style: italic;
+      font-size: .82rem;
+    }
+    .frame__body {
+      padding: 2rem 1.6rem;
+      color: var(--ink-soft);
+    }
+    .frame__body p {
+      font-family: var(--serif); font-size: 1rem; line-height: 1.65;
+      margin-bottom: 1rem;
+    }
+    .frame__body p:first-child::first-line { color: var(--ink); }
+
+    /* Icon base */
+    .ico { width: 16px; height: 16px; flex-shrink: 0; }
+
+    /* ============================
+       OPTION A — Quiet Pill (expands on hover)
+       Bottom-right pill with "Contact" label; hovers to reveal Call / Text / Email
+       ============================ */
+    .sticky-a {
+      position: absolute; bottom: 1.4rem; right: 1.4rem;
+      z-index: 20;
+      display: flex; flex-direction: column; align-items: flex-end;
+      gap: .5rem;
+    }
+    .sticky-a__options {
+      display: flex; flex-direction: column;
+      gap: .4rem;
+      opacity: 0; transform: translateY(6px) scale(.98);
+      transition: opacity .35s var(--ease), transform .35s var(--ease);
+      pointer-events: none;
+    }
+    .sticky-a:hover .sticky-a__options,
+    .sticky-a:focus-within .sticky-a__options {
+      opacity: 1; transform: none; pointer-events: auto;
+    }
+    .sticky-a__opt {
+      display: inline-flex; align-items: center; gap: .55rem;
+      background: rgba(255,255,255,.96);
+      -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+      color: var(--ink);
+      padding: .65rem 1rem;
+      border-radius: 999px;
+      font-family: var(--sans); font-weight: 400;
+      font-size: .68rem; letter-spacing: .18em; text-transform: uppercase;
+      box-shadow: 0 6px 18px -6px rgba(47,53,53,.2);
+      border: 1px solid rgba(47,53,53,.08);
+      text-decoration: none;
+      transition: color .2s ease, transform .2s ease;
+    }
+    .sticky-a__opt:hover { color: var(--clay); transform: translateX(-2px); }
+    .sticky-a__trigger {
+      display: inline-flex; align-items: center; gap: .55rem;
+      background: var(--clay);
+      color: #fff;
+      padding: .85rem 1.35rem;
+      border-radius: 999px;
+      font-family: var(--sans); font-weight: 500;
+      font-size: .72rem; letter-spacing: .22em; text-transform: uppercase;
+      box-shadow: 0 10px 26px -8px rgba(163,99,69,.5);
+      cursor: pointer;
+      border: none;
+    }
+
+    /* ============================
+       OPTION B — Compact Bar (bottom-center, desktop)
+       Like mobile bar but centered, narrow, three actions
+       ============================ */
+    .sticky-b {
+      position: absolute; bottom: 1.4rem;
+      left: 50%; transform: translateX(-50%);
+      z-index: 20;
+      background: rgba(255,255,255,.94);
+      -webkit-backdrop-filter: saturate(140%) blur(14px);
+      backdrop-filter: saturate(140%) blur(14px);
+      border-radius: 999px;
+      border: 1px solid rgba(47,53,53,.08);
+      box-shadow: 0 14px 40px -12px rgba(47,53,53,.22);
+      padding: .35rem;
+      display: inline-flex; align-items: center;
+      gap: .15rem;
+    }
+    .sticky-b__opt {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .65rem 1.1rem;
+      border-radius: 999px;
+      font-family: var(--sans); font-weight: 500;
+      font-size: .66rem; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--ink);
+      text-decoration: none;
+      transition: background .25s ease, color .25s ease;
+    }
+    .sticky-b__opt:hover { background: rgba(47,53,53,.06); color: var(--clay); }
+    .sticky-b__opt--primary {
+      background: var(--clay); color: #fff;
+    }
+    .sticky-b__opt--primary:hover { background: var(--clay-deep); color: #fff; }
+
+    /* ============================
+       OPTION C — Icon Stack (bottom-right, no labels until hover)
+       3 small circles stacked vertically
+       ============================ */
+    .sticky-c {
+      position: absolute; bottom: 1.4rem; right: 1.4rem;
+      z-index: 20;
+      display: flex; flex-direction: column;
+      gap: .55rem;
+    }
+    .sticky-c__opt {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.96);
+      -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+      color: var(--ink);
+      display: inline-flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 22px -6px rgba(47,53,53,.22);
+      border: 1px solid rgba(47,53,53,.08);
+      text-decoration: none;
+      transition: background .25s ease, color .25s ease, transform .25s ease, width .35s var(--ease);
+      position: relative;
+      overflow: hidden;
+    }
+    .sticky-c__opt:hover {
+      background: var(--ink); color: var(--cream);
+      transform: translateX(-3px);
+    }
+    .sticky-c__opt--primary {
+      background: var(--clay); color: #fff;
+      border-color: var(--clay);
+    }
+    .sticky-c__opt--primary:hover { background: var(--clay-deep); }
+    .sticky-c__opt .ico { width: 18px; height: 18px; }
+    .sticky-c__tooltip {
+      position: absolute;
+      right: calc(100% + 12px); top: 50%;
+      transform: translateY(-50%) translateX(6px);
+      background: var(--ink); color: var(--cream);
+      padding: .45rem .75rem;
+      border-radius: 6px;
+      font-family: var(--sans); font-size: .62rem;
+      letter-spacing: .2em; text-transform: uppercase;
+      white-space: nowrap;
+      opacity: 0; pointer-events: none;
+      transition: opacity .25s var(--ease), transform .25s var(--ease);
+    }
+    .sticky-c__opt:hover .sticky-c__tooltip {
+      opacity: 1; transform: translateY(-50%) translateX(0);
+    }
+
+    /* ============================
+       OPTION D — Serif Whisper (bottom-left, subtle)
+       Text-only "Call · Text · Email" line in bottom-left,
+       aligned like a caption. Most restrained.
+       ============================ */
+    .sticky-d {
+      position: absolute; bottom: 1.6rem; left: 1.6rem;
+      z-index: 20;
+      background: rgba(255,255,255,.94);
+      -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+      border-radius: 999px;
+      padding: .75rem 1.3rem;
+      box-shadow: 0 10px 24px -8px rgba(47,53,53,.18);
+      border: 1px solid rgba(47,53,53,.06);
+      font-family: var(--serif); font-weight: 400;
+      font-size: 1rem; color: var(--ink);
+      display: inline-flex; align-items: center; gap: .7rem;
+      letter-spacing: 0;
+    }
+    .sticky-d a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: color .2s ease, border-color .2s ease;
+    }
+    .sticky-d a:hover {
+      color: var(--clay);
+      border-bottom-color: var(--clay-soft);
+    }
+    .sticky-d__sep {
+      color: var(--ink-faint); font-style: italic; font-size: .85rem;
+    }
+    .sticky-d__label {
+      font-family: var(--sans); font-size: .58rem;
+      letter-spacing: .28em; text-transform: uppercase;
+      color: var(--sage);
+      margin-right: .35rem;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Sticky Contact — Four Directions</h1>
+  <p class="subhead">Hover the elements in each frame to see interactions. Each is shown inside a mock browser window at the same size.</p>
+
+  <div class="grid">
+
+    <!-- OPTION A -->
+    <div class="col">
+      <span class="col__label">Option A</span>
+      <span class="col__name">Quiet Pill</span>
+      <p class="col__note">Small "Contact" pill in the corner. Hover to reveal Call, Text, Email — each on its own line above.</p>
+      <div class="frame">
+        <div class="frame__nav"><span>Pinnacle</span><span>Book</span></div>
+        <div class="frame__hero">[ hero content ]</div>
+        <div class="frame__body">
+          <p>We view each client as a whole person — not a diagnosis — so your therapy is tailored entirely to your life and goals.</p>
+          <p>Personalized psychotherapy in Sacramento, California — and virtually throughout the state.</p>
+        </div>
+        <div class="sticky-a">
+          <div class="sticky-a__options">
+            <a class="sticky-a__opt" href="tel:9169902326">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.78.66 2.62a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.46-1.46a2 2 0 0 1 2.11-.45c.84.32 1.72.54 2.62.66A2 2 0 0 1 22 16.92z"/></svg>
+              Call
+            </a>
+            <a class="sticky-a__opt" href="sms:9169902326">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              Text
+            </a>
+            <a class="sticky-a__opt" href="mailto:info@pinnaclecounselinggroup.com">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Email
+            </a>
+          </div>
+          <button class="sticky-a__trigger" type="button">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.78.66 2.62a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.46-1.46a2 2 0 0 1 2.11-.45c.84.32 1.72.54 2.62.66A2 2 0 0 1 22 16.92z"/></svg>
+            Contact
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION B -->
+    <div class="col">
+      <span class="col__label">Option B</span>
+      <span class="col__name">Compact Bar</span>
+      <p class="col__note">A narrow bar centered at the bottom. Same pattern as your mobile sticky bar, refined for desktop.</p>
+      <div class="frame">
+        <div class="frame__nav"><span>Pinnacle</span><span>Book</span></div>
+        <div class="frame__hero">[ hero content ]</div>
+        <div class="frame__body">
+          <p>We view each client as a whole person — not a diagnosis — so your therapy is tailored entirely to your life and goals.</p>
+          <p>Personalized psychotherapy in Sacramento, California — and virtually throughout the state.</p>
+        </div>
+        <div class="sticky-b">
+          <a class="sticky-b__opt" href="tel:9169902326">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.78.66 2.62a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.46-1.46a2 2 0 0 1 2.11-.45c.84.32 1.72.54 2.62.66A2 2 0 0 1 22 16.92z"/></svg>
+            Call
+          </a>
+          <a class="sticky-b__opt" href="sms:9169902326">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Text
+          </a>
+          <a class="sticky-b__opt sticky-b__opt--primary" href="mailto:info@pinnaclecounselinggroup.com">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Email
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION C -->
+    <div class="col">
+      <span class="col__label">Option C</span>
+      <span class="col__name">Icon Stack</span>
+      <p class="col__note">Three minimal circular icons stacked in the corner. Hover reveals a small label. Most discreet — reads as accent, not sales tool.</p>
+      <div class="frame">
+        <div class="frame__nav"><span>Pinnacle</span><span>Book</span></div>
+        <div class="frame__hero">[ hero content ]</div>
+        <div class="frame__body">
+          <p>We view each client as a whole person — not a diagnosis — so your therapy is tailored entirely to your life and goals.</p>
+          <p>Personalized psychotherapy in Sacramento, California — and virtually throughout the state.</p>
+        </div>
+        <div class="sticky-c">
+          <a class="sticky-c__opt sticky-c__opt--primary" href="tel:9169902326">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.34 1.78.66 2.62a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.46-1.46a2 2 0 0 1 2.11-.45c.84.32 1.72.54 2.62.66A2 2 0 0 1 22 16.92z"/></svg>
+            <span class="sticky-c__tooltip">Call</span>
+          </a>
+          <a class="sticky-c__opt" href="sms:9169902326">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            <span class="sticky-c__tooltip">Text</span>
+          </a>
+          <a class="sticky-c__opt" href="mailto:info@pinnaclecounselinggroup.com">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span class="sticky-c__tooltip">Email</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION D -->
+    <div class="col">
+      <span class="col__label">Option D</span>
+      <span class="col__name">Serif Whisper</span>
+      <p class="col__note">Editorial serif capsule in the corner — a caption more than a button. Most on-brand for quiet luxury.</p>
+      <div class="frame">
+        <div class="frame__nav"><span>Pinnacle</span><span>Book</span></div>
+        <div class="frame__hero">[ hero content ]</div>
+        <div class="frame__body">
+          <p>We view each client as a whole person — not a diagnosis — so your therapy is tailored entirely to your life and goals.</p>
+          <p>Personalized psychotherapy in Sacramento, California — and virtually throughout the state.</p>
+        </div>
+        <div class="sticky-d">
+          <span class="sticky-d__label">Reach us</span>
+          <a href="tel:9169902326">Call</a>
+          <span class="sticky-d__sep">·</span>
+          <a href="sms:9169902326">Text</a>
+          <span class="sticky-d__sep">·</span>
+          <a href="mailto:info@pinnaclecounselinggroup.com">Email</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
